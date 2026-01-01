@@ -5,8 +5,9 @@ source:
 creator:
   - author/artist/director
 date-encountered: 2025-12-20
+publish: true
 tags:
-  - lake
+  - pond
   - placeholder
 ---
 <br>

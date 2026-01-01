@@ -2,11 +2,10 @@
 type: ocean
 status: draft/published
 date-created: 2025-12-30
-date-published:
+publish: true
 tags:
   - ocean
   - placeholder
-publish: false
 ---
 <br>
 

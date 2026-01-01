@@ -2,8 +2,8 @@ import { QuartzConfig } from "./quartz/cfg"
 import * as Plugin from "./quartz/plugins"
 
 /**
- * Quartz 4 Configuration
- *
+ * Quartz 4.0 Configuration
+ * 
  * See https://quartz.jzhao.xyz/configuration for more information.
  */
 const config: QuartzConfig = {
@@ -11,14 +11,12 @@ const config: QuartzConfig = {
     pageTitle: "ebb and bloom",
     enableSPA: true,
     enablePopovers: true,
-    analytics: null,
+    analytics: {
+      provider: "plausible",
+    },
     locale: "en-US",
     baseUrl: "ebb-and-bloom.netlify.app",
-    ignorePatterns: [
-      "private",
-      "templates",
-      ".obsidian/workspace*",
-    ],
+    ignorePatterns: ["private", "templates", ".obsidian"],
     defaultDateType: "created",
     theme: {
       fontOrigin: "googleFonts",
@@ -26,7 +24,7 @@ const config: QuartzConfig = {
       typography: {
         header: "Segoe UI",
         body: "Segoe UI",
-        code: "Jet Brains Mono",
+        code: "JetBrains Mono",
       },
       colors: {
         lightMode: {
@@ -38,6 +36,7 @@ const config: QuartzConfig = {
           secondary: "#284b63",
           tertiary: "#84a59d",
           highlight: "rgba(143, 202, 144, 0.15)",
+          textHighlight: "#fff23688",
         },
         darkMode: {
           light: "#4C566A",
@@ -48,6 +47,7 @@ const config: QuartzConfig = {
           secondary: "#8FBCBB",
           tertiary: "#A3BE8C",
           highlight: "rgba(143, 188, 187, 0.15)",
+          textHighlight: "#b3aa0288",
         },
       },
     },
@@ -55,8 +55,16 @@ const config: QuartzConfig = {
   plugins: {
     transformers: [
       Plugin.FrontMatter(),
-      Plugin.CreatedModifiedDate({ priority: ["frontmatter", "git", "filesystem"] }),
-      Plugin.SyntaxHighlighting({ theme: { light: "github-light", dark: "github-dark" }, keepBackground: false }),
+      Plugin.CreatedModifiedDate({
+        priority: ["frontmatter", "filesystem"],
+      }),
+      Plugin.SyntaxHighlighting({
+        theme: {
+          light: "github-light",
+          dark: "github-dark",
+        },
+        keepBackground: false,
+      }),
       Plugin.ObsidianFlavoredMarkdown({ enableInHtmlEmbed: false }),
       Plugin.GitHubFlavoredMarkdown(),
       Plugin.TableOfContents(),
@@ -64,17 +72,37 @@ const config: QuartzConfig = {
       Plugin.Description(),
       Plugin.Latex({ renderEngine: "katex" }),
     ],
-    filters: [Plugin.RemoveDrafts()],
-emitters: [
-  Plugin.AliasRedirects(),
-  Plugin.ComponentResources(),
-  Plugin.ContentPage(),
-  Plugin.FolderPage(),
-  Plugin.TagPage(),
-  Plugin.Assets(),
-  Plugin.Static(),
-  Plugin.Favicon(),
-  Plugin.NotFoundPage(),
+    filters: [
+      Plugin.RemoveDrafts(),
+      // Custom filter: only publish files with publish: true
+      (() => {
+        return {
+          name: "PublishFilter",
+          shouldPublish(_ctx, [_tree, vfile]) {
+            const frontmatter = vfile.data?.frontmatter
+            // Only publish if frontmatter has publish: true
+            if (frontmatter && "publish" in frontmatter) {
+              return frontmatter.publish === true
+            }
+            // If no publish field, don't publish by default
+            return false
+          },
+        }
+      })(),
+    ],
+    emitters: [
+      Plugin.AliasRedirects(),
+      Plugin.ComponentResources(),
+      Plugin.ContentPage(),
+      Plugin.FolderPage(),
+      Plugin.TagPage(),
+      Plugin.ContentIndex({
+        enableSiteMap: true,
+        enableRSS: true,
+      }),
+      Plugin.Assets(),
+      Plugin.Static(),
+      Plugin.NotFoundPage(),
     ],
   },
 }

@@ -1,223 +1,151 @@
-// Indent tag headers - both modes
-.markdown-preview-view h3:has(.tag),
-.cm-line.HyperMD-header-3:has(span.cm-hashtag) {
-  margin-left: 1em;
-}
-h3:has(.tag),
-.HyperMD-header-3:has(.cm-hashtag) {
-  margin-left: 1em;
-}
-// Tag colors - both modes
-.tag {
-  background-color: transparent !important;
-  background: none !important;
-  border: none !important;
-  padding: 0 !important;
-  color: #D08770 !important;
-}
-.cm-hashtag {
-  background-color: transparent !important;
-  background: none !important;
-  border: none !important;
-  padding: 0 !important;
-  color: #D08770 !important;
-}
-/* -------------------------
-   Internal link colors - Quartz
-------------------------- */
+/* =========================================================
+   GLOBAL TYPOGRAPHY
+   ========================================================= */
 
-/* Normal and visited links */
-.internal-link,
-.cm-hmd-internal-link,
-.internal-link[aria-current="page"],
-.cm-hmd-internal-link[aria-current="page"] {
-  color: #EBCB8B !important;       /* normal/visited color */
-  background-color: transparent !important; /* remove any temporary flash */
+body,
+.page,
+article {
+  font-family: ui-sans-serif, system-ui, -apple-system,
+               BlinkMacSystemFont, "Segoe UI", sans-serif !important;
 }
 
-/* Hover state */
-.internal-link:hover,
-.cm-hmd-internal-link:hover {
-  color: #8FBCBB !important;       /* hover color */
-  background-color: transparent !important;
+/* =========================================================
+   PAGE LAYOUT — GRID
+   ========================================================= */
+
+.page > #quartz-body {
+  max-width: 1200px;
+  margin: 0 auto;
+
+  display: grid;
+  grid-template-columns: 1fr minmax(0, 900px) 280px;
+  grid-template-rows: auto 1fr;
+  grid-template-areas:
+    "header header header"
+    "left   center right";
+
+  column-gap: 0.75rem; /* ← adjust this to tighten/loosen sidebar */
+  row-gap: 1rem;
 }
 
-/* Clicked / active / temporary flash */
-.internal-link.clicked,
-.cm-hmd-internal-link.clicked,
-.internal-link:active,
-.cm-hmd-internal-link:active {
-  color: #8FBCBB !important;       /* same as hover to prevent red flash */
-  background-color: transparent !important;
+/* =========================================================
+   GRID AREAS
+   ========================================================= */
+
+.page > #quartz-body > .page-header {
+  grid-area: header;
 }
 
+.page > #quartz-body > .left.sidebar {
+  grid-area: left;
+}
 
-// Header colors
-h1 {
-  color: #8FBCBB !important;
+.page > #quartz-body > .center {
+  grid-area: center;
 }
-h2 {
-  color: #A3BE8C !important;
+
+.page > #quartz-body > .right.sidebar {
+  grid-area: right;
 }
-h3 {
-  color: #D08770 !important;
+
+/* =========================================================
+   CENTER CONTENT
+   ========================================================= */
+
+.center {
+  margin: 0;
+  padding: 0.5rem;
 }
-h5 {
-  color: #BF616A !important;
+
+article {
+  padding: 0.5rem 2rem;   /* inner text padding */
+  border-radius: none;
 }
-// Dark mode backgrounds
-[saved-theme="dark"] {
-  body {
-    background-color: #3B4252 !important;
+
+/* =========================================================
+   MOBILE STACKING
+   ========================================================= */
+
+@media (max-width: 768px) {
+  .page > #quartz-body {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "header"
+      "center"
+      "right";
   }
+
+  .center {
+    padding: 0.25rem;
+  }
+
+  article {
+    padding: 0rem 1rem;
+  }
+}
+
+/* =========================================================
+   BACKGROUNDS (NORD)
+   ========================================================= */
+
+[saved-theme="dark"] {
+  body,
   .page {
     background-color: #3B4252 !important;
   }
+
   article {
     background-color: #434C5E !important;
   }
-  // Page header in dark mode
-  .page-header {
+
+  .page-header,
+  .graph {
     background-color: #2E3440 !important;
   }
 }
-// Light mode backgrounds
+
 [saved-theme="light"] {
-  body {
-    background-color: #E5E9F0 !important;
-  }
+  body,
   .page {
     background-color: #E5E9F0 !important;
   }
+
   article {
     background-color: #E5E9F0 !important;
   }
-  // Page header in light mode
-  .page-header {
+
+  .page-header,
+  .graph {
     background-color: #D8DEE9 !important;
     border-radius: 12px;
   }
 }
-body, article, .page {
-  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif !important;
-}
-// Add padding and max-width to content
-.center, article {
-  max-width: 900px;
-  padding-left: 2rem !important;
-  padding-right: 2rem !important;
-  margin: 0 auto;
-}
-// Better spacing for the page
-.page {
-  padding: 2rem 1rem;
-}
-// Add some breathing room to the content
+
+/* =========================================================
+   HEADER
+   ========================================================= */
+
 .page-header {
-  margin-bottom: 1.5rem;
-  padding: 1rem 2rem !important;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  padding: 0rem 0.25rem 0rem !important;
+  margin: 0 !important;
+  text-align: center;
 }
-.page article {
-  padding: 1.5rem;
-}
-// Mobile responsive padding
-@media (max-width: 768px) {
-  .center, article {
-    padding-left: 1rem !important;
-    padding-right: 1rem !important;
-  }
-}
-// Site title/name - clickable link to homepage
+
 .page-title {
-  color: #8FBCBB !important;
-  font-size: 1.5rem;
-  font-weight: 600;
-}
-.page-title a {
-  color: #8FBCBB !important;
-  text-decoration: none !important;
-}
-.page-title a:hover {
-  color: #88C0D0 !important;
-}
-// Hide metadata (date, reading time, etc) in page header
-.content-meta {
-  display: none !important;
-}
-// Hide article title in header (since we have page title)
-.article-title {
-  display: none !important;
-}
-// Remove all sidebar space
-.left.sidebar,
-.right.sidebar {
-  display: none !important;
-}
-// Make content full width
-.page {
-  grid-template-columns: 1fr !important;
-  max-width: 100%;
-}
-.center {
-  grid-column: 1 !important;
-  max-width: 900px;
-  margin: 0 auto;
-}
-// Explorer section
-.explorer {
-  background-color: transparent !important;
-}
-// Explorer folder/file items
-.explorer li {
-  padding: 0.25rem 0;
-}
-// Style dark mode toggle
-.darkmode {
-  position: fixed;
-  top: 1.5rem;
-  right: 3.5rem;
-  z-index: 999;
-  background: none !important;
-  border: none !important;
-  padding: 0.5rem !important;
-  cursor: pointer;
-}
-.darkmode svg {
-  width: 24px;
-  height: 24px;
-  color: #D8DEE9;
-}
-.darkmode:hover svg {
-  color: #8FBCBB;
-}
-// Remove header links
-a.internal[href^="#"],
-.header-anchor,
-.anchor,
-a[aria-hidden="true"],
-h1 > a[href^="#"],
-h2 > a[href^="#"],
-h3 > a[href^="#"],
-h4 > a[href^="#"],
-h5 > a[href^="#"],
-h6 > a[href^="#"] {
-  display: none !important;
-}
-// Also hide any anchor symbols
-.anchor-symbol,
-.headerlink {
-  display: none !important;
-}
-// Center site name in header
-.page-title {
-  text-align: center !important;
-  color: #D08770 !important;
   font-size: 2.5rem;
   font-weight: 700;
+  line-height: 1;
+  margin: 0 !important;
+  color: #D08770 !important;
 }
 
 .page-title a {
-  color: #D08770 !important;
+  color: inherit !important;
   text-decoration: none !important;
 }
 
@@ -225,36 +153,197 @@ h6 > a[href^="#"] {
   color: #A3BE8C !important;
 }
 
-// Hide breadcrumbs (in case they still show)
-.breadcrumbs {
-  display: none !important;
-}
-// Graph view styling
-.graph {
-  margin-top: 3rem;
-  padding: 2rem;
-  border-top: 2px solid #434C5E;
-}
+/* =========================================================
+   SEARCH — DISABLED
+   ========================================================= */
 
-[saved-theme="dark"] .graph {
-  background-color: #2E3440 !important;
-}
-
-[saved-theme="light"] .graph {
-  background-color: #D8DEE9 !important;
-}
-
-// Remove footer
-footer {
+.search,
+.search-container,
+.search-wrapper {
   display: none !important;
 }
 
+/* =========================================================
+   DARK MODE TOGGLE
+   ========================================================= */
+
+.darkmode {
+  position: relative;
+  top: 0rem;
+  right: 0.75rem;
+  z-index: 1000;
+}
+
+/* =========================================================
+   REMOVE HEADER ANCHOR ICONS
+   ========================================================= */
+
+.header-anchor,
+.anchor,
+.anchor-symbol,
+.headerlink,
+a.internal[href^="#"] {
+  display: none !important;
+}
+
+/* =========================================================
+   HEADINGS
+   ========================================================= */
+
+h1 { color: #8FBCBB !important; }
+h2 { color: #A3BE8C !important; }
+h3 { color: #D08770 !important; }
+h5 { color: #BF616A !important; }
+
+/* =========================================================
+   TAG STYLING
+   ========================================================= */
+
+.tag,
+.cm-hashtag,
+a.tag-link,
+a.internal.tag-link {
+  background: none !important;
+  border: none !important;
+  padding: 0 !important;
+  color: #D08770 !important;
+  text-decoration: none !important;
+}
+
+a.tag-link::before,
+a.internal.tag-link::before {
+  content: "#";
+}
+
+.page-header .tag,
+.page-header .tags,
+.page-header .tag-container {
+  display: none !important;
+}
+
+/* =========================================================
+   LINKS — NO RED FLASH
+   ========================================================= */
+
+:root[saved-theme="light"] a.internal {
+  color: #284b63 !important;
+  text-decoration: none !important;
+}
+
+:root[saved-theme="light"] a.internal:hover {
+  color: #84a59d !important;
+}
+
+:root[saved-theme="dark"] a.internal {
+  color: #8FBCBB !important;
+  text-decoration: none !important;
+}
+
+:root[saved-theme="dark"] a.internal:hover {
+  color: #A3BE8C !important;
+}
+
+a.internal {
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* =========================================================
+   REMOVE UNUSED UI
+   ========================================================= */
+
+.content-meta,
+.article-title,
+.explorer,
+footer,
 .page-footer {
   display: none !important;
 }
 
-// Or replace with custom text using CSS
-.graph h3::after {
-  content: "Branches";
+/* =========================================================
+   GRAPH — RIGHT SIDEBAR
+   ========================================================= */
+
+.graph {
+  width: 100%;
+  margin-top: 0.5rem;
+  padding: 1rem;
+  box-sizing: border-box;
+}
+
+.graph h3 {
+  font-size: 0 !important;
+}
+
+.graph h3::before {
+  content: "branches";
   display: block;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #8FBCBB;
+}
+
+
+/* =========================================================
+   REMOVE TOC, BACKLINKS, AND HR DIVIDER
+   ========================================================= */
+
+/* Table of contents (all known Quartz variants) */
+.table-of-contents,
+.toc,
+#toc,
+aside.toc,
+nav.toc {
+  display: none !important;
+}
+
+/* Backlinks section */
+.backlinks,
+.backlinks-container,
+section.backlinks {
+  display: none !important;
+}
+
+/* Horizontal divider inside content */
+.center hr,
+article hr {
+  display: none !important;
+}
+
+/* =========================================================
+   RECENT NOTES SPACING
+   ========================================================= */
+
+.recent-notes {
+  margin-top: 0 !important; /* Gap between graph and recent notes */
+  padding: 0 !important;
+}
+
+/* =========================================================
+   RECENT NOTES — MATCH GRAPH STYLING
+   ========================================================= */
+
+.recent-notes {
+  width: 100%;
+  margin-top: 1.5rem !important; /* Space between graph and recent notes */
+  padding: 1rem !important; /* Match graph padding */
+  box-sizing: border-box;
+}
+
+/* Match graph background colors */
+[saved-theme="dark"] .recent-notes {
+  background-color: #2E3440 !important;
+}
+
+[saved-theme="light"] .recent-notes {
+  background-color: #D8DEE9 !important;
+  border-radius: 12px;
+}
+
+/* Style the "currents" heading to match "branches" */
+.recent-notes h3 {
+  font-size: 1.2rem !important;
+  font-weight: 600 !important;
+  color: #8FBCBB !important;
+  margin-top: 0rem !important;
+  margin-bottom: 1rem !important;
 }
