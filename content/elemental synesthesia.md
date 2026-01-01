@@ -11,7 +11,7 @@ tags:
 # elemental synesthesia
 
 ### #puddle
-
+<br>
 It begins with black liquid fire. No, actually, the thought was preceded by a vision of metal trees - decades ago.
 Elemental synesthesia. In space, fire spreads like liquid.
 
@@ -19,8 +19,8 @@ All this to make me realize that the colours of my dark mode are too light for m
 
 There: I had my first thought. Genesis.
 
-<hr>
+<br>
 
-### branches
+### vines
 - [[puddle_placeholder]]
 - [[index]]

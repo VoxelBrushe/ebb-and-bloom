@@ -10,13 +10,13 @@ tags:
 ---
 <br>
 
-# {{placeholder}}
+# placeholder
 ### #puddle
 <br>
 
 explore.
 
-<hr>
+<br>
 
 ### branches
 - expand

@@ -9,14 +9,14 @@ tags:
 ---
 <br>
 
-# {{placeholder}}
+# placeholder
 ### #ocean 
 
 <br>
 
 harvest
 
----
+<br>
 
 ## seed
 soil - fertilized

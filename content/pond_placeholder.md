@@ -12,20 +12,20 @@ tags:
 ---
 <br>
 
-# {{placeholder}}
+# placeholder
 ### #pond
 <br>
 
 ## soil
 - fertilize
-- 
+
 ## seed
 - plant
 
 ## tree
 tree
 
-<hr>
+<br>
 
-### branches
-- expand
+### vines
+- connection

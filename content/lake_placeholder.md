@@ -10,7 +10,7 @@ tags:
 ---
 <br>
 
-# {{placeholder}}
+# placeholder
 ### #lake
 <br>
 
@@ -23,7 +23,7 @@ grow
 ## fruit
 harvest
 
-<hr>
+<br>
 
-### branches
-- expand
+### vines
+- connection
