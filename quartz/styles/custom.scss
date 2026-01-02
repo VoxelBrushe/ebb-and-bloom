@@ -489,32 +489,58 @@ a.internal:hover {
    CONTENT META — STYLE AND CONDITIONAL DISPLAY
    ========================================================= */
 
-/* Hide the divider above ContentMeta */
+/* Remove divider above ContentMeta */
+.content-meta,
+.content-meta::before {
+  border-top: none !important;
+  border: none !important;
+}
+
+/* Remove any hr before ContentMeta */
+.content-meta + hr,
+hr + .content-meta {
+  display: none !important;
+}
+
+/* If it's in the page-footer area */
+.page-footer hr,
+.page-footer::before {
+  display: none !important;
+}
+
+/* ContentMeta inside footer */
+.page-footer .content-meta {
+  height: 100% !important;      /* fills the footer height */
+  margin: 0 !important;
+  padding: 0 !important;
+  line-height: 2rem !important; /* vertically center text in footer */
+  font-size: 0.8rem !important;
+  opacity: 0.75;
+}
+
+/* =========================================================
+   SHRINK CONTENTMETA WHEN AFTERBODY
+   ========================================================= */
+
+/* Target the ContentMeta in the afterBody area */
 .center > .content-meta:last-child,
 .center .content-meta:last-of-type {
-  margin-top: 0 !important;      /* remove extra space */
-  padding-top: 0 !important;
+  margin-top: 0 !important;        /* remove top space */
+  padding-top: 0 !important;       /* remove padding */
+  line-height: 1 !important;       /* tighten line spacing */
+  font-size: 0.8rem !important;    /* smaller font */
+  opacity: 0.75;
 }
 
-/* Optional: hide previous sibling divider if it's a direct element */
+/* Optional: remove any ::before divider that Quartz adds */
 .center > .content-meta:last-child::before,
 .center .content-meta:last-of-type::before {
+  display: none !important;
   content: none !important;
-  display: none !important;
 }
 
-/* Hide ContentMeta on index page */
-body[data-slug="index"] .center .content-meta,
-body[data-slug="index"] .content-meta {
-  display: none !important;
-}
-
-
-/* Change the color of the date for all other pages */
-.center > .content-meta:last-child time,
-.center .content-meta:last-of-type time {
-  color: #989898 !important;       /* change to your desired color */
-  font-style: italic;
-  font-size: 0.85rem;
-  text-align: left;
+/* Optional: remove bottom spacing from article */
+article {
+  margin-bottom: 0.5rem !important;   /* adjust to taste */
+  padding-bottom: 0.5rem !important;
 }

@@ -9,7 +9,6 @@ tags:
   - character
   - prompt
 ---
-<br>
 
 # love is
 

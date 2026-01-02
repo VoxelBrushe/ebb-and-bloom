@@ -10,7 +10,6 @@ tags:
   - worldbuilding
   - prompt
 ---
-<br>
 
 # after genesis
 
