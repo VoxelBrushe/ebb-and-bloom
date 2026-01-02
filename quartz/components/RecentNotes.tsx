@@ -56,9 +56,6 @@ export default ((userOpts?: Partial<Options>) => {
             // Get title - prefer frontmatter title, fallback to slug
             let title = page.frontmatter?.title ?? page.slug ?? "Untitled"
             
-            // Remove date prefix (YYYY-MM-DD_ format) and replace underscores
-            title = title.replace(/^\d{4}-\d{2}-\d{2}_/, "").replace(/_/g, " ")
-            
             const tags = page.frontmatter?.tags ?? []
             
             return (
@@ -84,44 +81,38 @@ export default ((userOpts?: Partial<Options>) => {
   }
 
   RecentNotes.css = `
-  .recent-notes {
-    margin: 0 !important;
-    padding: 0 !important;
-  }
-  
-  .recent-notes h3 {
-    margin-bottom: 1rem !important;
-    font-size: 1.2rem !important;
-  }
-  
-  .recent-notes-list {
-    list-style: none !important;
-    padding: 0 !important;
-    margin: 0 !important;
-  }
-  
-  .recent-notes-list li {
-    margin-bottom: 0.75rem !important;
-    display: block !important;
-  }
-  
-  .recent-notes-list li a.internal {
-    display: inline !important;
-  }
-  
-  .recent-notes-tags {
-    display: inline-flex !important;
-    gap: 0.25rem !important;
-    font-size: 0.85rem !important;
-    opacity: 0.7 !important;
-    margin-left: 0.5rem !important;
-  }
-  
-  .recent-notes-tags .tag {
-    padding: 0.1rem 0.4rem !important;
-    border-radius: 4px !important;
-  }
-  `
+.recent-notes {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.recent-notes h3 {
+  margin-bottom: 1rem !important;
+  font-size: 1.2rem !important;
+}
+
+.recent-notes-list {
+  list-style: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+.recent-notes-list li {
+  margin-bottom: 0.75rem !important;
+  display: block !important;
+}
+
+.recent-notes-list li a.internal {
+  display: inline !important;
+  font-family: 'Roboto', sans-serif !important;
+  color: var(--text-normal, white) !important; /* use body text color */
+  text-decoration: none !important; /* optional: remove underline */
+}
+
+.recent-notes-tags {
+  display: none;
+}
+`
 
   return RecentNotes
 }) satisfies QuartzComponentConstructor

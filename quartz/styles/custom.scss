@@ -2,11 +2,24 @@
    GLOBAL TYPOGRAPHY
    ========================================================= */
 
+/* Body text */
 body,
 .page,
-article {
+article,
+p,
+li,
+span,
+div {
   font-family: ui-sans-serif, system-ui, -apple-system,
                BlinkMacSystemFont, "Segoe UI", sans-serif !important;
+}
+
+/* Headers */
+h1, h2, h3, h4, h5, h6,
+.page-title,
+.graph h3::before,
+.recent-notes h3 {
+  font-family: ui-sans-serif, system-ui, sans-serif !important;
 }
 
 /* =========================================================
@@ -24,7 +37,7 @@ article {
     "header header header"
     "left   center right";
 
-  column-gap: 0.75rem; /* ← adjust this to tighten/loosen sidebar */
+  column-gap: 0.75rem;
   row-gap: 1rem;
 }
 
@@ -58,7 +71,7 @@ article {
 }
 
 article {
-  padding: 0.5rem 2rem;   /* inner text padding */
+  padding: 0.5rem 2rem;
   border-radius: none;
 }
 
@@ -136,21 +149,25 @@ article {
   text-align: center;
 }
 
+/* =========================================================
+   PAGE TITLE (ALWAYS SAME COLORS)
+   ========================================================= */
+
 .page-title {
   font-size: 2.5rem;
   font-weight: 700;
   line-height: 1;
   margin: 0 !important;
-  color: #D08770 !important;
+  color: #D08770 !important; /* Always this color */
 }
 
 .page-title a {
-  color: inherit !important;
+  color: #D08770 !important; /* Always this color */
   text-decoration: none !important;
 }
 
 .page-title a:hover {
-  color: #A3BE8C !important;
+  color: #A3BE8C !important; /* Always this hover color */
 }
 
 /* =========================================================
@@ -169,7 +186,7 @@ article {
 
 .darkmode {
   position: relative;
-  top: 0rem;
+  top: 0.2rem;
   right: 0.75rem;
   z-index: 1000;
 }
@@ -187,13 +204,26 @@ a.internal[href^="#"] {
 }
 
 /* =========================================================
-   HEADINGS
+   CONTENT HEADERS — LIGHT MODE COLORS
    ========================================================= */
+[saved-theme="light"] {
+  article h1 { color: #5E81AC !important; }
+  article h2 { color: #A3BE8C !important; }
+  article h3 { color: #D08770 !important; }
+  article h4 { color: #81A1C1 !important; }
+  article h5 { color: #B48EAD !important; }
+}
 
-h1 { color: #8FBCBB !important; }
-h2 { color: #A3BE8C !important; }
-h3 { color: #D08770 !important; }
-h5 { color: #BF616A !important; }
+/* =========================================================
+   CONTENT HEADERS — DARK MODE COLORS
+   ========================================================= */
+[saved-theme="dark"] {
+  article h1 { color: #8FBCBB !important; }
+  article h2 { color: #A3BE8C !important; }
+  article h3 { color: #EBCB8B !important; }
+  article h4 { color: #A3BE8C !important; }
+  article h5 { color: #EBCB8B !important; }
+}
 
 /* =========================================================
    TAG STYLING
@@ -206,7 +236,7 @@ a.internal.tag-link {
   background: none !important;
   border: none !important;
   padding: 0 !important;
-  color: #D08770 !important;
+  color: white !important;
   text-decoration: none !important;
 }
 
@@ -235,7 +265,7 @@ a.internal.tag-link::before {
 }
 
 :root[saved-theme="dark"] a.internal {
-  color: #8FBCBB !important;
+  color: white !important;
   text-decoration: none !important;
 }
 
@@ -251,11 +281,54 @@ a.internal {
    REMOVE UNUSED UI
    ========================================================= */
 
-.content-meta,
 .article-title,
-.explorer,
-footer,
-.page-footer {
+.explorer {
+  display: none !important;
+}
+
+/* =========================================================
+   HIDE TOP CONTENT-META, SHOW BOTTOM
+   ========================================================= */
+
+/* Hide content-meta everywhere first */
+.content-meta {
+  display: none !important;
+}
+
+/* Show content-meta ONLY when it's the last element in center */
+.center > .content-meta:last-child,
+.center .content-meta:last-of-type {
+  display: block !important;
+  text-align: left !important;
+  font-size: 0.85rem !important;
+  font-style: italic;
+  color: var(--gray) !important;
+  background-color: transparent !important;
+  padding: 1rem 0 1rem 2rem !important;
+  margin: 3rem 0 0 0 !important;
+  border-top: 1px solid var(--lightgray);
+}
+
+/* Add "planted on" before the date */
+.center > .content-meta:last-child time::before,
+.center .content-meta:last-of-type time::before {
+  content: "planted on ";
+}
+
+/* Remove comma */
+.center > .content-meta:last-child time::after,
+.center .content-meta:last-of-type time::after {
+  content: "" !important;
+}
+
+/* Hide reading time */
+.center > .content-meta:last-child span:not(:has(time)),
+.center .content-meta:last-of-type span:not(:has(time)) {
+  display: none !important;
+}
+
+/* Remove HR dividers */
+.center hr {
   display: none !important;
 }
 
@@ -282,12 +355,10 @@ footer,
   color: #8FBCBB;
 }
 
-
 /* =========================================================
    REMOVE TOC, BACKLINKS, AND HR DIVIDER
    ========================================================= */
 
-/* Table of contents (all known Quartz variants) */
 .table-of-contents,
 .toc,
 #toc,
@@ -296,40 +367,28 @@ nav.toc {
   display: none !important;
 }
 
-/* Backlinks section */
 .backlinks,
 .backlinks-container,
 section.backlinks {
   display: none !important;
 }
 
-/* Horizontal divider inside content */
 .center hr,
 article hr {
   display: none !important;
 }
 
 /* =========================================================
-   RECENT NOTES SPACING
-   ========================================================= */
-
-.recent-notes {
-  margin-top: 0 !important; /* Gap between graph and recent notes */
-  padding: 0 !important;
-}
-
-/* =========================================================
-   RECENT NOTES — MATCH GRAPH STYLING
+   RECENT NOTES — MATCH GRAPH STYLING (BULLETED LIST)
    ========================================================= */
 
 .recent-notes {
   width: 100%;
-  margin-top: 1.5rem !important; /* Space between graph and recent notes */
-  padding: 1rem !important; /* Match graph padding */
+  margin-top: 1.5rem !important;
+  padding: 1rem !important;
   box-sizing: border-box;
 }
 
-/* Match graph background colors */
 [saved-theme="dark"] .recent-notes {
   background-color: #2E3440 !important;
 }
@@ -339,11 +398,123 @@ article hr {
   border-radius: 12px;
 }
 
-/* Style the "currents" heading to match "branches" */
 .recent-notes h3 {
   font-size: 1.2rem !important;
   font-weight: 600 !important;
   color: #8FBCBB !important;
   margin-top: 0rem !important;
   margin-bottom: 1rem !important;
+}
+
+/* =========================================================
+   RECENT NOTES — BULLETED LIST WITH THEME COLORS
+   ========================================================= */
+
+.recent-notes ul.recent-notes-list {
+  list-style: disc !important;       /* bullets */
+  padding-left: 1.5rem !important;   /* indent bullets */
+  margin: 0 !important;
+}
+
+.recent-notes ul.recent-notes-list li {
+  display: list-item !important;     /* ensures bullets show */
+  margin-bottom: 0.75rem !important;
+}
+
+/* Links inside list items */
+.recent-notes ul.recent-notes-list li a.internal {
+  font-family: 'Roboto', sans-serif !important;
+  text-decoration: none !important;
+}
+
+/* Light theme */
+[saved-theme="light"] .recent-notes ul.recent-notes-list li {
+  color: #2E3440 !important;         /* bullet and text color for light mode */
+}
+
+[saved-theme="light"] .recent-notes ul.recent-notes-list li a.internal {
+  color: #2E3440 !important;         /* link color matches text */
+}
+
+[saved-theme="light"] .recent-notes ul.recent-notes-list li a.internal:hover {
+  color: #5E81AC !important;         /* accent color for hover */
+}
+
+/* Dark theme */
+[saved-theme="dark"] .recent-notes ul.recent-notes-list li {
+  color: #D8DEE9 !important;         /* bullet and text color for dark mode */
+}
+
+[saved-theme="dark"] .recent-notes ul.recent-notes-list li a.internal {
+  color: #D8DEE9 !important;         /* link color matches text */
+}
+
+[saved-theme="dark"] .recent-notes ul.recent-notes-list li a.internal:hover {
+  color: #88C0D0 !important;         /* accent color for hover */
+}
+
+
+/* =========================================================
+   INDENT H3 AFTER H1
+   ========================================================= */
+
+article h1 + h3,
+.page h1 + h3 {
+  margin-left: 0.5rem;
+  margin-top: 0;
+  font-family: 'Roboto', sans-serif !important;
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 0;
+}
+
+/* =========================================================
+   REMOVE ALL LINK HOVER POPUPS / POPOVERS
+   ========================================================= */
+
+/* Hide all internal link popovers */
+.popover,
+.popover * {
+  display: none !important;
+  pointer-events: none !important; /* ensures no interaction */
+}
+
+/* Optional: prevent Quartz from generating popovers at all */
+a.internal:hover {
+  cursor: pointer; /* keep link pointer normal */
+}
+
+
+/* =========================================================
+   CONTENT META — STYLE AND CONDITIONAL DISPLAY
+   ========================================================= */
+
+/* Hide the divider above ContentMeta */
+.center > .content-meta:last-child,
+.center .content-meta:last-of-type {
+  margin-top: 0 !important;      /* remove extra space */
+  padding-top: 0 !important;
+}
+
+/* Optional: hide previous sibling divider if it's a direct element */
+.center > .content-meta:last-child::before,
+.center .content-meta:last-of-type::before {
+  content: none !important;
+  display: none !important;
+}
+
+/* Hide ContentMeta on index page */
+body[data-slug="index"] .center .content-meta,
+body[data-slug="index"] .content-meta {
+  display: none !important;
+}
+
+
+/* Change the color of the date for all other pages */
+.center > .content-meta:last-child time,
+.center .content-meta:last-of-type time {
+  color: #989898 !important;       /* change to your desired color */
+  font-style: italic;
+  font-size: 0.85rem;
+  text-align: left;
 }

@@ -1,8 +1,14 @@
-import { PageLayout, SharedLayout } from "./quartz/cfg"
+import { PageLayout, SharedLayout, QuartzComponentConstructor } from "./quartz/cfg"
 import * as Component from "./quartz/components"
 import RecentNotes from "./quartz/components/RecentNotes"
 
-// Components shared across all pages
+// Empty component that Quartz accepts
+const EmptyFooter: QuartzComponentConstructor = () => {
+  const comp = () => null
+  comp.css = "" // <-- Quartz expects a css property
+  return comp
+}
+
 export const sharedPageComponents: SharedLayout = {
   head: Component.Head(),
   header: [
@@ -10,18 +16,11 @@ export const sharedPageComponents: SharedLayout = {
     Component.Darkmode(),
   ],
   afterBody: [],
-  footer: Component.Footer({
-    links: {
-      GitHub: "https://github.com/VoxelBrushe/ebb-and-bloom",
-    },
-  }),
+  footer: EmptyFooter(), // ← safe empty footer
 }
 
-// Components for pages that display a single page (e.g. a single note)
 export const defaultContentPageLayout: PageLayout = {
   beforeBody: [
-    Component.ArticleTitle(),
-    Component.ContentMeta(),
     Component.TagList(),
   ],
   left: [
@@ -31,20 +30,19 @@ export const defaultContentPageLayout: PageLayout = {
   ],
   right: [
     Component.Graph(),
-    Component.DesktopOnly(Component.TableOfContents()),
-    Component.Backlinks(),
-    // Recent Notes only at the bottom
     RecentNotes({
       title: "Recent Notes",
       limit: 5,
       showTags: true,
     }),
   ],
+  afterBody: [
+    Component.ContentMeta(), // your "planted on" date
+  ],
 }
 
-// Components for pages that display lists of pages (e.g. tags or folders)
 export const defaultListPageLayout: PageLayout = {
-  beforeBody: [Component.ArticleTitle(), Component.ContentMeta()],
+  beforeBody: [],
   left: [
     Component.MobileOnly(Component.Spacer()),
     Component.Search(),

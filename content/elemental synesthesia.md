@@ -6,7 +6,8 @@ date-created: 2025-12-31
 publish: true
 tags:
   - puddle
-  - placeholder
+  - elements
+  - inspiration
 ---
 
 # elemental synesthesia

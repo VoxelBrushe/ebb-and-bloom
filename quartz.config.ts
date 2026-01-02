@@ -22,8 +22,8 @@ const config: QuartzConfig = {
       fontOrigin: "googleFonts",
       cdnCaching: true,
       typography: {
-        header: "Segoe UI",
-        body: "Segoe UI",
+        header: "Raleway",
+        body: "Roboto",
         code: "JetBrains Mono",
       },
       colors: {
