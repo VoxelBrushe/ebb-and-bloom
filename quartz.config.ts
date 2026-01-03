@@ -53,11 +53,11 @@ const config: QuartzConfig = {
     },
   },
   plugins: {
-    transformers: [
-      Plugin.FrontMatter(),
-      Plugin.CreatedModifiedDate({
-        priority: ["frontmatter", "filesystem"],
-      }),
+  transformers: [
+    Plugin.FrontMatter(),
+    Plugin.CreatedModifiedDate({
+      priority: ["frontmatter", "filesystem"], // ← frontmatter FIRST
+    }),
       Plugin.SyntaxHighlighting({
         theme: {
           light: "github-light",

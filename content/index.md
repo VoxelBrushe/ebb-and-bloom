@@ -1,5 +1,6 @@
 ---
 title: Home
+date-created: 2025-12-31
 pageLayout: home
 publish: true
 ---
@@ -17,5 +18,3 @@ hopefully, puddles will become lakes
 and lakes will become oceans.
 
 whatever happens, I'll just follow the current and see where it leads me.
-
-que sera, sera.

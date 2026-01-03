@@ -13,10 +13,6 @@ tags:
 
 # after genesis
 
-### #puddle
-
-<br>
-
 Before Existence, there was the Void; the Universal Mind.
 
 Mind created a thought-form, and the Universe came into being.
@@ -29,6 +25,9 @@ We all return to the Void.
 
 <br>
 
+<span class="note-tags">#puddle #cosmology #worldbuilding #prompt</span>
+
 ### vines
 - [[elemental synesthesia]]
 
+[[index]]

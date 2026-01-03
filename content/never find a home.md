@@ -41,5 +41,9 @@ Do you even consider coming back?
 
 <br>
 
+<span class="note-tags">#puddle #change #loss #prompt</span>
+
 ### vines
 - [[love is]]
+
+[[index]]

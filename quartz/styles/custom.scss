@@ -130,7 +130,7 @@ article {
   .page-header,
   .graph {
     background-color: #D8DEE9 !important;
-    border-radius: 12px;
+    border-radius: none;
   }
 }
 
@@ -166,8 +166,13 @@ article {
   text-decoration: none !important;
 }
 
-.page-title a:hover {
-  color: #A3BE8C !important; /* Always this hover color */
+/* Page-title link hover colors per theme */
+[saved-theme="light"] .page-title a:hover {
+  color: #5E81AC !important;  /* light mode hover */
+}
+
+[saved-theme="dark"] .page-title a:hover {
+  color: #EBCB8B !important;  /* dark mode hover */
 }
 
 /* =========================================================
@@ -181,13 +186,18 @@ article {
 }
 
 /* =========================================================
-   DARK MODE TOGGLE
+   DARK MODE TOGGLE — LEFT EDGE OF HEADER
    ========================================================= */
 
+.page-header {
+  position: relative; /* anchor for absolute positioning */
+}
+
 .darkmode {
-  position: relative;
-  top: 0.2rem;
-  right: 0.75rem;
+  position: absolute;
+  left: 0.75rem;      /* distance from left edge */
+  top: 50%;
+  transform: translateY(-50%);
   z-index: 1000;
 }
 
@@ -256,12 +266,12 @@ a.internal.tag-link::before {
    ========================================================= */
 
 :root[saved-theme="light"] a.internal {
-  color: #284b63 !important;
+  color: black !important;
   text-decoration: none !important;
 }
 
 :root[saved-theme="light"] a.internal:hover {
-  color: #84a59d !important;
+  color: #5E81AC !important;
 }
 
 :root[saved-theme="dark"] a.internal {
@@ -270,7 +280,7 @@ a.internal.tag-link::before {
 }
 
 :root[saved-theme="dark"] a.internal:hover {
-  color: #A3BE8C !important;
+  color: #8FBCBB !important;
 }
 
 a.internal {
@@ -306,7 +316,6 @@ a.internal {
   background-color: transparent !important;
   padding: 1rem 0 1rem 2rem !important;
   margin: 3rem 0 0 0 !important;
-  border-top: 1px solid var(--lightgray);
 }
 
 /* Add "planted on" before the date */
@@ -333,6 +342,35 @@ a.internal {
 }
 
 /* =========================================================
+   TAGS — STYLING
+   ========================================================= */
+
+/* Container span right-aligned */
+.note-tags {
+  display: flex;           /* flex container */
+  justify-content: flex-end; /* push contents to the right */
+  flex-wrap: wrap;         /* wrap long lists on small screens */
+  gap: 0.5rem;             /* space between tags */
+  margin-top: 1rem;        /* spacing from content */
+  font-size: 0.8rem;
+}
+
+/* Theme colors */
+[saved-theme="light"] .note-tags {
+  color: #5E81AC;
+}
+
+[saved-theme="dark"] .note-tags {
+  color: #8FBCBB;
+}
+
+/* Optional hover effect */
+.note-tags span:hover {
+  opacity: 1;
+}
+
+
+/* =========================================================
    GRAPH — RIGHT SIDEBAR
    ========================================================= */
 
@@ -343,17 +381,54 @@ a.internal {
   box-sizing: border-box;
 }
 
+/* Preserve layout but hide original text */
 .graph h3 {
-  font-size: 0 !important;
+  font-size: 1.4rem !important;   /* keep height */
+  line-height: 1.2 !important;
+  color: transparent !important; /* hide text without collapsing */
+  margin: 0 0 0.75rem 0 !important;
+  position: relative;
 }
 
-.graph h3::before {
+/* Dark mode title */
+[saved-theme="dark"] .graph h3::before {
   content: "branches";
-  display: block;
-  font-size: 1.2rem;
-  font-weight: 600;
+  position: absolute;
+  inset: 0;
   color: #8FBCBB;
+  font-weight: 600;
 }
+
+/* Light mode title */
+[saved-theme="light"] .graph h3::before {
+  content: "branches";
+  position: absolute;
+  inset: 0;
+  color: #5E81AC;
+  font-weight: 600;
+}
+
+/* =========================================================
+   HIDE INDEX BACKLINKS IN ARTICLE CONTENT
+   ========================================================= */
+
+/* Hide links to index page in article body */
+article a.internal[href="/index"],
+article a.internal[href="./index"],
+article a.internal[data-slug="index"] {
+  display: none !important;
+}
+
+/* If the link is in a paragraph by itself, hide the whole paragraph */
+article p:has(> a.internal[href="/index"]):has(> a:only-child) {
+  display: none !important;
+}
+
+/* Optional: hide any text nodes that are just whitespace around it */
+article p:has(> a.internal[href="/index"]) {
+  line-height: 0;
+}
+
 
 /* =========================================================
    REMOVE TOC, BACKLINKS, AND HR DIVIDER
@@ -373,10 +448,6 @@ section.backlinks {
   display: none !important;
 }
 
-.center hr,
-article hr {
-  display: none !important;
-}
 
 /* =========================================================
    RECENT NOTES — MATCH GRAPH STYLING (BULLETED LIST)
@@ -395,16 +466,25 @@ article hr {
 
 [saved-theme="light"] .recent-notes {
   background-color: #D8DEE9 !important;
-  border-radius: 12px;
+  border-radius: none;
 }
 
 .recent-notes h3 {
-  font-size: 1.2rem !important;
+  font-size: 1.4rem !important;
   font-weight: 600 !important;
-  color: #8FBCBB !important;
-  margin-top: 0rem !important;
-  margin-bottom: 1rem !important;
+  margin: 0 0 1rem 0 !important;
 }
+
+/* Dark mode title */
+[saved-theme="dark"] .recent-notes h3 {
+  color: #8FBCBB !important;
+}
+
+/* Light mode title */
+[saved-theme="light"] .recent-notes h3 {
+  color: #5E81AC !important;
+}
+
 
 /* =========================================================
    RECENT NOTES — BULLETED LIST WITH THEME COLORS
@@ -437,7 +517,7 @@ article hr {
 }
 
 [saved-theme="light"] .recent-notes ul.recent-notes-list li a.internal:hover {
-  color: #5E81AC !important;         /* accent color for hover */
+  color: #D08770 !important;         /* accent color for hover */
 }
 
 /* Dark theme */
@@ -450,7 +530,7 @@ article hr {
 }
 
 [saved-theme="dark"] .recent-notes ul.recent-notes-list li a.internal:hover {
-  color: #88C0D0 !important;         /* accent color for hover */
+  color: #EBCB8B !important;         /* accent color for hover */
 }
 
 
@@ -543,4 +623,40 @@ hr + .content-meta {
 article {
   margin-bottom: 0.5rem !important;   /* adjust to taste */
   padding-bottom: 0.5rem !important;
+}
+
+/* Desktop: max-width 50% */
+.center img {
+  max-width: 50%;
+  height: auto;
+  display: block;
+  margin: 0 auto; /* center image */
+}
+
+/* Mobile: max-width 100% */
+@media (max-width: 768px) {
+  .center img {
+    max-width: 100%;
+  }
+}
+
+
+/* =========================================================
+   GRAPH OUTER BORDER — THEME AWARE
+   ========================================================= */
+
+/* Dark mode — keep original color */
+[saved-theme="dark"] .graph-outer {
+  border: 1.5px solid #8FBCBB;   /* adjust if you want a different dark border */
+  border-radius: none;         /* match graph rounding */
+  padding: 0.5rem;             /* keep spacing inside */
+  box-sizing: border-box;
+}
+
+/* Light mode — custom color */
+[saved-theme="light"] .graph-outer {
+  border: 2px solid #E5E9F0;   /* your desired light border */
+  border-radius: none;
+  padding: 0.5rem;
+  box-sizing: border-box;
 }

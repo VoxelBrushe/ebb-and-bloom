@@ -17,19 +17,23 @@ tags:
 <br>
 
 these drawings used to be everywhere.
-what kind of person would draw them?
-i figure it is either someone very happy
+
+what kind of person would create them?
+
+i figure it is either someone very happy,
 or someone extremely sad.
 
 there’s a prompt in here, somewhere.
 
-![[Assets/photo_image_2026-01-02_08-53-53.jpg]]
+![[love is.jpg]]
 
 unrelated: for some reason, i am in a mood to find capitals offensive.
 
 <br>
 
+<span class="note-tags">#puddle #character #prompt</span>
+
 ### vines
 - [[never find a home]]
 
-
+[[index]]

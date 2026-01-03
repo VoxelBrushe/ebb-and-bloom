@@ -1,33 +1,41 @@
-import { QuartzComponentConstructor } from "../cfg"
+import { QuartzComponentConstructor, QuartzComponentProps } from "../cfg"
+import * as Component from "./index" // or wherever ContentMeta lives
 
 export const PlantedDate: QuartzComponentConstructor = () => {
-  const comp = ({ fileData }: any) => {
-    const created = fileData?.frontmatter?.["date-created"]
+  const comp = (props: QuartzComponentProps) => {
+    const fm = props.fileData.frontmatter
+
+    const created = fm?.dateCreated ?? fm?.["date-created"]
     if (!created) return null
 
-    const dateObj = new Date(created)
-    const formatted = dateObj.toLocaleDateString("en-US", {
+    const date = new Date(created)
+    if (isNaN(date.getTime())) return null
+
+    const formatted = date.toLocaleDateString("en-US", {
       year: "numeric",
       month: "long",
       day: "numeric",
     })
 
-    return `
-      <div class="content-meta planted-date">
-        planted on ${formatted}
-      </div>
-    `
+    // Use ContentMeta itself (Quartz-safe) instead of raw <div>
+    return Component.ContentMeta()({
+      ...props,
+      text: `planted on ${formatted}`,
+    })
   }
 
+  // CSS tweaks (optional)
   comp.css = `
-    .planted-date {
+    .center > .content-meta:last-child,
+    .center .content-meta:last-of-type {
       margin: 0 !important;
       padding: 0 !important;
+      line-height: 1 !important;
       font-size: 0.8rem;
-      line-height: 1;
       opacity: 0.75;
+      color: var(--gray);
+      border-top: none !important;
     }
   `
-
   return comp
 }

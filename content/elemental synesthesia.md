@@ -28,5 +28,9 @@ There: I had my first thought. Genesis.
 
 <br>
 
+<span class="note-tags">#puddle #elements #inspiration</span>
+
 ### vines
 - [[after genesis]]
+
+[[index]]
