@@ -2,7 +2,7 @@
 type: puddle
 sparked-by:
   - - Source Note
-date-created: 2026-01-02
+created: 2026-01-02
 publish: true
 tags:
   - puddle

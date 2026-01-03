@@ -2,7 +2,7 @@
 type: puddle
 sparked-by:
   - - [[love is]]
-date-created: 2026-01-02
+created: 2026-01-02
 publish: true
 tags:
   - puddle

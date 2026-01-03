@@ -5,7 +5,8 @@ export const PlantedDate: QuartzComponentConstructor = () => {
   const comp = (props: QuartzComponentProps) => {
     const fm = props.fileData.frontmatter
 
-    const created = fm?.dateCreated ?? fm?.["date-created"]
+    // fixed: use props.fileData instead of undefined fileData
+    const created = fm?.created ?? props.fileData.dates?.created
     if (!created) return null
 
     const date = new Date(created)
@@ -31,7 +32,7 @@ export const PlantedDate: QuartzComponentConstructor = () => {
       margin: 0 !important;
       padding: 0 !important;
       line-height: 1 !important;
-      font-size: 0.8rem;
+      font-size: 0.8rem !important;
       opacity: 0.75;
       color: var(--gray);
       border-top: none !important;
