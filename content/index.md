@@ -5,8 +5,6 @@ pageLayout: home
 publish: true
 ---
 
-<br>
-
 # welcome to my digital garden.
 
 in here, I play with idea seedlings to see if they take root. 
