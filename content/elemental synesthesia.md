@@ -12,10 +12,6 @@ tags:
 
 # elemental synesthesia
 
-### #puddle
-
-<br>
-
 It begins with black liquid fire. 
 
 No, actually, the thought was preceded by a vision of metal trees - decades ago.

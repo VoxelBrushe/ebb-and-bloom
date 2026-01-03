@@ -12,10 +12,6 @@ tags:
 
 # love is
 
-### #puddle
-
-<br>
-
 these drawings used to be everywhere.
 
 what kind of person would create them?

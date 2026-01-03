@@ -13,10 +13,6 @@ tags:
 
 # never find a home
 
-### #puddle
-
-<br>
-
 You walk these rainslick streets alone. Nothing is the same. 
 
 Whatever shaped your youth has been demolished, rebuilt or repurposed. 
