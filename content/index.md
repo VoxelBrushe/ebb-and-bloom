@@ -1,6 +1,6 @@
 ---
 title: Home
-date-created: 2025-12-31
+created: 2025-12-31
 pageLayout: home
 publish: true
 ---
@@ -17,4 +17,4 @@ but isn't that the best part of the creative process?
 hopefully, puddles will become lakes
 and lakes will become oceans.
 
-whatever happens, I'll just follow the current and see where it leads me.
+whatever happens, I'll just follow the current to see where it leads me.
