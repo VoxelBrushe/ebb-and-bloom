@@ -5,6 +5,8 @@ pageLayout: home
 publish: true
 ---
 
+<br>
+
 # welcome to my digital garden.
 
 in here, I play with idea seedlings to see if they take root. 
@@ -15,4 +17,4 @@ but isn't that the best part of the creative process?
 hopefully, puddles will become lakes
 and lakes will become oceans.
 
-whatever happens, I'll just follow the current to see where it leads me.
+whatever happens, I'll just follow the current and see where it leads me.

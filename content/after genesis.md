@@ -2,7 +2,7 @@
 type: puddle
 sparked-by:
   - - [[elemental synesthesia]]
-date-created: 2026-01-02
+created: 2026-01-02
 publish: true
 tags:
   - puddle
@@ -21,7 +21,7 @@ Some say we are projections of Mind, incomplete though equal. Others say we are 
 
 Although we will not speak our truth, there is comfort in not believing. When we end, it ends. 
 
-We all return to the Void.
+And we all return to the Void.
 
 <br>
 
