@@ -1,5 +1,5 @@
 ---
-title: Home
+title: ebb and bloom
 created: 2025-12-31
 pageLayout: home
 publish: true
@@ -9,12 +9,20 @@ publish: true
 
 # welcome to my digital garden.
 
-in here, I play with idea seedlings to see if they take root. 
+here, I play with story seedlings to see if they take root.
 
-my hands may get dirty, my feet may get wet,
-but isn't that the best part of the creative process?
+my ideas evolve in water:
 
-hopefully, puddles will become lakes
-and lakes will become oceans.
+<br>
 
-whatever happens, I'll just follow the current and see where it leads me.
+#pond - whatever inspires me right now
+
+#puddle - prompts and thoughts that bubble to the surface
+
+#lake - evolving ideas and story premises
+
+#ocean - stories (un)published, mostly Dutch
+
+<br>
+
+you’re welcome to wander, skim, dive deep, or just float for a while.

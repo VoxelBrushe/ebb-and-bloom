@@ -185,21 +185,6 @@ article {
   display: none !important;
 }
 
-/* =========================================================
-   DARK MODE TOGGLE — LEFT EDGE OF HEADER
-   ========================================================= */
-
-.page-header {
-  position: relative; /* anchor for absolute positioning */
-}
-
-.darkmode {
-  position: absolute;
-  left: 0.75rem;      /* distance from left edge */
-  top: 50%;
-  transform: translateY(-50%);
-  z-index: 1000;
-}
 
 /* =========================================================
    REMOVE HEADER ANCHOR ICONS
@@ -659,4 +644,31 @@ article {
   border-radius: none;
   padding: 0.5rem;
   box-sizing: border-box;
+}
+
+
+/* =========================================================
+   DARK MODE TOGGLE — TOP LEFT
+   ========================================================= */
+
+.page-header .darkmode {
+  position: absolute !important;
+  top: 1.2rem !important;
+  left: 1.2rem !important;
+  right: auto !important;
+  z-index: 10 !important;
+  background: none !important;
+  border: none !important;
+  padding: 2.2rem !important;
+  cursor: pointer;
+}
+
+.page-header .darkmode svg {
+  width: 24px;
+  height: 24px;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3)); /* Shadow so it's visible on light backgrounds */
+}
+
+.page-header .darkmode:hover svg {
+  opacity: 0.8;
 }

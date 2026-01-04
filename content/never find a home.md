@@ -8,6 +8,7 @@ tags:
   - puddle
   - change
   - loss
+  - character
   - prompt
 ---
 
@@ -37,7 +38,7 @@ Do you even consider coming back?
 
 <br>
 
-<span class="note-tags">#puddle #change #loss #prompt</span>
+<span class="note-tags">#puddle #change #loss #character #prompt</span>
 
 ### vines
 - [[love is]]

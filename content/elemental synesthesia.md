@@ -7,7 +7,8 @@ publish: true
 tags:
   - puddle
   - elements
-  - inspiration
+  - synesthesia
+  - vision
 ---
 
 # elemental synesthesia
@@ -24,7 +25,7 @@ There: I had my first thought. Genesis.
 
 <br>
 
-<span class="note-tags">#puddle #elements #inspiration</span>
+<span class="note-tags">#puddle #elements #synesthesia #vision</span>
 
 ### vines
 - [[after genesis]]
