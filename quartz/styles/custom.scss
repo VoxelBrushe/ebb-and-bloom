@@ -224,6 +224,21 @@ a.internal[href^="#"] {
    TAG STYLING
    ========================================================= */
 
+   /* If tags are plain text like "#puddle #cosmology" */
+.note-tags {
+  display: block;
+  text-align: right;
+  margin: 1rem 0;
+  font-size: 0.9rem;
+  word-spacing: 0.5rem; /* Space between tags */
+}
+
+/* Color all text in note-tags orange */
+.note-tags,
+.note-tags * {
+  color: #D08770 !important;
+}
+
 .tag,
 .cm-hashtag,
 a.tag-link,
@@ -246,20 +261,6 @@ a.internal.tag-link::before {
   display: none !important;
 }
 
-/* If tags are plain text like "#puddle #cosmology" */
-.note-tags {
-  display: block;
-  text-align: right;
-  margin: 1rem 0;
-  font-size: 0.9rem;
-  word-spacing: 0.5rem; /* Space between tags */
-}
-
-/* Color all text in note-tags orange */
-.note-tags,
-.note-tags * {
-  color: #D08770 !important;
-}
 
 /* =========================================================
    LINKS — NO RED FLASH
