@@ -684,9 +684,13 @@ article {
 }
 
 /* =========================================================
-   NOTE TEXT — ALIGN RIGHT
+   NOTE TEXT — ALIGN RIGHT & CENTER
    ========================================================= */
 
 .align-right {
   text-align: right;
+}
+
+.align-center {
+  text-align: center;
 }
