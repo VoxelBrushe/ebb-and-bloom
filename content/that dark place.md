@@ -33,7 +33,7 @@ But how can he be certain?
 
 <br>
 
-<span class="note-tags">#puddle #trauma #character #prompt</span>
+<span class="note-tags note-tags--accent">#puddle #trauma #character #prompt</span>
 
 ### vines
 

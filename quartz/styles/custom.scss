@@ -221,23 +221,27 @@ a.internal[href^="#"] {
 }
 
 /* =========================================================
-   TAG STYLING
+   NOTE TAGS STYLING (ORANGE, RIGHT-ALIGNED)
    ========================================================= */
 
-   /* If tags are plain text like "#puddle #cosmology" */
-.note-tags {
-  display: block;
-  text-align: right;
+.page .note-tags {
+  display: flex;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  gap: 0.5rem;
   margin: 1rem 0;
   font-size: 0.9rem;
-  word-spacing: 0.5rem; /* Space between tags */
-}
-
-/* Color all text in note-tags orange */
-.note-tags,
-.note-tags * {
   color: #D08770 !important;
 }
+
+.note-tags--accent {
+  color: #D08770;
+}
+
+
+/* =========================================================
+   TAG STYLING
+   ========================================================= */
 
 .tag,
 .cm-hashtag,
@@ -261,6 +265,9 @@ a.internal.tag-link::before {
   display: none !important;
 }
 
+.recent-notes ul.recent-notes-list a.internal {
+  font-size: 0.9em;
+}
 
 /* =========================================================
    LINKS — NO RED FLASH
@@ -345,16 +352,6 @@ a.internal {
 /* =========================================================
    TAGS — STYLING
    ========================================================= */
-
-/* Container span right-aligned */
-.note-tags {
-  display: flex;           /* flex container */
-  justify-content: flex-end; /* push contents to the right */
-  flex-wrap: wrap;         /* wrap long lists on small screens */
-  gap: 0.5rem;             /* space between tags */
-  margin-top: 1rem;        /* spacing from content */
-  font-size: 0.8rem;
-}
 
 /* Theme colors */
 [saved-theme="light"] .note-tags {

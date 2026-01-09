@@ -18,7 +18,8 @@ The trending question this week is:
 
 <br>
 
-<span class="note-tags">#puddle #question #prompt</span>
+<span class="note-tags" style="color:#D08770;">#puddle #question #prompt</span>
+
 
 
 

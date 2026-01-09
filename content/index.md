@@ -27,7 +27,7 @@ my ideas evolve in water:
 
 <br>
 
-you’re welcome to wander, skim, dive deep, or just float for a while.here, I play with story seedlings to see if they take root.
+you’re welcome to wander, skim, dive deep, or just float for a while.
 
 
 <br>

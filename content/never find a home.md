@@ -38,7 +38,7 @@ Do you even consider coming back?
 
 <br>
 
-<span class="note-tags">#puddle #change #loss #character #prompt</span>
+<span class="note-tags note-tags--accent">#puddle #change #loss #character #prompt</span>
 
 ### vines
 - [[love is]]

@@ -27,7 +27,7 @@ unrelated: for some reason, i am in a mood to find capitals offensive.
 
 <br>
 
-<span class="note-tags">#puddle #character #prompt</span>
+<span class="note-tags note-tags--accent">#puddle #character #prompt</span>
 
 ### vines
 - [[never find a home]]

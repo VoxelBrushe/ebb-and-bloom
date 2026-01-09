@@ -25,7 +25,7 @@ There: I had my first thought. Genesis.
 
 <br>
 
-<span class="note-tags">#puddle #elements #synesthesia #vision</span>
+<span class="note-tags note-tags--accent">#puddle #elements #synesthesia #vision</span>
 
 ### vines
 - [[after genesis]]
