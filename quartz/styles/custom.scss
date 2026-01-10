@@ -240,6 +240,7 @@ a.internal[href^="#"] {
    TAG STYLING
    ========================================================= */
 
+/* Base tag appearance */
 .tag,
 .cm-hashtag,
 a.tag-link,
@@ -251,26 +252,31 @@ a.internal.tag-link {
   text-decoration: none !important;
 }
 
+/* Add # prefix before tag links globally */
 a.tag-link::before,
 a.internal.tag-link::before {
   content: "#";
+  color: #D08770 !important;
 }
 
-/* Remove # prefix from tag links inside tag overview pages */
-.tag-page a.tag-link::before,
-.tag-page a.internal.tag-link::before {
+/* Remove # prefix from tag overview pages */
+body[data-slug^="tags/"] a.tag-link::before,
+body[data-slug^="tags/"] a.internal.tag-link::before {
   content: "" !important;
 }
 
+/* Hide tag display in the page header */
 .page-header .tag,
 .page-header .tags,
 .page-header .tag-container {
   display: none !important;
 }
 
+/* Smaller font for recent notes tag list links */
 .recent-notes ul.recent-notes-list a.internal {
   font-size: 0.9em;
 }
+
 
 /* =========================================================
    LINKS — NO RED FLASH
