@@ -1,75 +1,61 @@
 import { QuartzComponent, QuartzComponentConstructor, QuartzComponentProps } from "./types"
-import { FullSlug } from "../util/path"
+import { pathToRoot } from "../util/path"
 
-export default ((opts?: { sort?: (a: any, b: any) => number }) => {
-  const CustomTagContent: QuartzComponent = ({ allFiles, fileData }: QuartzComponentProps) => {
-    const thisTag = fileData.slug?.split("/")[1]
-    const tagged = allFiles
-      .filter((f) => f.frontmatter?.tags?.includes(thisTag))
-      .sort(opts?.sort)
+export default (() => {
+  const CustomTagContent: QuartzComponent = ({ fileData, allFiles, cfg }: QuartzComponentProps) => {
+    const tag = fileData.slug?.split("/").pop()
+    if (!tag) return null
+
+    // Filter all notes that have this tag
+    const taggedNotes = allFiles.filter((f) =>
+      f.frontmatter?.tags?.map((t) => t.toLowerCase()).includes(tag.toLowerCase()),
+    )
 
     return (
-      <div class="custom-tag-content">
-        <h1>{`#${thisTag}`}</h1>
-        <ul class="tag-list">
-          {tagged.map((f) => (
-            <li>
-              <a
-                class="tag-link"
-                href={`/${f.slug as FullSlug}`}
-              >
-                {(f.frontmatter?.title ?? f.slug).replace(/^#\s*/, "")}
-              </a>
-            </li>
-          ))}
+      <article class="custom-tag-content">
+        <h1>{tag}</h1>
+        <ul>
+          {taggedNotes.map((note) => {
+            const title = note.frontmatter?.title ?? note.slug
+            const link = pathToRoot(note.slug!) + note.slug + "/"
+            return (
+              <li>
+                <a class="internal" href={link}>
+                  {title}
+                </a>
+              </li>
+            )
+          })}
         </ul>
-      </div>
+      </article>
     )
   }
 
   CustomTagContent.css = `
-    /* Base styles */
-    .custom-tag-content .tag-list {
+    .custom-tag-content ul {
       list-style: none;
-      padding: 0;
-      margin: 0.8em 0;
+      padding-left: 0;
+      margin: 1.5rem 0;
     }
 
-    .custom-tag-content .tag-list li {
-      margin: 0.4em 0;
+    .custom-tag-content li {
+      margin: 0.5rem 0;
     }
 
-    /* Link styling */
-    .custom-tag-content .tag-link {
-      color: white !important;
-      text-decoration: none !important;
-      transition: color 0.2s ease-in-out;
-      font-weight: 500;
+    .custom-tag-content a.internal {
+      color: white;
+      text-decoration: none;
+      transition: color 0.2s ease;
     }
 
-    /* Hover: strong specificity to override theme */
-    .custom-tag-content .tag-link:hover,
-    .custom-tag-content .tag-link:focus,
-    .custom-tag-content .tag-link:active {
-      color: #5E81AC !important;
-      text-decoration: none !important;
+    .custom-tag-content a.internal:hover {
+      color: #5E81AC;
     }
 
-    /* Optional dark/light handling */
-    html[data-theme="light"] .custom-tag-content .tag-link {
-      color: #2B2B2B !important;
-    }
-
-    html[data-theme="light"] .custom-tag-content .tag-link:hover {
-      color: #5E81AC !important;
-    }
-
-    html[data-theme="dark"] .custom-tag-content .tag-link {
-      color: white !important;
-    }
-
-    html[data-theme="dark"] .custom-tag-content .tag-link:hover {
-      color: #5E81AC !important;
+    .custom-tag-content h1 {
+      text-transform: capitalize;
+      margin-bottom: 1rem;
+      color: var(--secondary);
     }
   `
 
