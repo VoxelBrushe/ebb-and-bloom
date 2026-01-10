@@ -256,6 +256,12 @@ a.internal.tag-link::before {
   content: "#";
 }
 
+/* Remove # prefix from tag links inside tag overview pages */
+.tag-page a.tag-link::before,
+.tag-page a.internal.tag-link::before {
+  content: "" !important;
+}
+
 .page-header .tag,
 .page-header .tags,
 .page-header .tag-container {
