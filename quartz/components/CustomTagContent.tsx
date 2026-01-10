@@ -1,12 +1,11 @@
 import { QuartzComponent, QuartzComponentConstructor, QuartzComponentProps } from "./types"
-import { pathToRoot } from "../util/path"
 
 export default (() => {
-  const CustomTagContent: QuartzComponent = ({ fileData, allFiles, cfg }: QuartzComponentProps) => {
+  const CustomTagContent: QuartzComponent = ({ fileData, allFiles }: QuartzComponentProps) => {
     const tag = fileData.slug?.split("/").pop()
     if (!tag) return null
 
-    // Filter all notes that have this tag
+    // Filter all notes that include this tag
     const taggedNotes = allFiles.filter((f) =>
       f.frontmatter?.tags?.map((t) => t.toLowerCase()).includes(tag.toLowerCase()),
     )
@@ -17,7 +16,7 @@ export default (() => {
         <ul>
           {taggedNotes.map((note) => {
             const title = note.frontmatter?.title ?? note.slug
-            const link = pathToRoot(note.slug!) + note.slug + "/"
+            const link = "/" + note.slug + "/" // ✅ absolute URL to fix redirect issue
             return (
               <li>
                 <a class="internal" href={link}>
