@@ -11,7 +11,7 @@ import { sharedPageComponents } from "./quartz.layout"
 const config: QuartzConfig = {
   configuration: {
     pageTitle: "ebb and bloom",
-    enableSPA: true,
+    enableSPA: false,
     enablePopovers: false,
     analytics: {
       provider: "plausible",
