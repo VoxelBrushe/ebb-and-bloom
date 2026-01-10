@@ -15,7 +15,7 @@ const config: QuartzConfig = {
       provider: "plausible",
     },
     locale: "en-US",
-    baseUrl: "https://ebb-and-bloom.com",
+    baseUrl: "https://ebb-and-bloom.com/",
 
     ignorePatterns: ["private", "templates", ".obsidian"],
     defaultDateType: "created",
