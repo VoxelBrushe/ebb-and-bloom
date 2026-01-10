@@ -34,18 +34,14 @@ export const defaultListPageLayout: PageLayout = {
 }
 
 export const defaultContentPageLayout: PageLayout = {
-  beforeBody: [
-    Component.TagList({
-      showTags: true,
-      tagPrefix: "#",
-    }),
-  ],
+  beforeBody: [],
 
   left: [
     Component.MobileOnly(Component.Spacer()),
     Component.Search(),
     Component.DesktopOnly(Component.Explorer()),
   ],
+
   right: [
     Component.Graph(),
     RecentNotes({
@@ -54,8 +50,12 @@ export const defaultContentPageLayout: PageLayout = {
       showTags: true,
     }),
   ],
+
   afterBody: [
-    TagDisplay(), // ← Add this - appears after content, before footer
+    Component.TagList({
+      showTags: true,
+      tagPrefix: "#",
+    }),
     PlantedDate(),
   ],
 }
