@@ -18,7 +18,6 @@ const config: QuartzConfig = {
     },
     locale: "en-US",
     baseUrl: "https://ebb-and-bloom.com/",
-
     ignorePatterns: ["private", "templates", ".obsidian"],
     defaultDateType: "created",
     theme: {
@@ -55,53 +54,54 @@ const config: QuartzConfig = {
       },
     },
   },
+
   plugins: {
-  transformers: [
-    Plugin.FrontMatter(),
-    Plugin.CreatedModifiedDate({
-      priority: ["frontmatter", "filesystem"],
-    }),
-    Plugin.SyntaxHighlighting({
-      theme: { light: "github-light", dark: "github-dark" },
-      keepBackground: false,
-    }),
-    Plugin.ObsidianFlavoredMarkdown({ enableInHtmlEmbed: true }),
-    Plugin.GitHubFlavoredMarkdown(),
-    Plugin.TableOfContents(),
-    Plugin.CrawlLinks({ markdownLinkResolution: "absolute" }),
-    Plugin.Description(),
-    Plugin.Latex({ renderEngine: "katex" }),
-  ],
+    transformers: [
+      Plugin.FrontMatter(),
+      Plugin.CreatedModifiedDate({
+        priority: ["frontmatter", "filesystem"],
+      }),
+      Plugin.SyntaxHighlighting({
+        theme: { light: "github-light", dark: "github-dark" },
+        keepBackground: false,
+      }),
+      Plugin.ObsidianFlavoredMarkdown({ enableInHtmlEmbed: true }),
+      Plugin.GitHubFlavoredMarkdown(),
+      Plugin.TableOfContents(),
+      Plugin.CrawlLinks({ markdownLinkResolution: "absolute" }),
+      Plugin.Description(),
+      Plugin.Latex({ renderEngine: "katex" }),
+    ],
 
-  filters: [
-    Plugin.RemoveDrafts(),
-    (() => ({
-      name: "PublishFilter",
-      shouldPublish(_ctx, [_tree, vfile]) {
-        const fm = vfile.data?.frontmatter
-        if (fm && "publish" in fm) return fm.publish === true
-        return false
-      },
-    }))(),
-  ],
+    filters: [
+      Plugin.RemoveDrafts(),
+      (() => ({
+        name: "PublishFilter",
+        shouldPublish(_ctx, [_tree, vfile]) {
+          const fm = vfile.data?.frontmatter
+          if (fm && "publish" in fm) return fm.publish === true
+          return false
+        },
+      }))(),
+    ],
 
-  emitters: [
-    Plugin.AliasRedirects(),
-    Plugin.ComponentResources(),
-    Plugin.ContentPage(),
-    Plugin.FolderPage(),
-    Plugin.TagPage({
-      pageBody: CustomTagContent(),
-    }),
-    Plugin.ContentIndex({
-      enableSiteMap: true,
-      enableRSS: true,
-    }),
-    Plugin.Assets(),
-    Plugin.Static(),
-    Plugin.NotFoundPage(),
-  ],
-},
-
+    emitters: [
+      Plugin.AliasRedirects(),
+      Plugin.ComponentResources(),
+      Plugin.ContentPage(),
+      Plugin.FolderPage(),
+      Plugin.TagPage({
+        pageBody: CustomTagContent(),
+      }),
+      Plugin.ContentIndex({
+        enableSiteMap: true,
+        enableRSS: true,
+      }),
+      Plugin.Assets(),
+      Plugin.Static(),
+      Plugin.NotFoundPage(),
+    ],
+  },
+}
 
 export default config
