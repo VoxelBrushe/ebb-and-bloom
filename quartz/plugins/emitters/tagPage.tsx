@@ -26,8 +26,6 @@ function computeTagInfo(
     allFiles.flatMap((data) => data.frontmatter?.tags ?? []).flatMap(getAllSegmentPrefixes),
   )
 
-  // add base tag
-  tags.add("index")
 
   const tagDescriptions: Record<string, ProcessedContent> = Object.fromEntries(
     [...tags].map((tag) => {
