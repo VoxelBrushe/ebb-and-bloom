@@ -1,5 +1,4 @@
 import { QuartzComponent, QuartzComponentConstructor, QuartzComponentProps } from "./types"
-import { simplifySlug } from "../util/path"
 
 export default (() => {
   const CustomTagContent: QuartzComponent = ({ fileData, allFiles }: QuartzComponentProps) => {
@@ -33,7 +32,6 @@ export default (() => {
     return (
       <article class="custom-tag-content">
         <h1>{tag}</h1>
-        <p class="tag-count">{taggedNotes.length} {taggedNotes.length === 1 ? 'note' : 'notes'}</p>
         <ul>
           {taggedNotes.map((note) => {
             // Clean up title - remove date prefix if present
@@ -79,15 +77,8 @@ export default (() => {
     
     .custom-tag-content h1 {
       text-transform: capitalize;
-      margin-bottom: 0.5rem;
+      margin-bottom: 1rem;
       color: #8FBCBB;
-    }
-    
-    .custom-tag-content .tag-count {
-      color: var(--gray);
-      font-size: 0.9rem;
-      margin-bottom: 1.5rem;
-      opacity: 0.8;
     }
   `
   

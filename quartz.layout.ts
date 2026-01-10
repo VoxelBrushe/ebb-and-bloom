@@ -2,6 +2,8 @@ import { PageLayout, SharedLayout, QuartzComponentConstructor } from "./quartz/c
 import * as Component from "./quartz/components"
 import RecentNotes from "./quartz/components/RecentNotes"
 import { PlantedDate } from "./quartz/components/PlantedDate"
+import TagDisplay from "./quartz/components/TagDisplay"
+
 
 // Empty footer (prevents phantom spacing)
 const EmptyFooter: QuartzComponentConstructor = () => {
@@ -18,6 +20,17 @@ export const sharedPageComponents: SharedLayout = {
   ],
   afterBody: [],
   footer: EmptyFooter(),
+}
+
+
+export const defaultListPageLayout: PageLayout = {
+  beforeBody: [],
+  left: [
+    Component.MobileOnly(Component.Spacer()),
+    Component.Search(),
+    Component.DesktopOnly(Component.Explorer()),
+  ],
+  right: [],
 }
 
 export const defaultContentPageLayout: PageLayout = {
@@ -38,16 +51,7 @@ export const defaultContentPageLayout: PageLayout = {
     }),
   ],
   afterBody: [
-    PlantedDate(), // ← uses date-created
+    TagDisplay(), // ← Add this - appears after content, before footer
+    PlantedDate(),
   ],
-}
-
-export const defaultListPageLayout: PageLayout = {
-  beforeBody: [],
-  left: [
-    Component.MobileOnly(Component.Spacer()),
-    Component.Search(),
-    Component.DesktopOnly(Component.Explorer()),
-  ],
-  right: [],
 }
