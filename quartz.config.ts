@@ -1,5 +1,6 @@
 import { QuartzConfig } from "./quartz/cfg"
 import * as Plugin from "./quartz/plugins"
+import CustomTagContent from "./quartz/components/CustomTagContent"
 
 /**
  * Quartz 4.0 Configuration
@@ -96,7 +97,9 @@ const config: QuartzConfig = {
       Plugin.ComponentResources(),
       Plugin.ContentPage(),
       Plugin.FolderPage(),
-      Plugin.TagPage(),
+      Plugin.TagPage({
+  pageBody: CustomTagContent(),
+}),
       Plugin.ContentIndex({
         enableSiteMap: true,
         enableRSS: true,
