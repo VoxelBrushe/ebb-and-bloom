@@ -1,6 +1,7 @@
 import { QuartzConfig } from "./quartz/cfg"
 import * as Plugin from "./quartz/plugins"
 import CustomTagContent from "./quartz/components/CustomTagContent"
+import { sharedPageComponents } from "./quartz.layout"
 
 /**
  * Quartz 4.0 Configuration
@@ -98,11 +99,10 @@ const config: QuartzConfig = {
       Plugin.ContentPage(),
       Plugin.FolderPage(),
       Plugin.TagPage({
-  // use your custom component
+  ...sharedPageComponents,
   pageBody: CustomTagContent(),
-  // ensure that "index" tag is skipped so banner links behave normally
-  sort: (a, b) => 0, // required param placeholder
-}),
+  beforeBody: [], // removes the built-in tag title block
+})
       Plugin.ContentIndex({
         enableSiteMap: true,
         enableRSS: true,
