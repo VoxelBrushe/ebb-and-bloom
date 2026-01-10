@@ -59,59 +59,49 @@ const config: QuartzConfig = {
   transformers: [
     Plugin.FrontMatter(),
     Plugin.CreatedModifiedDate({
-      priority: ["frontmatter", "filesystem"], // ← frontmatter FIRST
+      priority: ["frontmatter", "filesystem"],
     }),
-      Plugin.SyntaxHighlighting({
-        theme: {
-          light: "github-light",
-          dark: "github-dark",
-        },
-        keepBackground: false,
-      }),
-      Plugin.ObsidianFlavoredMarkdown({ enableInHtmlEmbed: true }),
-      Plugin.GitHubFlavoredMarkdown(),
-      Plugin.TableOfContents(),
-      Plugin.CrawlLinks({ markdownLinkResolution: "absolute" }),
-      Plugin.Description(),
-      Plugin.Latex({ renderEngine: "katex" }),
-    ],
-    filters: [
-      Plugin.RemoveDrafts(),
-      // Custom filter: only publish files with publish: true
-      (() => {
-        return {
-          name: "PublishFilter",
-          shouldPublish(_ctx, [_tree, vfile]) {
-            const frontmatter = vfile.data?.frontmatter
-            // Only publish if frontmatter has publish: true
-            if (frontmatter && "publish" in frontmatter) {
-              return frontmatter.publish === true
-            }
-            // If no publish field, don't publish by default
-            return false
-          },
-        }
-      })(),
-    ],
-    emitters: [
-      Plugin.AliasRedirects(),
-      Plugin.ComponentResources(),
-      Plugin.ContentPage(),
-      Plugin.FolderPage(),
-      Plugin.TagPage({
-  ...sharedPageComponents,
-  pageBody: CustomTagContent(),
-  beforeBody: [], // removes the built-in tag title block
-})
-      Plugin.ContentIndex({
-        enableSiteMap: true,
-        enableRSS: true,
-      }),
-      Plugin.Assets(),
-      Plugin.Static(),
-      Plugin.NotFoundPage(),
-    ],
-  },
-}
+    Plugin.SyntaxHighlighting({
+      theme: { light: "github-light", dark: "github-dark" },
+      keepBackground: false,
+    }),
+    Plugin.ObsidianFlavoredMarkdown({ enableInHtmlEmbed: true }),
+    Plugin.GitHubFlavoredMarkdown(),
+    Plugin.TableOfContents(),
+    Plugin.CrawlLinks({ markdownLinkResolution: "absolute" }),
+    Plugin.Description(),
+    Plugin.Latex({ renderEngine: "katex" }),
+  ],
+
+  filters: [
+    Plugin.RemoveDrafts(),
+    (() => ({
+      name: "PublishFilter",
+      shouldPublish(_ctx, [_tree, vfile]) {
+        const fm = vfile.data?.frontmatter
+        if (fm && "publish" in fm) return fm.publish === true
+        return false
+      },
+    }))(),
+  ],
+
+  emitters: [
+    Plugin.AliasRedirects(),
+    Plugin.ComponentResources(),
+    Plugin.ContentPage(),
+    Plugin.FolderPage(),
+    Plugin.TagPage({
+      pageBody: CustomTagContent(),
+    }),
+    Plugin.ContentIndex({
+      enableSiteMap: true,
+      enableRSS: true,
+    }),
+    Plugin.Assets(),
+    Plugin.Static(),
+    Plugin.NotFoundPage(),
+  ],
+},
+
 
 export default config

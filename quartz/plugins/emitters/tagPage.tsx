@@ -9,7 +9,6 @@ import { FullSlug, getAllSegmentPrefixes, joinSegments, pathToRoot } from "../..
 import { defaultListPageLayout, sharedPageComponents } from "../../../quartz.layout"
 import { TagContent } from "../../components"
 import { write } from "./helpers"
-import { i18n, TRANSLATIONS } from "../../i18n"
 import { BuildCtx } from "../../util/ctx"
 import { StaticResources } from "../../util/resources"
 
@@ -17,22 +16,22 @@ interface TagPageOptions extends FullPageLayout {
   sort?: (f1: QuartzPluginData, f2: QuartzPluginData) => number
 }
 
+// --------------------------------------------------------
+// Compute tag info
+// --------------------------------------------------------
 function computeTagInfo(
   allFiles: QuartzPluginData[],
   content: ProcessedContent[],
-  locale: keyof typeof TRANSLATIONS,
+  _locale: string,
 ): [Set<string>, Record<string, ProcessedContent>] {
   const tags: Set<string> = new Set(
     allFiles.flatMap((data) => data.frontmatter?.tags ?? []).flatMap(getAllSegmentPrefixes),
   )
 
-
+  // Remove the "#" in the generated tag titles
   const tagDescriptions: Record<string, ProcessedContent> = Object.fromEntries(
     [...tags].map((tag) => {
-      const title =
-        tag === "index"
-          ? i18n(locale).pages.tagContent.tagIndex
-          : `${i18n(locale).pages.tagContent.tag}: ${tag}`
+      const title = tag // clean plain tag name
       return [
         tag,
         defaultProcessedContent({
@@ -51,7 +50,7 @@ function computeTagInfo(
       if (tags.has(tag)) {
         tagDescriptions[tag] = [tree, file]
         if (file.data.frontmatter?.title === tag) {
-          file.data.frontmatter.title = `${i18n(locale).pages.tagContent.tag}: ${tag}`
+          file.data.frontmatter.title = tag
         }
       }
     }
@@ -60,6 +59,9 @@ function computeTagInfo(
   return [tags, tagDescriptions]
 }
 
+// --------------------------------------------------------
+// Generate each tag page
+// --------------------------------------------------------
 async function processTagPage(
   ctx: BuildCtx,
   tag: string,
@@ -72,6 +74,7 @@ async function processTagPage(
   const [tree, file] = tagContent
   const cfg = ctx.cfg.configuration
   const externalResources = pageResources(pathToRoot(slug), resources)
+
   const componentData: QuartzComponentProps = {
     ctx,
     fileData: file.data,
@@ -91,6 +94,9 @@ async function processTagPage(
   })
 }
 
+// --------------------------------------------------------
+// TagPage Emitter
+// --------------------------------------------------------
 export const TagPage: QuartzEmitterPlugin<Partial<TagPageOptions>> = (userOpts) => {
   const opts: FullPageLayout = {
     ...sharedPageComponents,
@@ -105,6 +111,7 @@ export const TagPage: QuartzEmitterPlugin<Partial<TagPageOptions>> = (userOpts) 
 
   return {
     name: "TagPage",
+
     getQuartzComponents() {
       return [
         Head,
@@ -119,6 +126,8 @@ export const TagPage: QuartzEmitterPlugin<Partial<TagPageOptions>> = (userOpts) 
         Footer,
       ]
     },
+
+    // Emit all tag pages
     async *emit(ctx, content, resources) {
       const allFiles = content.map((c) => c[1].data)
       const cfg = ctx.cfg.configuration
@@ -128,31 +137,32 @@ export const TagPage: QuartzEmitterPlugin<Partial<TagPageOptions>> = (userOpts) 
         yield processTagPage(ctx, tag, tagDescriptions[tag], allFiles, opts, resources)
       }
     },
+
+    // Partial re-build for incremental changes
     async *partialEmit(ctx, content, resources, changeEvents) {
       const allFiles = content.map((c) => c[1].data)
       const cfg = ctx.cfg.configuration
 
-      // Find all tags that need to be updated based on changed files
+      // Find affected tags
       const affectedTags: Set<string> = new Set()
+
       for (const changeEvent of changeEvents) {
         if (!changeEvent.file) continue
         const slug = changeEvent.file.data.slug!
 
-        // If it's a tag page itself that changed
+        // If it's a tag page itself
         if (slug.startsWith("tags/")) {
           const tag = slug.slice("tags/".length)
           affectedTags.add(tag)
         }
 
-        // If a file with tags changed, we need to update those tag pages
+        // If a note with tags changed
         const fileTags = changeEvent.file.data.frontmatter?.tags ?? []
         fileTags.flatMap(getAllSegmentPrefixes).forEach((tag) => affectedTags.add(tag))
+      }
 
-      // If there are affected tags, rebuild their pages
       if (affectedTags.size > 0) {
-        // We still need to compute all tags because tag pages show all tags
         const [_tags, tagDescriptions] = computeTagInfo(allFiles, content, cfg.locale)
-
         for (const tag of affectedTags) {
           if (tagDescriptions[tag]) {
             yield processTagPage(ctx, tag, tagDescriptions[tag], allFiles, opts, resources)
