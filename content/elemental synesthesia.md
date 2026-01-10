@@ -26,10 +26,10 @@ There: I had my first thought. Genesis.
 <br>
 
 <span class="note-tags" style="display:flex; justify-content:flex-end;">
-  <a href="tags/puddle/" class="internal tag-link" style="color:#D08770 !important;">puddle</a>
-  <a href="tags/question/" class="internal tag-link" style="color:#D08770 !important;">elements</a>
-  <a href="tags/question/" class="internal tag-link" style="color:#D08770 !important;">synesthesia</a>
-  <a href="tags/prompt/" class="internal tag-link" style="color:#D08770 !important;">vision</a>
+  <a href="/tags/puddle/" class="internal tag-link" style="color:#D08770 !important;">puddle</a>
+  <a href="/tags/question/" class="internal tag-link" style="color:#D08770 !important;">elements</a>
+  <a href="/tags/question/" class="internal tag-link" style="color:#D08770 !important;">synesthesia</a>
+  <a href="/tags/prompt/" class="internal tag-link" style="color:#D08770 !important;">vision</a>
 </span>
 
 
