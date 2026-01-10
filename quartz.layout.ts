@@ -35,8 +35,12 @@ export const defaultListPageLayout: PageLayout = {
 
 export const defaultContentPageLayout: PageLayout = {
   beforeBody: [
-    Component.TagList(),
+    Component.TagList({
+      showTags: true,
+      tagPrefix: "#",
+    }),
   ],
+
   left: [
     Component.MobileOnly(Component.Spacer()),
     Component.Search(),
