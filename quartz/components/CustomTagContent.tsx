@@ -48,7 +48,7 @@ export default (() => {
     }
 
     .custom-tag-content a.internal:hover {
-      color: #5E81AC;
+      color: #EBCB8B;
     }
 
     .custom-tag-content h1 {
