@@ -1,5 +1,4 @@
 import { QuartzComponent, QuartzComponentConstructor, QuartzComponentProps } from "./types"
-import { classNames } from "../util/lang"
 import { FullSlug } from "../util/path"
 
 export default ((opts?: { sort?: (a: any, b: any) => number }) => {
@@ -10,7 +9,7 @@ export default ((opts?: { sort?: (a: any, b: any) => number }) => {
       .sort(opts?.sort)
 
     return (
-      <div class="tag-content">
+      <div class="custom-tag-content">
         <h1>{`#${thisTag}`}</h1>
         <ul>
           {tagged.map((f) => (
@@ -22,6 +21,30 @@ export default ((opts?: { sort?: (a: any, b: any) => number }) => {
       </div>
     )
   }
-  CustomTagContent.css = "/* optional custom styles */"
+
+  // ✅ Add scoped CSS for the tag overview links
+  CustomTagContent.css = `
+    .custom-tag-content a {
+      color: white;
+      text-decoration: none;
+      transition: color 0.2s ease-in-out;
+    }
+
+    .custom-tag-content a:hover {
+      color: #5E81AC;
+      text-decoration: none;
+    }
+
+    /* Optional: make list clean */
+    .custom-tag-content ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .custom-tag-content li {
+      margin: 0.4em 0;
+    }
+  `
+
   return CustomTagContent
 }) satisfies QuartzComponentConstructor
