@@ -9,7 +9,7 @@ import * as Plugin from "./quartz/plugins"
 const config: QuartzConfig = {
   configuration: {
     pageTitle: "ebb and bloom",
-    enableSPA: false,
+    enableSPA: true,
     enablePopovers: false,
     analytics: {
       provider: "plausible",
