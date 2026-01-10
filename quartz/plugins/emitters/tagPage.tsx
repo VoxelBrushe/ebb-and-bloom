@@ -17,7 +17,7 @@ interface TagPageOptions extends FullPageLayout {
 }
 
 // --------------------------------------------------------
-// Compute tag info
+// Compute tag info (removes # prefixes from titles)
 // --------------------------------------------------------
 function computeTagInfo(
   allFiles: QuartzPluginData[],
@@ -28,10 +28,10 @@ function computeTagInfo(
     allFiles.flatMap((data) => data.frontmatter?.tags ?? []).flatMap(getAllSegmentPrefixes),
   )
 
-  // Remove the "#" in the generated tag titles
+  // Generate clean tag titles (no "#" prefix)
   const tagDescriptions: Record<string, ProcessedContent> = Object.fromEntries(
     [...tags].map((tag) => {
-      const title = tag // clean plain tag name
+      const title = tag // clean title, no hashtag
       return [
         tag,
         defaultProcessedContent({
@@ -42,13 +42,15 @@ function computeTagInfo(
     }),
   )
 
-  // Update with actual content if available
+  // Update tag descriptions with any existing content if present
   for (const [tree, file] of content) {
     const slug = file.data.slug!
     if (slug.startsWith("tags/")) {
       const tag = slug.slice("tags/".length)
       if (tags.has(tag)) {
         tagDescriptions[tag] = [tree, file]
+
+        // Ensure tag titles remain clean
         if (file.data.frontmatter?.title === tag) {
           file.data.frontmatter.title = tag
         }
@@ -95,7 +97,7 @@ async function processTagPage(
 }
 
 // --------------------------------------------------------
-// TagPage Emitter
+// TagPage Emitter (no hashtag titles)
 // --------------------------------------------------------
 export const TagPage: QuartzEmitterPlugin<Partial<TagPageOptions>> = (userOpts) => {
   const opts: FullPageLayout = {
@@ -138,12 +140,11 @@ export const TagPage: QuartzEmitterPlugin<Partial<TagPageOptions>> = (userOpts) 
       }
     },
 
-    // Partial re-build for incremental changes
+    // Partial rebuild for incremental changes
     async *partialEmit(ctx, content, resources, changeEvents) {
       const allFiles = content.map((c) => c[1].data)
       const cfg = ctx.cfg.configuration
 
-      // Find affected tags
       const affectedTags: Set<string> = new Set()
 
       for (const changeEvent of changeEvents) {
@@ -161,6 +162,7 @@ export const TagPage: QuartzEmitterPlugin<Partial<TagPageOptions>> = (userOpts) 
         fileTags.flatMap(getAllSegmentPrefixes).forEach((tag) => affectedTags.add(tag))
       }
 
+      // Rebuild affected tag pages
       if (affectedTags.size > 0) {
         const [_tags, tagDescriptions] = computeTagInfo(allFiles, content, cfg.locale)
         for (const tag of affectedTags) {
