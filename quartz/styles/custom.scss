@@ -717,15 +717,36 @@ article {
 }
 
 /* =========================================================
-   FRONTMATTER TAG LINKS — ORANGE (CORRECT TARGET)
+   QUARTZ FRONTMATTER TAGS — FINAL FIX
    ========================================================= */
 
-.center .note-tags a.internal.tag-link {
-  color: #D08770 !important;
+/* Layout + alignment */
+.center .note-tags {
+  display: flex;
+  justify-content: flex-end; /* right aligned again */
+  gap: 0.5rem;
   font-size: 0.85rem;
 }
 
-.center .note-tags a.internal.tag-link:hover {
-  color: #EBCB8B !important;
-  font-size: 0.85rem;
+/* Force tag color */
+.center .note-tags .tag a.internal.tag-link {
+  color: #D08770 !important;
+  text-decoration: none !important;
+}
+
+/* Add hashtag visually */
+.center .note-tags .tag a.internal.tag-link::before {
+  content: "#";
+  margin-right: 0.05em;
+}
+
+/* Hover colors */
+[saved-theme="light"]
+.center .note-tags .tag a.internal.tag-link:hover {
+  color: #5E81AC !important;
+}
+
+[saved-theme="dark"]
+.center .note-tags .tag a.internal.tag-link:hover {
+  color: #8FBCBB !important;
 }
