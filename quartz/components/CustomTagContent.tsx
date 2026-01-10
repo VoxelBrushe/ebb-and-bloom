@@ -11,10 +11,12 @@ export default ((opts?: { sort?: (a: any, b: any) => number }) => {
     return (
       <div class="custom-tag-content">
         <h1>{`#${thisTag}`}</h1>
-        <ul>
+        <ul class="tag-list">
           {tagged.map((f) => (
             <li>
-              <a href={`/${f.slug as FullSlug}`}>{f.frontmatter?.title ?? f.slug}</a>
+              <a class="tag-link" href={`/${f.slug as FullSlug}`}>
+                {f.frontmatter?.title ?? f.slug}
+              </a>
             </li>
           ))}
         </ul>
@@ -22,26 +24,26 @@ export default ((opts?: { sort?: (a: any, b: any) => number }) => {
     )
   }
 
-  // ✅ Add scoped CSS for the tag overview links
+  // ✅ Scoped but strong CSS (won’t be overridden by theme)
   CustomTagContent.css = `
-    .custom-tag-content a {
-      color: white;
-      text-decoration: none;
+    .custom-tag-content .tag-link {
+      color: white !important;
+      text-decoration: none !important;
       transition: color 0.2s ease-in-out;
     }
 
-    .custom-tag-content a:hover {
-      color: #5E81AC;
-      text-decoration: none;
+    .custom-tag-content .tag-link:hover {
+      color: #5E81AC !important;
+      text-decoration: none !important;
     }
 
-    /* Optional: make list clean */
-    .custom-tag-content ul {
+    .custom-tag-content .tag-list {
       list-style: none;
-      padding: 0;
+      padding-left: 0;
+      margin-top: 0.8em;
     }
 
-    .custom-tag-content li {
+    .custom-tag-content .tag-list li {
       margin: 0.4em 0;
     }
   `

@@ -98,7 +98,10 @@ const config: QuartzConfig = {
       Plugin.ContentPage(),
       Plugin.FolderPage(),
       Plugin.TagPage({
+  // use your custom component
   pageBody: CustomTagContent(),
+  // ensure that "index" tag is skipped so banner links behave normally
+  sort: (a, b) => 0, // required param placeholder
 }),
       Plugin.ContentIndex({
         enableSiteMap: true,
