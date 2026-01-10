@@ -32,4 +32,4 @@ you’re welcome to wander, skim, dive deep, or just float for a while.
 
 <br>
 
-<p class="align-center">-MF-</p>
+<p class="align-center">- MF -</p>
