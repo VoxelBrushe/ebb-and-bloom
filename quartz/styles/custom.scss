@@ -169,7 +169,7 @@ article {
 
 /* Page-title link hover colors per theme */
 [saved-theme="light"] .page-title a:hover {
-  color: #5E81AC !important;  /* light mode hover */
+  color: #EBCB8B !important;  /* light mode hover */
 }
 
 [saved-theme="dark"] .page-title a:hover {
@@ -532,7 +532,7 @@ section.backlinks {
 
 [saved-theme="light"] .recent-notes {
   background-color: #D8DEE9 !important;
-  border-radius: none;
+  border-radius: 0px;
 }
 
 .recent-notes h3 {
@@ -583,7 +583,7 @@ section.backlinks {
 }
 
 [saved-theme="light"] .recent-notes ul.recent-notes-list li a.internal:hover {
-  color: #D08770 !important;         /* accent color for hover */
+  color: #EBCB8B !important;         /* accent color for hover */
 }
 
 /* Dark theme */
@@ -721,11 +721,28 @@ article {
 
 /* Light mode — custom color */
 [saved-theme="light"] .graph-outer {
+  background-color: #cfd5df !important;
   border: 2px solid #E5E9F0;   /* your desired light border */
   border-radius: none;
   padding: 0.5rem;
   box-sizing: border-box;
 }
+
+
+/* =========================================================
+   GRAPH CANVAS BACKGROUND — THEME AWARE
+   ========================================================= */
+
+/* Light mode canvas background */
+[saved-theme="light"] .graph canvas {
+  background-color: #cfd5df !important;  /* slightly darker Nord light gray */
+}
+
+/* Dark mode canvas background */
+[saved-theme="dark"] .graph canvas {
+  background-color: #2E3440 !important;  /* subtle Nord dark blue-gray */
+}
+
 
 
 /* =========================================================
