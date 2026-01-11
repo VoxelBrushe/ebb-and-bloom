@@ -718,38 +718,50 @@ article {
 
 
 /* =========================================================
-   FRONTMATTER TAG LINKS — FINAL OVERRIDE
+   FRONTMATTER TAG LINKS — FIXED FOR <ul class="tags">
    ========================================================= */
 
-/* Make sure tag container aligns to the right */
-.center > .content-meta:last-child {
+/* Container alignment */
+ul.tags {
   display: flex !important;
-  justify-content: flex-end !important;
-  align-items: center !important;
+  justify-content: flex-end !important; /* right-aligned */
   flex-wrap: wrap !important;
+  list-style: none !important;
+  padding: 0 !important;
+  margin: 1rem 0 0 0 !important;
   text-align: right !important;
 }
 
-/* Style all tag links */
-.center > .content-meta:last-child a[href^="/tags/"] {
-  color: #D08770 !important;         /* orange */
+/* Each tag item */
+ul.tags li {
+  margin-left: 0.5rem !important;
+}
+
+/* The tag links themselves */
+ul.tags li a[href*="/tags/"],
+ul.tags li a[href*="./tags/"] {
+  color: #D08770 !important;            /* orange */
   text-decoration: none !important;
   font-size: 0.9rem !important;
-  margin-left: 0.5rem !important;
   font-weight: 500 !important;
+  background: none !important;
+  border: none !important;
 }
 
-/* Add a hashtag prefix */
-.center > .content-meta:last-child a[href^="/tags/"]::before {
+/* Add hashtag before tag text */
+ul.tags li a[href*="/tags/"]::before,
+ul.tags li a[href*="./tags/"]::before {
   content: "#" !important;
-  margin-right: 0.1em !important;
+  margin-right: 0.15em !important;
 }
 
-/* Hover color tweaks per theme */
-[saved-theme="light"] .center > .content-meta:last-child a[href^="/tags/"]:hover {
-  color: #5E81AC !important; /* blue accent on hover */
+/* Hover effects (theme aware) */
+[saved-theme="light"] ul.tags li a[href*="/tags/"]:hover,
+[saved-theme="light"] ul.tags li a[href*="./tags/"]:hover {
+  color: #5E81AC !important;  /* blue accent */
 }
 
-[saved-theme="dark"] .center > .content-meta:last-child a[href^="/tags/"]:hover {
+[saved-theme="dark"] ul.tags li a[href*="/tags/"]:hover,
+[saved-theme="dark"] ul.tags li a[href*="./tags/"]:hover {
   color: #8FBCBB !important;
 }
