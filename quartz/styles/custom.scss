@@ -717,36 +717,38 @@ article {
 }
 
 /* =========================================================
-   FRONTMATTER TAGS — PRODUCTION (Quartz v4.5.2)
+   FRONTMATTER TAGS — FINAL, PRODUCTION-SAFE
+   Quartz v4.5.x
    ========================================================= */
 
-/* Layout */
-.tags {
+/* Container: right-aligned */
+.content-meta .tags {
   display: flex;
-  justify-content: right;
+  justify-content: flex-end;
   gap: 0.5rem;
   font-size: 0.85rem;
 }
 
-/* Base color */
-.tags a.internal.tag-link {
-  color: #D08770 !important;
+/* Base tag link color */
+.content-meta .tags a.internal.tag-link {
+  color: #D08770 !important; /* orange */
   text-decoration: none !important;
 }
 
-/* Add hashtag */
-.tags a.internal.tag-link::before {
+/* Add hashtag before each tag */
+.content-meta .tags a.internal.tag-link::before {
   content: "#";
   margin-right: 0.05em;
 }
 
-/* Hover colors */
+/* Hover colors (keep your existing scheme) */
 :root[saved-theme="light"]
-.tags a.internal.tag-link:hover {
-  color: #5E81AC !important;
+.content-meta .tags a.internal.tag-link:hover {
+  color: #5E81AC !important; /* blue */
 }
 
 :root[saved-theme="dark"]
-.tags a.internal.tag-link:hover {
-  color: #8FBCBB !important;
+.content-meta .tags a.internal.tag-link:hover {
+  color: #8FBCBB !important; /* blue-green */
 }
+
