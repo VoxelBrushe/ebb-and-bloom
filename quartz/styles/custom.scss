@@ -338,19 +338,28 @@ a[href^="http"]:not(.internal)::after {
 }
 
 /* =========================================================
-   FORCE HIDE EXTERNAL LINK ICONS (Quartz override)
+   REMOVE EXTERNAL LINK ICONS (COMPREHENSIVE)
    ========================================================= */
 
-/* 1️⃣ Hide pseudo-elements (::after) added by Quartz or custom CSS */
-a.external-link::after,
-a[href^="http"]:not(.internal)::after {
+/* 1. Hide all ::after pseudo-elements on external links */
+a[href^="http"]::after,
+a[href^="https"]::after,
+a.external::after,
+a.external-link::after {
   display: none !important;
-  content: none !important;
+  content: "" !important;
+  visibility: hidden !important;
+  width: 0 !important;
+  height: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
 }
 
-/* 2️⃣ Hide inline SVG icons Quartz sometimes injects inside links */
-a.external-link svg,
-a[href^="http"]:not(.internal) svg {
+/* 2. Hide SVG icons that might be inline */
+a[href^="http"] svg,
+a[href^="https"] svg,
+a.external svg,
+a.external-link svg {
   display: none !important;
   visibility: hidden !important;
   width: 0 !important;
@@ -358,13 +367,50 @@ a[href^="http"]:not(.internal) svg {
   pointer-events: none !important;
 }
 
-/* 3️⃣ Hide span wrappers Quartz uses for the external-link icon */
-a.external-link span.external-icon,
-a[href^="http"]:not(.internal) span.external-icon {
+/* 3. Hide any span wrappers around icons */
+a[href^="http"] span.icon,
+a[href^="https"] span.icon,
+a[href^="http"] span.external-icon,
+a[href^="https"] span.external-icon,
+a.external span,
+a.external-link span {
   display: none !important;
   visibility: hidden !important;
+  width: 0 !important;
+  height: 0 !important;
+  margin: 0 !important;
 }
 
+/* 4. If there's an svg-inline class */
+a[href^="http"] svg.svg-inline,
+a[href^="https"] svg.svg-inline {
+  display: none !important;
+}
+
+/* 5. Hide any element with class containing "icon" after external links */
+a[href^="http"] [class*="icon"],
+a[href^="https"] [class*="icon"] {
+  display: none !important;
+  visibility: hidden !important;
+  width: 0 !important;
+  height: 0 !important;
+}
+
+/* 6. Target article content specifically */
+article a[href^="http"]::after,
+article a[href^="https"]::after {
+  display: none !important;
+  content: "" !important;
+}
+
+/* 7. Hide right margin that might be reserved for the icon */
+a[href^="http"],
+a[href^="https"],
+a.external,
+a.external-link {
+  margin-right: 0 !important;
+  padding-right: 0 !important;
+}
 
 /* =========================================================
    REMOVE UNUSED UI
