@@ -278,6 +278,72 @@ a.internal {
 }
 
 /* =========================================================
+   EXTERNAL LINK COLOR — LIGHT + DARK MODES
+   ========================================================= */
+
+/* Light mode */
+[saved-theme="light"] a[href^="http"]:not(.internal) {
+  color: #5E81AC !important;        /* blue accent */
+  text-decoration: none !important;
+}
+
+[saved-theme="light"] a[href^="http"]:not(.internal):hover {
+  color: #D08770 !important;        /* orange hover accent */
+}
+
+/* Dark mode */
+[saved-theme="dark"] a[href^="http"]:not(.internal) {
+  color: #5E81AC !important;        /* same Nord blue */
+  text-decoration: none !important;
+}
+
+[saved-theme="dark"] a[href^="http"]:not(.internal):hover {
+  color: #EBCB8B !important;        /* gold hover accent */
+}
+
+   /* =========================================================
+   EXTERNAL LINK ICON COLOR FIX
+   ========================================================= */
+
+/* Base (applies to all) */
+a.external-link::after,
+a[href^="http"]:not(.internal)::after {
+  mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24'%3E%3Cpath fill='currentColor' d='M14 3h7v7h-2V6.414l-9.293 9.293l-1.414-1.414L17.586 5H14V3zM5 5h5V3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-5h-2v5H5V5z'/%3E%3C/svg%3E");
+  -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24'%3E%3Cpath fill='currentColor' d='M14 3h7v7h-2V6.414l-9.293 9.293l-1.414-1.414L17.586 5H14V3zM5 5h5V3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-5h-2v5H5V5z'/%3E%3C/svg%3E");
+  mask-repeat: no-repeat;
+  -webkit-mask-repeat: no-repeat;
+  mask-position: center right;
+  -webkit-mask-position: center right;
+  mask-size: 0.9em;
+  -webkit-mask-size: 0.9em;
+  content: "";
+  display: inline-block;
+  width: 0.9em;
+  height: 0.9em;
+  margin-left: 0.25em;
+  background-color: currentColor; /* inherits text color */
+  vertical-align: text-top;
+}
+
+/* Light mode (icon follows text color) */
+[saved-theme="light"] a.external-link::after,
+[saved-theme="light"] a[href^="http"]:not(.internal)::after {
+  background-color: #5E81AC; /* blue */
+}
+
+/* Dark mode (white icon) */
+[saved-theme="dark"] a.external-link::after,
+[saved-theme="dark"] a[href^="http"]:not(.internal)::after {
+  background-color: #ECEFF4; /* white */
+}
+
+a.external-link::after,
+a[href^="http"]:not(.internal)::after {
+  display: none !important;
+}
+
+
+/* =========================================================
    REMOVE UNUSED UI
    ========================================================= */
 
@@ -730,4 +796,127 @@ ul.tags li a.internal.tag-link[href*="./tags/"]::before {
 [saved-theme="dark"] ul.tags li a.internal.tag-link[href*="/tags/"]:hover,
 [saved-theme="dark"] ul.tags li a.internal.tag-link[href*="./tags/"]:hover {
   color: #8FBCBB !important;
+}
+
+/* =========================================================
+   RESPONSIVE CARD LINK STYLING — NORD THEME
+   ========================================================= */
+
+.card-link {
+  display: flex;
+  flex-direction: row;                /* Image left, text right */
+  align-items: stretch;
+  background-color: #D8DEE9;
+  border: 0px solid #D8DEE9;
+  border-radius: 0px;
+  overflow: hidden;
+  text-decoration: none;
+  margin: 1rem 0;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Hover lift */
+.card-link:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+}
+
+/* Remove all link underlines (globally for cards) */
+.card-link a {
+  text-decoration: none !important;
+  color: inherit !important;
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+
+/* Thumbnail image */
+.card-link img {
+  width: 140px;
+  height: 140px;
+  object-fit: cover;
+  flex-shrink: 0;
+  border-right: 1px solid #D8DEE9;
+}
+
+/* Card content container */
+.card-content {
+  padding: 1rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* Title */
+.card-title {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 0.3rem;
+  color: #2E3440;
+  text-decoration: none !important;
+}
+
+/* Description */
+.card-desc {
+  font-size: 0.9rem;
+  color: #4C566A;
+  margin-bottom: 0.5rem;
+  line-height: 1.4;
+  text-decoration: none !important;
+}
+
+/* Host text */
+.card-host {
+  font-size: 0.8rem;
+  color: #5E81AC;
+  text-transform: lowercase;
+}
+
+/* =========================================================
+   DARK MODE VARIANTS
+   ========================================================= */
+[saved-theme="dark"] .card-link {
+  background-color: #2E3440;
+  border-color: #2E3440;
+}
+
+[saved-theme="dark"] .card-link img {
+  border-right-color: #2E3440;
+}
+
+[saved-theme="dark"] .card-title {
+  color: #ECEFF4;
+}
+
+[saved-theme="dark"] .card-desc {
+  color: #D8DEE9;
+}
+
+[saved-theme="dark"] .card-host {
+  color: #8FBCBB;
+}
+
+/* =========================================================
+   RESPONSIVE BEHAVIOR — STACK IMAGE ABOVE TEXT ON MOBILE
+   ========================================================= */
+@media (max-width: 768px) {
+  .card-link a {
+    flex-direction: column;
+  }
+
+  .card-link img {
+    width: 100%;
+    height: auto;
+    border-right: none;
+    border-bottom: 1px solid #D8DEE9;
+  }
+
+  [saved-theme="dark"] .card-link img {
+    border-bottom-color: #4C566A;
+  }
+
+  .card-content {
+    padding: 0.75rem 1rem;
+  }
 }

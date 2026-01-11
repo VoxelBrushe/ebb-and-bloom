@@ -54,7 +54,6 @@ const config: QuartzConfig = {
       },
     },
   },
-
   plugins: {
     transformers: [
       Plugin.FrontMatter(),
@@ -72,7 +71,6 @@ const config: QuartzConfig = {
       Plugin.Description(),
       Plugin.Latex({ renderEngine: "katex" }),
     ],
-
     filters: [
       Plugin.RemoveDrafts(),
       (() => ({
@@ -84,7 +82,6 @@ const config: QuartzConfig = {
         },
       }))(),
     ],
-
     emitters: [
       Plugin.AliasRedirects(),
       Plugin.ComponentResources(),
