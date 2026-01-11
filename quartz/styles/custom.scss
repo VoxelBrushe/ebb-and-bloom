@@ -220,20 +220,6 @@ a.internal[href^="#"] {
   article h5 { color: #EBCB8B !important; }
 }
 
-/* =========================================================
-   NOTE TAGS STYLING (ORANGE, RIGHT-ALIGNED)
-   ========================================================= */
-
-.page .note-tags {
-  display: flex;
-  justify-content: flex-end;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-  margin: 1rem 0;
-  font-size: 0.9rem;
-  color: #D08770 !important;
-}
-
 
 /* =========================================================
    TAG STYLING
