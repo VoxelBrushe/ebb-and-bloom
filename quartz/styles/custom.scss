@@ -694,13 +694,13 @@ ul.tags {
   flex-wrap: wrap !important;
   list-style: none !important;
   padding: 0 !important;
-  margin: 0.5rem 0 0 0 !important;
+  margin: -2rem 0 0 0 !important;
   text-align: right !important;
 }
 
 /* Each tag item */
 ul.tags li {
-  margin-left: 0.3rem !important;
+  margin-left: 0.25rem !important;
 }
 
 /* The tag links themselves */
