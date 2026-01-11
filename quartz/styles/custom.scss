@@ -721,32 +721,32 @@ article {
    ========================================================= */
 
 /* Layout */
-.content-meta .tags {
+.tags {
   display: flex;
-  justify-content: flex-end;
+  justify-content: right;
   gap: 0.5rem;
   font-size: 0.85rem;
 }
 
 /* Base color */
-.content-meta .tags a.internal.tag-link {
+.tags a.internal.tag-link {
   color: #D08770 !important;
   text-decoration: none !important;
 }
 
 /* Add hashtag */
-.content-meta .tags a.internal.tag-link::before {
+.tags a.internal.tag-link::before {
   content: "#";
   margin-right: 0.05em;
 }
 
 /* Hover colors */
 :root[saved-theme="light"]
-.content-meta .tags a.internal.tag-link:hover {
+.tags a.internal.tag-link:hover {
   color: #5E81AC !important;
 }
 
 :root[saved-theme="dark"]
-.content-meta .tags a.internal.tag-link:hover {
+.tags a.internal.tag-link:hover {
   color: #8FBCBB !important;
 }
