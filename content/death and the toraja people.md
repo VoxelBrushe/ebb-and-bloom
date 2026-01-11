@@ -17,8 +17,6 @@ tags:
 
 # death and the toraja people
 
-<br>
-
 - **Type**: Article
 - **Creator**: Caitlin Moore / mooremisadventures.com
 - **Year**: 2020

@@ -337,9 +337,32 @@ a[href^="http"]:not(.internal)::after {
   background-color: #ECEFF4; /* white */
 }
 
+/* =========================================================
+   FORCE HIDE EXTERNAL LINK ICONS (Quartz override)
+   ========================================================= */
+
+/* 1️⃣ Hide pseudo-elements (::after) added by Quartz or custom CSS */
 a.external-link::after,
 a[href^="http"]:not(.internal)::after {
   display: none !important;
+  content: none !important;
+}
+
+/* 2️⃣ Hide inline SVG icons Quartz sometimes injects inside links */
+a.external-link svg,
+a[href^="http"]:not(.internal) svg {
+  display: none !important;
+  visibility: hidden !important;
+  width: 0 !important;
+  height: 0 !important;
+  pointer-events: none !important;
+}
+
+/* 3️⃣ Hide span wrappers Quartz uses for the external-link icon */
+a.external-link span.external-icon,
+a[href^="http"]:not(.internal) span.external-icon {
+  display: none !important;
+  visibility: hidden !important;
 }
 
 

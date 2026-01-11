@@ -17,8 +17,6 @@ tags:
 
 # rendezvous with death - gow2
 
-<br>
-
 - **Type**: Game / Poem
 - **Creator**: Epic Games
 - **Year**: 2008
@@ -33,6 +31,8 @@ tags:
     </div>
   </a>
 </div>
+
+<br>
 
 #### I Have a Rendezvous with Death
 
