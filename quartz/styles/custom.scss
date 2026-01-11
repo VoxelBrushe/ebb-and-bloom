@@ -718,7 +718,7 @@ article {
 
 
 /* =========================================================
-   FRONTMATTER TAG LINKS — FIXED FOR <ul class="tags">
+   FRONTMATTER TAG LINKS — FIXED FOR <ul class="tags"> (FINAL)
    ========================================================= */
 
 /* Container alignment */
@@ -738,8 +738,8 @@ ul.tags li {
 }
 
 /* The tag links themselves */
-ul.tags li a[href*="/tags/"],
-ul.tags li a[href*="./tags/"] {
+ul.tags li a.internal.tag-link[href*="/tags/"],
+ul.tags li a.internal.tag-link[href*="./tags/"] {
   color: #D08770 !important;            /* orange */
   text-decoration: none !important;
   font-size: 0.85rem !important;
@@ -749,19 +749,19 @@ ul.tags li a[href*="./tags/"] {
 }
 
 /* Add hashtag before tag text */
-ul.tags li a[href*="/tags/"]::before,
-ul.tags li a[href*="./tags/"]::before {
+ul.tags li a.internal.tag-link[href*="/tags/"]::before,
+ul.tags li a.internal.tag-link[href*="./tags/"]::before {
   content: "#" !important;
   margin-right: 0.15em !important;
 }
 
 /* Hover effects (theme aware) */
-[saved-theme="light"] ul.tags li a[href*="/tags/"]:hover,
-[saved-theme="light"] ul.tags li a[href*="./tags/"]:hover {
+[saved-theme="light"] ul.tags li a.internal.tag-link[href*="/tags/"]:hover,
+[saved-theme="light"] ul.tags li a.internal.tag-link[href*="./tags/"]:hover {
   color: #5E81AC !important;  /* blue accent */
 }
 
-[saved-theme="dark"] ul.tags li a[href*="/tags/"]:hover,
-[saved-theme="dark"] ul.tags li a[href*="./tags/"]:hover {
+[saved-theme="dark"] ul.tags li a.internal.tag-link[href*="/tags/"]:hover,
+[saved-theme="dark"] ul.tags li a.internal.tag-link[href*="./tags/"]:hover {
   color: #8FBCBB !important;
 }
