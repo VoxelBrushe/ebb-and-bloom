@@ -338,78 +338,26 @@ a[href^="http"]:not(.internal)::after {
 }
 
 /* =========================================================
-   REMOVE EXTERNAL LINK ICONS (COMPREHENSIVE)
+   REMOVE EXTERNAL LINK ICONS
    ========================================================= */
 
-/* 1. Hide all ::after pseudo-elements on external links */
-a[href^="http"]::after,
-a[href^="https"]::after,
-a.external::after,
-a.external-link::after {
+/* Hide the svg.external-icon specifically */
+svg.external-icon {
   display: none !important;
-  content: "" !important;
   visibility: hidden !important;
   width: 0 !important;
   height: 0 !important;
   margin: 0 !important;
   padding: 0 !important;
-}
-
-/* 2. Hide SVG icons that might be inline */
-a[href^="http"] svg,
-a[href^="https"] svg,
-a.external svg,
-a.external-link svg {
-  display: none !important;
-  visibility: hidden !important;
-  width: 0 !important;
-  height: 0 !important;
   pointer-events: none !important;
 }
 
-/* 3. Hide any span wrappers around icons */
-a[href^="http"] span.icon,
-a[href^="https"] span.icon,
-a[href^="http"] span.external-icon,
-a[href^="https"] span.external-icon,
-a.external span,
-a.external-link span {
-  display: none !important;
-  visibility: hidden !important;
-  width: 0 !important;
-  height: 0 !important;
-  margin: 0 !important;
-}
-
-/* 4. If there's an svg-inline class */
-a[href^="http"] svg.svg-inline,
-a[href^="https"] svg.svg-inline {
-  display: none !important;
-}
-
-/* 5. Hide any element with class containing "icon" after external links */
-a[href^="http"] [class*="icon"],
-a[href^="https"] [class*="icon"] {
-  display: none !important;
-  visibility: hidden !important;
-  width: 0 !important;
-  height: 0 !important;
-}
-
-/* 6. Target article content specifically */
-article a[href^="http"]::after,
-article a[href^="https"]::after {
+/* Also hide any ::after pseudo-elements that might contain it */
+a[href^="http"]::after,
+a[href^="https"]::after {
   display: none !important;
   content: "" !important;
-}
-
-/* 7. Hide right margin that might be reserved for the icon */
-a[href^="http"],
-a[href^="https"],
-a.external,
-a.external-link {
-  margin-right: 0 !important;
-  padding-right: 0 !important;
+  visibility: hidden !important;
 }
 
 /* =========================================================
