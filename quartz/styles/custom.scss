@@ -717,38 +717,36 @@ article {
 }
 
 /* =========================================================
-   FRONTMATTER TAGS — FINAL, PRODUCTION-SAFE
-   Quartz v4.5.x
+   FRONTMATTER TAG LINKS — GUARANTEED SELECTOR
    ========================================================= */
 
-/* Container: right-aligned */
-.content-meta .tags {
+/* Right-align the tag container (wherever it lives) */
+.content-meta {
   display: flex;
   justify-content: flex-end;
-  gap: 0.5rem;
-  font-size: 0.85rem;
 }
 
-/* Base tag link color */
-.content-meta .tags a.internal.tag-link {
-  color: #D08770 !important; /* orange */
+/* Target ALL tag links by URL */
+.content-meta a[href^="/tags/"] {
+  color: #D08770 !important;        /* orange */
   text-decoration: none !important;
+  font-size: 0.85rem;
+  margin-left: 0.5rem;
 }
 
-/* Add hashtag before each tag */
-.content-meta .tags a.internal.tag-link::before {
+/* Add hashtag */
+.content-meta a[href^="/tags/"]::before {
   content: "#";
   margin-right: 0.05em;
 }
 
-/* Hover colors (keep your existing scheme) */
+/* Hover colors */
 :root[saved-theme="light"]
-.content-meta .tags a.internal.tag-link:hover {
-  color: #5E81AC !important; /* blue */
+.content-meta a[href^="/tags/"]:hover {
+  color: #5E81AC !important;
 }
 
 :root[saved-theme="dark"]
-.content-meta .tags a.internal.tag-link:hover {
-  color: #8FBCBB !important; /* blue-green */
+.content-meta a[href^="/tags/"]:hover {
+  color: #8FBCBB !important;
 }
-
