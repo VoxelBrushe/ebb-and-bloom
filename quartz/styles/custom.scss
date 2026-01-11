@@ -345,26 +345,6 @@ a.internal {
   display: none !important;
 }
 
-/* =========================================================
-   TAG DISPLAY — INSIDE ARTICLE BOX
-   ========================================================= */
-
-/* Pull tag display into article box */
-article + .note-tags,
-.page-footer + .note-tags {
-  margin-top: -2rem !important; /* Pull up into article */
-  padding: 0 2rem 1rem 2rem !important; /* Match article padding */
-  color: #D08770 !important;  
-  background: inherit; /* Match article background */
-}
-
-[saved-theme="dark"] article + .note-tags {
-  background-color: #434C5E !important;
-}
-
-[saved-theme="light"] article + .note-tags {
-  background-color: #E5E9F0 !important;
-}
 
 
 /* =========================================================
