@@ -728,13 +728,13 @@ ul.tags {
   flex-wrap: wrap !important;
   list-style: none !important;
   padding: 0 !important;
-  margin: 1rem 0 0 0 !important;
+  margin: 0.5rem 0 0 0 !important;
   text-align: right !important;
 }
 
 /* Each tag item */
 ul.tags li {
-  margin-left: 0.5rem !important;
+  margin-left: 0.3rem !important;
 }
 
 /* The tag links themselves */
@@ -742,8 +742,8 @@ ul.tags li a[href*="/tags/"],
 ul.tags li a[href*="./tags/"] {
   color: #D08770 !important;            /* orange */
   text-decoration: none !important;
-  font-size: 0.9rem !important;
-  font-weight: 500 !important;
+  font-size: 0.85rem !important;
+  font-weight: 400 !important;
   background: none !important;
   border: none !important;
 }
