@@ -4,7 +4,7 @@ source:
   - article
 creator:
   - Caitlin Moore
-encountered: 2026-01-06
+created: 2026-01-11
 publish: true
 tags:
   - pond
@@ -42,7 +42,7 @@ tags:
 
 ### just some thoughts:
 
-I encountered this story while researching the <a href="https://en.wikipedia.org/wiki/Police_Actions_(Indonesia)" target="_blank" rel="noopener noreferrer">Dutch military occupation</a> of Indonesia for a short story I was writing. While my views on death do mostly align with those of the Toraja people, I find myself trying to understand how those beliefs are lived out in practice.
+I encountered this article while researching the <a href="https://en.wikipedia.org/wiki/Police_Actions_(Indonesia)" target="_blank" rel="noopener noreferrer">Dutch military occupation</a> of Indonesia for a short story I am writing. While my views on death do mostly align with those of the Toraja people, I find myself trying to understand how those beliefs are lived out in practice.
 
 It's a very human thing to grapple with the role death plays in life, the question of an afterlife, and how the answers we arrive at impact the way we perceive our time on this Earth. Religion, of course, looms large in that. 
 

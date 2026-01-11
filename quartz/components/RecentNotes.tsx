@@ -16,7 +16,7 @@ const defaultOptions: Options = {
 
 export default ((userOpts?: Partial<Options>) => {
   const opts = { ...defaultOptions, ...userOpts }
-  
+
   const RecentNotes: QuartzComponent = ({
     allFiles,
     fileData,
@@ -27,17 +27,17 @@ export default ((userOpts?: Partial<Options>) => {
       .filter((file) => {
         // Exclude the current page
         if (file.slug === fileData.slug) return false
-        
+
         // Exclude index pages
         if (file.slug?.endsWith("index") || file.slug === "") return false
-        
+
         // Apply custom filter if provided
         if (opts.filter && !opts.filter(file)) return false
-        
+
         return true
       })
       .sort((a, b) => {
-        // Sort by date-created from frontmatter, fallback to file dates
+        // Sort by creation date, newest first
         const dateA = a.dates?.created ?? new Date(0)
         const dateB = b.dates?.created ?? new Date(0)
         return dateB.getTime() - dateA.getTime()
@@ -53,11 +53,9 @@ export default ((userOpts?: Partial<Options>) => {
         <h3>currents</h3>
         <ul class="recent-notes-list">
           {pages.map((page) => {
-            // Get title - prefer frontmatter title, fallback to slug
-            let title = page.frontmatter?.title ?? page.slug ?? "Untitled"
-            
+            const title = page.frontmatter?.title ?? page.slug ?? "Untitled"
             const tags = page.frontmatter?.tags ?? []
-            
+
             return (
               <li key={page.slug}>
                 <a href={`/${page.slug}`} class="internal">
@@ -80,6 +78,7 @@ export default ((userOpts?: Partial<Options>) => {
     )
   }
 
+  // ✅ Required: define component CSS *inside* before returning it
   RecentNotes.css = `
 .recent-notes {
   margin: 0 !important;
@@ -105,8 +104,8 @@ export default ((userOpts?: Partial<Options>) => {
 .recent-notes-list li a.internal {
   display: inline !important;
   font-family: 'Roboto', sans-serif !important;
-  color: var(--text-normal, white) !important; /* use body text color */
-  text-decoration: none !important; /* optional: remove underline */
+  color: var(--text-normal, white) !important;
+  text-decoration: none !important;
 }
 
 .recent-notes-tags {
@@ -114,5 +113,6 @@ export default ((userOpts?: Partial<Options>) => {
 }
 `
 
+  // ✅ Return the actual component constructor
   return RecentNotes
 }) satisfies QuartzComponentConstructor

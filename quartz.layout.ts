@@ -4,6 +4,13 @@ import RecentNotes from "./quartz/components/RecentNotes"
 import { PlantedDate } from "./quartz/components/PlantedDate"
 import TagDisplay from "./quartz/components/TagDisplay"
 
+// Debug helper for Quartz emitter crash
+function safeComponent<T>(comp: T | null | undefined, name: string): T {
+  if (comp == null) {
+    console.error(`❌ Component '${name}' is null or undefined`);
+  }
+  return comp as T;
+}
 
 // Empty footer (prevents phantom spacing)
 const EmptyFooter: QuartzComponentConstructor = () => {
@@ -30,7 +37,15 @@ export const defaultListPageLayout: PageLayout = {
     Component.Search(),
     Component.DesktopOnly(Component.Explorer()),
   ],
-  right: [],
+  right: [
+  safeComponent(Component.Graph(), "Graph"),
+  safeComponent(RecentNotes({
+    title: "Recent Notes",
+    limit: 5,
+    showTags: true,
+  }), "RecentNotes"),
+],
+
 }
 
 export const defaultContentPageLayout: PageLayout = {
@@ -52,10 +67,6 @@ export const defaultContentPageLayout: PageLayout = {
   ],
 
   afterBody: [
-    Component.TagList({
-      showTags: true,
-      tagPrefix: "#",
-    }),
-    PlantedDate(),
-  ],
+  Component.TagsAndDate(),
+],
 }
