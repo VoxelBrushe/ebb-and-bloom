@@ -716,37 +716,40 @@ article {
   text-align: center;
 }
 
+
 /* =========================================================
-   FRONTMATTER TAG LINKS — GUARANTEED SELECTOR
+   FRONTMATTER TAG LINKS — FINAL OVERRIDE
    ========================================================= */
 
-/* Right-align the tag container (wherever it lives) */
-.content-meta {
-  display: flex;
-  justify-content: flex-end;
+/* Make sure tag container aligns to the right */
+.center > .content-meta:last-child {
+  display: flex !important;
+  justify-content: flex-end !important;
+  align-items: center !important;
+  flex-wrap: wrap !important;
+  text-align: right !important;
 }
 
-/* Target ALL tag links by URL */
-.content-meta a[href^="/tags/"] {
-  color: #D08770 !important;        /* orange */
+/* Style all tag links */
+.center > .content-meta:last-child a[href^="/tags/"] {
+  color: #D08770 !important;         /* orange */
   text-decoration: none !important;
-  font-size: 0.85rem;
-  margin-left: 0.5rem;
+  font-size: 0.9rem !important;
+  margin-left: 0.5rem !important;
+  font-weight: 500 !important;
 }
 
-/* Add hashtag */
-.content-meta a[href^="/tags/"]::before {
-  content: "#";
-  margin-right: 0.05em;
+/* Add a hashtag prefix */
+.center > .content-meta:last-child a[href^="/tags/"]::before {
+  content: "#" !important;
+  margin-right: 0.1em !important;
 }
 
-/* Hover colors */
-:root[saved-theme="light"]
-.content-meta a[href^="/tags/"]:hover {
-  color: #5E81AC !important;
+/* Hover color tweaks per theme */
+[saved-theme="light"] .center > .content-meta:last-child a[href^="/tags/"]:hover {
+  color: #5E81AC !important; /* blue accent on hover */
 }
 
-:root[saved-theme="dark"]
-.content-meta a[href^="/tags/"]:hover {
+[saved-theme="dark"] .center > .content-meta:last-child a[href^="/tags/"]:hover {
   color: #8FBCBB !important;
 }
