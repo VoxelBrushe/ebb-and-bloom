@@ -1,6 +1,7 @@
 import { PageLayout, SharedLayout, QuartzComponentConstructor } from "./quartz/cfg"
 import * as Component from "./quartz/components"
 import RecentNotes from "./quartz/components/RecentNotes"
+import ContactForm from "./quartz/components/ContactForm"
 import { PlantedDate } from "./quartz/components/PlantedDate"
 import TagDisplay from "./quartz/components/TagDisplay"
 
@@ -29,7 +30,6 @@ export const sharedPageComponents: SharedLayout = {
   footer: EmptyFooter(),
 }
 
-
 export const defaultListPageLayout: PageLayout = {
   beforeBody: [],
   left: [
@@ -38,25 +38,23 @@ export const defaultListPageLayout: PageLayout = {
     Component.DesktopOnly(Component.Explorer()),
   ],
   right: [
-  safeComponent(Component.Graph(), "Graph"),
-  safeComponent(RecentNotes({
-    title: "Recent Notes",
-    limit: 5,
-    showTags: true,
-  }), "RecentNotes"),
-],
-
+    safeComponent(Component.Graph(), "Graph"),
+    safeComponent(RecentNotes({
+      title: "Recent Notes",
+      limit: 5,
+      showTags: true,
+    }), "RecentNotes"),
+    safeComponent(ContactForm(), "ContactForm"),
+  ],
 }
 
 export const defaultContentPageLayout: PageLayout = {
   beforeBody: [],
-
   left: [
     Component.MobileOnly(Component.Spacer()),
     Component.Search(),
     Component.DesktopOnly(Component.Explorer()),
   ],
-
   right: [
     Component.Graph(),
     RecentNotes({
@@ -64,9 +62,9 @@ export const defaultContentPageLayout: PageLayout = {
       limit: 5,
       showTags: true,
     }),
+    ContactForm(),
   ],
-
   afterBody: [
-  Component.TagsAndDate(),
-],
+    Component.TagsAndDate(),
+  ],
 }
