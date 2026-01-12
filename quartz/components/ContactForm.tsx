@@ -14,7 +14,7 @@ const ContactForm: QuartzComponentConstructor = () => {
             your message:
             <textarea name="message" placeholder="what's on your mind?" required></textarea>
           </label>
-          <input type="hidden" name="_next" value="https://ebb-and-bloom.com/contact-success" />
+          <input type="hidden" name="_next" value="https://ebb-and-bloom.com/contact-success/" />
           <button type="submit">Send</button>
         </form>
       </div>
