@@ -5,6 +5,8 @@ pageLayout: home
 publish: true
 ---
 
+<meta name="description" content="A digital garden where writing ideas take root. Discover story prompts, character inspiration, and creative thoughts. Perfect for writers seeking sparks of imagination.">
+
 <br>
 
 # welcome to my digital garden.
@@ -33,3 +35,5 @@ you’re welcome to wander, skim, dive deep, or just float for a while.
 <br>
 
 <p class="align-center">- MF -</p>
+
+<br>

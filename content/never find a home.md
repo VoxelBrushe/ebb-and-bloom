@@ -12,6 +12,8 @@ tags:
   - prompt
 ---
 
+<meta name="description" content="Writing prompt about loss and displacement. Develop a character navigating change and the search for home. Explore complex emotional arcs.">
+
 # never find a home
 
 You walk these rainslick streets alone. Nothing is the same. 
@@ -38,7 +40,8 @@ Do you even consider coming back?
 
 <br>
 
-### vines
+## vines
+
 - [[love is]]
 
 [[index]]

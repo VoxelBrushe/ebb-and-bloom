@@ -11,6 +11,8 @@ tags:
   - prompt
 ---
 
+<meta name="description" content="Character prompt exploring PTSD and obsession. A survivor of trauma compulsively recreates the conditions of survival. Perfect for developing psychologically complex characters shaped by dark experiences.">
+
 # that dark place
 
 Every night, he is trapped inside that wooden box. He pounds and screams, out of breath. 
@@ -33,8 +35,9 @@ But how can he be certain?
 
 <br>
 
-### vines
+## vines
 
 - [[love is]]
 
 [[index]]
+

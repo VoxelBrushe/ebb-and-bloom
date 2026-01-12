@@ -215,12 +215,36 @@ a.internal[href^="#"] {
    ========================================================= */
 [saved-theme="dark"] {
   article h1 { color: #8FBCBB !important; }
-  article h2 { color: #A3BE8C !important; }
+  article h2 { color: #EBCB8B !important; }
   article h3 { color: #EBCB8B !important; }
   article h4 { color: #A3BE8C !important; }
   article h5 { color: #EBCB8B !important; }
 }
 
+
+/* =========================================================
+   CONTENT HEADERS — FONT SIZES
+   ========================================================= */
+
+article h1 {
+  font-size: 1.8rem !important;
+}
+
+article h2 {
+  font-size: 1.2rem !important;  /* same as h3 */
+}
+
+article h3 {
+  font-size: 1.2rem !important;
+}
+
+article h4 {
+  font-size: 1rem !important;
+}
+
+article h5 {
+  font-size: 0.95rem !important;
+}
 
 /* =========================================================
    TAG STYLING

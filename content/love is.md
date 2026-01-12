@@ -10,6 +10,8 @@ tags:
   - prompt
 ---
 
+<meta name="description" content="Character prompt exploring motivation and emotion. Who creates 'love is' drawings - someone blissfully happy or deeply sad? Develop complex characters through psychological depth.">
+
 # love is
 
 these drawings used to be everywhere.
@@ -27,7 +29,8 @@ unrelated: for some reason, i am in a mood to find capitals offensive.
 
 <br>
 
-### vines
+## vines
+
 - [[never find a home]]
 
 [[index]]

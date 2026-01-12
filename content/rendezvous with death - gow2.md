@@ -13,7 +13,8 @@ tags:
   - war
   - game
 ---
-<br>
+
+<meta name="description" content="Inspiration: Alan Seeger's classic war poem reimagined in the Gears of War 2 trailer. Explore how timeless themes of sacrifice, duty, and fate resonate across centuries. Perfect for writers developing characters shaped by duty and mortality">
 
 # rendezvous with death - gow2
 
@@ -34,7 +35,7 @@ tags:
 
 <br>
 
-#### I Have a Rendezvous with Death
+## I Have a Rendezvous with Death
 
 by <a href="https://www.poetryfoundation.org/poets/alan-seeger" target="_blank" rel="noopener noreferrer">Alan Seeger</a>
 
@@ -94,7 +95,7 @@ I shall not fail that rendezvous.
 
 <br>
 
-### vines
+## vines
 
 - [[death and the toraja people]]
 

@@ -11,6 +11,8 @@ tags:
   - vision
 ---
 
+<meta name="description" content="Explore elemental synesthesia and the blending of senses. Writing inspiration for developing unique sensory systems in fiction and philosophical worldbuilding.">
+
 # elemental synesthesia
 
 It begins with black liquid fire. 
@@ -25,7 +27,8 @@ There: I had my first thought. Genesis.
 
 <br>
 
-### vines
+## vines
+
 - [[after genesis]]
 
 [[index]]

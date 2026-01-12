@@ -13,7 +13,8 @@ tags:
   - animism
   - indonesia
 ---
-<br>
+
+<meta name="description" content="Inspiration: The Toraja people's unique relationship with death and funeral rituals. A reflection on how cultural beliefs shape our understanding of mortality. Perfect for writers exploring spirituality, cultural worldbuilding, and death themes.">
 
 # death and the toraja people
 
@@ -40,7 +41,7 @@ tags:
 
 <br>
 
-### just some thoughts:
+## just some thoughts:
 
 I encountered this article while researching the <a href="https://en.wikipedia.org/wiki/Police_Actions_(Indonesia)" target="_blank" rel="noopener noreferrer">Dutch military occupation</a> of Indonesia for a short story I am writing. While my views on death do mostly align with those of the Toraja people, I find myself trying to understand how those beliefs are lived out in practice.
 
@@ -50,8 +51,9 @@ Reading this article, I started wondering how I might have experienced the first
 
 <br>
 
-### vines
+## vines
 
 - [[rendezvous with death - gow2]]
 
 [[index]]
+

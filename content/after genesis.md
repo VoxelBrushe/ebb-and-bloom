@@ -11,6 +11,8 @@ tags:
   - prompt
 ---
 
+<meta name="description" content="A story prompt exploring cosmology and worldbuilding. A starting point for writers developing fantasy worlds and creation myths.">
+
 # after genesis
 
 Before Existence, there was the Void; the Universal Mind.
@@ -27,7 +29,9 @@ And we all return to the Void.
 
 <br>
 
-### vines
+## vines
+
 - [[elemental synesthesia]]
+- [[rendezvous with death - gow2]]
 
 [[index]]
