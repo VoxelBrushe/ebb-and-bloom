@@ -1,131 +1,187 @@
 import { QuartzComponent, QuartzComponentConstructor } from "./types"
+import { useState } from "preact/hooks"
 
 export const ContactForm: QuartzComponent = () => {
+  const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">("idle")
+
+  const handleSubmit = async (e: Event) => {
+    e.preventDefault()
+    const form = e.target as HTMLFormElement
+    setStatus("sending")
+
+    const data = new FormData(form)
+    const response = await fetch(form.action, {
+      method: "POST",
+      body: data,
+      headers: { Accept: "application/json" },
+    })
+
+    if (response.ok) {
+      setStatus("sent")
+      form.reset()
+    } else {
+      setStatus("error")
+    }
+  }
+
   return (
-    <div class="contact-form-container">
-      <h3 class="contact-form-title">Get in Touch</h3>
-      <form
-        action="https://formspree.io/f/mgooezed"
-        method="POST"
-        class="contact-form"
-      >
-        {/* Hidden redirect field */}
-        <input type="hidden" name="_redirect" value="/contact-success" />
+    <div class="contact-form">
+      <h3>Get in Touch</h3>
 
-        <label>
-          <span>Your name</span>
-          <input type="text" name="name" required />
-        </label>
+      {status === "sent" ? (
+        <p class="contact-success">thank you! message in a bottle successfully sent</p>
+      ) : (
+        <form
+          onSubmit={handleSubmit}
+          action="https://formspree.io/f/mgooezed"
+          method="POST"
+        >
+          <label>
+            <span>Your name</span>
+            <input type="text" name="name" required />
+          </label>
 
-        <label>
-          <span>Your email</span>
-          <input type="email" name="email" required />
-        </label>
+          <label>
+            <span>Your email</span>
+            <input type="email" name="email" required />
+          </label>
 
-        <label>
-          <span>Message</span>
-          <textarea name="message" rows="4" required></textarea>
-        </label>
+          <label>
+            <span>Message</span>
+            <textarea name="message" rows={4} required></textarea>
+          </label>
 
-        <button type="submit">Send</button>
-      </form>
+          <button type="submit" disabled={status === "sending"}>
+            {status === "sending" ? "Sending..." : "Send"}
+          </button>
+        </form>
+      )}
+
+      {status === "error" && (
+        <p class="contact-error">⚠️ oops! something went wrong. please try again later.</p>
+      )}
     </div>
   )
 }
 
 ContactForm.css = `
 /* =========================================================
-   CONTACT FORM — SIDEBAR NORD STYLE
+   CONTACT FORM — RIGHT SIDEBAR
    ========================================================= */
 
-.contact-form-container {
+.contact-form {
+  width: 100%;
   margin-top: 1.5rem !important;
   padding: 1rem !important;
-  border: 1.5px solid #D8DEE9 !important;
-  border-radius: 6px !important;
-  background-color: rgba(216, 222, 233, 0.2);
   box-sizing: border-box;
 }
 
-[saved-theme="dark"] .contact-form-container {
-  border-color: #4C566A !important;
-  background-color: rgba(46, 52, 64, 0.5);
+[saved-theme="dark"] .contact-form {
+  background-color: #2E3440 !important;
 }
 
-.contact-form-title {
-  font-size: 1.2rem !important;
+[saved-theme="light"] .contact-form {
+  background-color: #D8DEE9 !important;
+  border-radius: 0px;
+}
+
+.contact-form h3 {
+  font-size: 1.4rem !important;
   font-weight: 600 !important;
-  margin-bottom: 0.75rem !important;
-  color: #5E81AC !important;
+  margin: 0 0 1rem 0 !important;
 }
 
-[saved-theme="dark"] .contact-form-title {
+/* Dark mode title */
+[saved-theme="dark"] .contact-form h3 {
   color: #8FBCBB !important;
 }
 
-.contact-form {
-  display: flex !important;
-  flex-direction: column !important;
-  gap: 0.75rem !important;
+/* Light mode title */
+[saved-theme="light"] .contact-form h3 {
+  color: #5E81AC !important;
+}
+
+/* Form styling */
+.contact-form form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
 }
 
 .contact-form label {
-  display: flex !important;
-  flex-direction: column !important;
-  font-size: 0.85rem !important;
+  display: flex;
+  flex-direction: column;
+  font-size: 0.9rem;
+  gap: 0.3rem;
+}
+
+[saved-theme="light"] .contact-form label {
   color: #2E3440 !important;
 }
 
 [saved-theme="dark"] .contact-form label {
-  color: #ECEFF4 !important;
+  color: #D8DEE9 !important;
 }
 
 .contact-form input,
 .contact-form textarea {
-  margin-top: 0.25rem !important;
-  padding: 0.45rem 0.6rem !important;
-  border: 1px solid #D8DEE9 !important;
-  border-radius: 4px !important;
-  background-color: #ECEFF4 !important;
-  color: #2E3440 !important;
-  font-family: inherit !important;
-  font-size: 0.85rem !important;
-  resize: vertical !important;
+  padding: 0.5rem;
+  border: 1px solid #D08770;
+  border-radius: 3px;
+  font-family: inherit;
+  font-size: 0.9rem;
+}
+
+[saved-theme="light"] .contact-form input,
+[saved-theme="light"] .contact-form textarea {
+  background-color: #E5E9F0;
+  color: #2E3440;
 }
 
 [saved-theme="dark"] .contact-form input,
 [saved-theme="dark"] .contact-form textarea {
-  background-color: #3B4252 !important;
-  border-color: #4C566A !important;
-  color: #ECEFF4 !important;
-}
-
-.contact-form input:focus,
-.contact-form textarea:focus {
-  outline: none !important;
-  border-color: #5E81AC !important;
-  box-shadow: 0 0 0 2px rgba(94, 129, 172, 0.3);
+  background-color: #3B4252;
+  color: #D8DEE9;
 }
 
 .contact-form button {
-  align-self: flex-end !important;
-  padding: 0.4rem 1rem !important;
-  background-color: #5E81AC !important;
-  color: #ECEFF4 !important;
-  font-weight: 600 !important;
-  border: none !important;
-  border-radius: 4px !important;
-  cursor: pointer !important;
-  transition: background-color 0.2s ease, transform 0.1s ease;
+  padding: 0.5rem 1rem;
+  background-color: #D08770;
+  color: white;
+  border: none;
+  border-radius: 3px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: opacity 0.2s;
 }
 
 .contact-form button:hover {
-  background-color: #81A1C1 !important;
-  transform: translateY(-1px);
+  opacity: 0.9;
 }
 
-.contact-form button:active {
-  transform: translateY(0);
+/* Success + error messages */
+.contact-success,
+.contact-error {
+  font-size: 0.9rem;
+  padding: 0.5rem;
+  border-radius: 3px;
+  margin-top: 0.5rem;
+}
+
+.contact-success {
+  background-color: rgba(163, 190, 140, 0.15);
+  color: #A3BE8C;
+}
+
+.contact-error {
+  background-color: rgba(191, 97, 106, 0.15);
+  color: #BF616A;
+}
+
+/* Optional: smooth fade for status messages */
+.contact-success,
+.contact-error {
+  transition: opacity 0.3s ease-in-out;
 }
 `
 
