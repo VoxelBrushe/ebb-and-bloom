@@ -3,10 +3,13 @@ import { QuartzComponentConstructor, QuartzComponent } from "./types"
 const ContactForm: QuartzComponentConstructor = () => {
   const ContactFormComponent: QuartzComponent = () => {
     const handleSubmit = (e: Event) => {
+        console.log("Form submitted!")  // Add this
       e.preventDefault()
       
       const form = e.target as HTMLFormElement
       const formData = new FormData(form)
+      
+      console.log("Sending to worker...")  // And this
       
       fetch('https://contact-form.voxelbrushe.workers.dev', {
         method: 'POST',

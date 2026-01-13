@@ -24,7 +24,7 @@ my ideas evolve in water:
 </p>
 
 <p>
-  <span style="color:#D08770; font-weight:00;">#puddle</span> - prompts and (randowm) thoughts
+  <span style="color:#D08770; font-weight:00;">#puddle</span> - prompts and (random) thoughts
 </p>
 
 <p>
@@ -37,7 +37,7 @@ my ideas evolve in water:
 
 <br>
 
-an Idea may develop from a root, or may grow vines to form new ideas. 
+an idea may develop from a root, or may grow vines to form new ideas. 
 
 this is a continuing process, growing organically.
 
