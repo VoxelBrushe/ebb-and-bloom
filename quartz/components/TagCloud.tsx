@@ -151,7 +151,6 @@ TagCloud.css = `
   white-space: normal !important;
   line-height: 1.4 !important;
   text-decoration: none !important;
-  color: #D08770 !important; /* Nord orange */
   transition: transform 0.2s ease, opacity 0.2s ease;
   opacity: 0.9;
 }
