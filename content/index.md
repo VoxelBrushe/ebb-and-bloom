@@ -32,7 +32,7 @@ my ideas evolve in water:
 </p>
 
 <p>
-  <span style="color:#D08770; font-weight:00;">#ocean</span> - stories (un)published, mostly Dutch
+  <span style="color:#D08770; font-weight:00;">#ocean</span> - stories, mostly Dutch
 </p>
 
 <br>
