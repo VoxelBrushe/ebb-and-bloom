@@ -1,7 +1,7 @@
-import { QuartzComponent, QuartzComponentConstructor } from "./types"
+import { QuartzComponent, QuartzComponentConstructor, QuartzComponentProps } from "./types"
 import { useState } from "preact/hooks"
 
-export const ContactForm: QuartzComponent = () => {
+const ContactFormComponent = (props: QuartzComponentProps) => {
   const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">("idle")
 
   const handleSubmit = async (e: Event) => {
@@ -29,13 +29,9 @@ export const ContactForm: QuartzComponent = () => {
       <h3>Get in Touch</h3>
 
       {status === "sent" ? (
-        <p class="contact-success">thank you! message in a bottle successfully sent</p>
+        <p class="contact-success">🌿 Thank you! Your message has been sent successfully.</p>
       ) : (
-        <form
-          onSubmit={handleSubmit}
-          action="https://formspree.io/f/mgooezed"
-          method="POST"
-        >
+        <form onSubmit={handleSubmit} action="https://formspree.io/f/mgooezed" method="POST">
           <label>
             <span>Your name</span>
             <input type="text" name="name" required />
@@ -58,13 +54,13 @@ export const ContactForm: QuartzComponent = () => {
       )}
 
       {status === "error" && (
-        <p class="contact-error">⚠️ oops! something went wrong. please try again later.</p>
+        <p class="contact-error">⚠️ Oops! Something went wrong. Please try again later.</p>
       )}
     </div>
   )
 }
 
-ContactForm.css = `
+ContactFormComponent.css = `
 /* =========================================================
    CONTACT FORM — RIGHT SIDEBAR
    ========================================================= */
@@ -178,11 +174,13 @@ ContactForm.css = `
   color: #BF616A;
 }
 
-/* Optional: smooth fade for status messages */
 .contact-success,
 .contact-error {
   transition: opacity 0.3s ease-in-out;
 }
 `
 
-export default (() => ContactForm) satisfies QuartzComponentConstructor
+// ✅ Tell Quartz this component needs client-side hydration
+ContactFormComponent.hydration = "client"
+
+export default (() => ContactFormComponent) satisfies QuartzComponentConstructor
