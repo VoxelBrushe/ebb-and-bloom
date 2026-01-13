@@ -1,66 +1,75 @@
-import { QuartzComponent, QuartzComponentConstructor, QuartzComponentProps } from "./types"
-import { useState } from "preact/hooks"
+import { QuartzComponent, QuartzComponentConstructor } from "./types"
 
-const ContactFormComponent = (props: QuartzComponentProps) => {
-  const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">("idle")
-
-  const handleSubmit = async (e: Event) => {
-    e.preventDefault()
-    const form = e.target as HTMLFormElement
-    setStatus("sending")
-
-    const data = new FormData(form)
-    const response = await fetch(form.action, {
-      method: "POST",
-      body: data,
-      headers: { Accept: "application/json" },
-    })
-
-    if (response.ok) {
-      setStatus("sent")
-      form.reset()
-    } else {
-      setStatus("error")
-    }
-  }
-
+export const ContactForm: QuartzComponent = () => {
   return (
     <div class="contact-form">
       <h3>Get in Touch</h3>
+      <form
+        id="contact-form"
+        action="https://formspree.io/f/mgooezed"
+        method="POST"
+      >
+        <label>
+          <span>Your name</span>
+          <input type="text" name="name" required />
+        </label>
 
-      {status === "sent" ? (
-        <p class="contact-success">🌿 Thank you! Your message has been sent successfully.</p>
-      ) : (
-        <form onSubmit={handleSubmit} action="https://formspree.io/f/mgooezed" method="POST">
-          <label>
-            <span>Your name</span>
-            <input type="text" name="name" required />
-          </label>
+        <label>
+          <span>Your email</span>
+          <input type="email" name="email" required />
+        </label>
 
-          <label>
-            <span>Your email</span>
-            <input type="email" name="email" required />
-          </label>
+        <label>
+          <span>Message</span>
+          <textarea name="message" rows={4} required></textarea>
+        </label>
 
-          <label>
-            <span>Message</span>
-            <textarea name="message" rows={4} required></textarea>
-          </label>
+        <button type="submit">Send</button>
+      </form>
 
-          <button type="submit" disabled={status === "sending"}>
-            {status === "sending" ? "Sending..." : "Send"}
-          </button>
-        </form>
-      )}
+      <p id="contact-status" class="contact-status" style="display:none"></p>
 
-      {status === "error" && (
-        <p class="contact-error">⚠️ Oops! Something went wrong. Please try again later.</p>
-      )}
+      <script is:inline>
+        {`
+          document.addEventListener('DOMContentLoaded', () => {
+            const form = document.getElementById('contact-form');
+            const status = document.getElementById('contact-status');
+            if (!form) return;
+
+            form.addEventListener('submit', async (e) => {
+              e.preventDefault();
+              status.style.display = 'block';
+              status.textContent = '🌿 Sending...';
+
+              const data = new FormData(form);
+              try {
+                const response = await fetch(form.action, {
+                  method: 'POST',
+                  body: data,
+                  headers: { Accept: 'application/json' },
+                });
+
+                if (response.ok) {
+                  form.reset();
+                  status.textContent = '✅ Thank you! Your message has been sent successfully.';
+                  status.className = 'contact-success';
+                } else {
+                  status.textContent = '⚠️ Oops! Something went wrong. Please try again later.';
+                  status.className = 'contact-error';
+                }
+              } catch (error) {
+                status.textContent = '⚠️ Failed to send. Please try again later.';
+                status.className = 'contact-error';
+              }
+            });
+          });
+        `}
+      </script>
     </div>
   )
 }
 
-ContactFormComponent.css = `
+ContactForm.css = `
 /* =========================================================
    CONTACT FORM — RIGHT SIDEBAR
    ========================================================= */
@@ -173,14 +182,6 @@ ContactFormComponent.css = `
   background-color: rgba(191, 97, 106, 0.15);
   color: #BF616A;
 }
-
-.contact-success,
-.contact-error {
-  transition: opacity 0.3s ease-in-out;
-}
 `
 
-// ✅ Tell Quartz this component needs client-side hydration
-ContactFormComponent.hydration = "client"
-
-export default (() => ContactFormComponent) satisfies QuartzComponentConstructor
+export default (() => ContactForm) satisfies QuartzComponentConstructor
