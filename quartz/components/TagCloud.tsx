@@ -117,6 +117,47 @@ TagCloud.css = `
 [saved-theme="dark"] .tag-cloud-item:hover {
   color: #8FBCBB !important;
 }
+
+/* =========================================================
+   FIX — TAG CLOUD MOBILE RESPONSIVENESS
+   ========================================================= */
+
+/* Ensure the tag cloud never exceeds viewport width */
+.tag-cloud {
+  max-width: 100% !important;
+  overflow: hidden !important;
+  word-wrap: break-word !important;
+  box-sizing: border-box !important;
+}
+
+/* Keep tags flexible and wrapping properly */
+.tag-cloud .tag-cloud-item,
+.tag-cloud a,
+.tag-cloud span {
+  display: inline-block !important;
+  white-space: normal !important;
+  max-width: 100% !important;
+}
+
+/* Force wrapping on smaller screens */
+@media (max-width: 768px) {
+  .tag-cloud {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+    padding: 0.5rem !important;
+  }
+
+  .tag-cloud .tag-cloud-item {
+    margin: 0.25rem !important;
+    font-size: clamp(0.7rem, 2.5vw, 1.1rem) !important; /* scale down gracefully */
+  }
+
+  /* Prevent horizontal scrolling */
+  html, body {
+    overflow-x: hidden !important;
+  }
+}
 `
 
 export default (() => TagCloud) satisfies QuartzComponentConstructor
