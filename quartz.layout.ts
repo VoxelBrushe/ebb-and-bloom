@@ -1,5 +1,6 @@
 import { PageLayout, SharedLayout, QuartzComponentConstructor } from "./quartz/cfg"
 import * as Component from "./quartz/components"
+import TagCloud from "./quartz/components/TagCloud"
 import RecentNotes from "./quartz/components/RecentNotes"
 import ContactForm from "./quartz/components/ContactForm"
 import { PlantedDate } from "./quartz/components/PlantedDate"
@@ -8,9 +9,9 @@ import TagDisplay from "./quartz/components/TagDisplay"
 // Debug helper for Quartz emitter crash
 function safeComponent<T>(comp: T | null | undefined, name: string): T {
   if (comp == null) {
-    console.error(`❌ Component '${name}' is null or undefined`);
+    console.error(`❌ Component '${name}' is null or undefined`)
   }
-  return comp as T;
+  return comp as T
 }
 
 // Empty footer (prevents phantom spacing)
@@ -39,24 +40,30 @@ export const defaultListPageLayout: PageLayout = {
   ],
   right: [
     safeComponent(Component.Graph(), "Graph"),
-    safeComponent(RecentNotes({
-      title: "Recent Notes",
-      limit: 5,
-      showTags: true,
-    }), "RecentNotes"),
+    safeComponent(
+      RecentNotes({
+        title: "Recent Notes",
+        limit: 5,
+        showTags: true,
+      }),
+      "RecentNotes"
+    ),
     safeComponent(ContactForm(), "ContactForm"),
   ],
 }
 
 export const defaultContentPageLayout: PageLayout = {
   beforeBody: [],
+
   left: [
     Component.MobileOnly(Component.Spacer()),
     Component.Search(),
     Component.DesktopOnly(Component.Explorer()),
   ],
+
+  // ✅ Right sidebar: Tag cloud + recent notes + contact form
   right: [
-    Component.Graph(),
+    TagCloud(),
     RecentNotes({
       title: "Recent Notes",
       limit: 5,
@@ -64,7 +71,10 @@ export const defaultContentPageLayout: PageLayout = {
     }),
     ContactForm(),
   ],
+
+  // ✅ AfterBody: Planted Date + Tags, then the Graph below the note
   afterBody: [
     Component.TagsAndDate(),
+    Component.Graph(), // moved here
   ],
 }

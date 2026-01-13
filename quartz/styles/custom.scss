@@ -474,6 +474,7 @@ a[href^="https"]::after {
 /* Preserve layout but hide original text */
 .graph h3 {
   font-size: 1.4rem !important;   /* keep height */
+  text-align: center;
   line-height: 1.2 !important;
   color: transparent !important; /* hide text without collapsing */
   margin: 0 0 0.75rem 0 !important;
@@ -562,6 +563,7 @@ section.backlinks {
 .recent-notes h3 {
   font-size: 1.4rem !important;
   font-weight: 600 !important;
+  text-align: center;
   margin: 0 0 1rem 0 !important;
 }
 
