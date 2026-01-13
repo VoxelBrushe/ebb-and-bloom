@@ -119,43 +119,68 @@ TagCloud.css = `
 }
 
 /* =========================================================
-   FIX — TAG CLOUD MOBILE RESPONSIVENESS
+   TAG CLOUD — RESPONSIVE + WRAPPING FIX
    ========================================================= */
 
-/* Ensure the tag cloud never exceeds viewport width */
 .tag-cloud {
+  display: flex !important;
+  flex-wrap: wrap !important;          /* ✅ ensures wrapping */
+  justify-content: center !important;  /* ✅ centers tags on all devices */
+  align-items: flex-start !important;
+  gap: 0.5rem !important;
   max-width: 100% !important;
-  overflow: hidden !important;
-  word-wrap: break-word !important;
+  overflow-x: hidden !important;
+  padding: 1rem !important;
   box-sizing: border-box !important;
+  text-align: center !important;
 }
 
-/* Keep tags flexible and wrapping properly */
-.tag-cloud .tag-cloud-item,
-.tag-cloud a,
-.tag-cloud span {
+/* Each tag item */
+.tag-cloud-item {
   display: inline-block !important;
-  white-space: normal !important;
+  white-space: normal !important;      /* ✅ allows tags to wrap */
   max-width: 100% !important;
+  line-height: 1.4 !important;
+  text-decoration: none !important;
+  transition: transform 0.2s ease, opacity 0.2s ease;
 }
 
-/* Force wrapping on smaller screens */
+.tag-cloud-item:hover {
+  transform: scale(1.05);
+  opacity: 0.9;
+}
+
+/* Font sizing — random variation for organic look */
+.tag-cloud-item {
+  font-size: clamp(0.8rem, 2.5vw, 1.5rem) !important;
+}
+
+/* Light & dark color themes */
+[saved-theme="light"] .tag-cloud-item {
+  color: #5E81AC !important;
+}
+
+[saved-theme="dark"] .tag-cloud-item {
+  color: #8FBCBB !important;
+}
+
+/* =========================================================
+   MOBILE FIX — PREVENT OVERFLOW AND SHRINK TEXT
+   ========================================================= */
 @media (max-width: 768px) {
   .tag-cloud {
-    display: flex !important;
-    flex-wrap: wrap !important;
     justify-content: center !important;
-    padding: 0.5rem !important;
+    gap: 0.4rem !important;
+    padding: 0.5rem 0.5rem 1rem 0.5rem !important;
   }
 
-  .tag-cloud .tag-cloud-item {
+  .tag-cloud-item {
+    font-size: clamp(0.75rem, 3vw, 1rem) !important; /* ✅ scales down naturally */
     margin: 0.25rem !important;
-    font-size: clamp(0.7rem, 2.5vw, 1.1rem) !important; /* scale down gracefully */
   }
 
-  /* Prevent horizontal scrolling */
   html, body {
-    overflow-x: hidden !important;
+    overflow-x: hidden !important; /* ✅ prevents zoomed layout overflow */
   }
 }
 `
