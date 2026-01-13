@@ -119,13 +119,13 @@ TagCloud.css = `
 }
 
 /* =========================================================
-   TAG CLOUD — RESPONSIVE + WRAPPING FIX
+   TAG CLOUD — BALANCED + FREQUENCY-BASED SCALING
    ========================================================= */
 
 .tag-cloud {
   display: flex !important;
-  flex-wrap: wrap !important;          /* ✅ ensures wrapping */
-  justify-content: center !important;  /* ✅ centers tags on all devices */
+  flex-wrap: wrap !important;
+  justify-content: center !important;
   align-items: flex-start !important;
   gap: 0.5rem !important;
   max-width: 100% !important;
@@ -138,49 +138,63 @@ TagCloud.css = `
 /* Each tag item */
 .tag-cloud-item {
   display: inline-block !important;
-  white-space: normal !important;      /* ✅ allows tags to wrap */
-  max-width: 100% !important;
+  white-space: normal !important;
   line-height: 1.4 !important;
   text-decoration: none !important;
+  color: #D08770 !important; /* Nord orange */
   transition: transform 0.2s ease, opacity 0.2s ease;
-}
-
-.tag-cloud-item:hover {
-  transform: scale(1.05);
   opacity: 0.9;
 }
 
-/* Font sizing — random variation for organic look */
-.tag-cloud-item {
-  font-size: clamp(0.8rem, 2.5vw, 1.5rem) !important;
-}
-
-/* Light & dark color themes */
-[saved-theme="light"] .tag-cloud-item {
-  color: #5E81AC !important;
-}
-
-[saved-theme="dark"] .tag-cloud-item {
-  color: #8FBCBB !important;
+.tag-cloud-item:hover {
+  transform: scale(1.08);
+  opacity: 1;
 }
 
 /* =========================================================
-   MOBILE FIX — PREVENT OVERFLOW AND SHRINK TEXT
+   FONT SIZE — TRUE FREQUENCY SCALING
    ========================================================= */
+
+/*
+Quartz tag frequency data gives each tag a "size" or "weight" value (usually 1–10).
+We map that visually to smaller increments so the difference is readable,
+but not extreme or overpowering.
+*/
+
+.tag-cloud-item[data-weight="1"]  { font-size: 0.75rem !important; }
+.tag-cloud-item[data-weight="2"]  { font-size: 0.85rem !important; }
+.tag-cloud-item[data-weight="3"]  { font-size: 0.95rem !important; }
+.tag-cloud-item[data-weight="4"]  { font-size: 1.05rem !important; }
+.tag-cloud-item[data-weight="5"]  { font-size: 1.15rem !important; }
+.tag-cloud-item[data-weight="6"]  { font-size: 1.25rem !important; }
+.tag-cloud-item[data-weight="7"]  { font-size: 1.35rem !important; }
+.tag-cloud-item[data-weight="8"]  { font-size: 1.45rem !important; }
+.tag-cloud-item[data-weight="9"]  { font-size: 1.55rem !important; }
+.tag-cloud-item[data-weight="10"] { font-size: 1.65rem !important; }
+
+/* =========================================================
+   MOBILE — SMALLER SCALE + WRAP FIX
+   ========================================================= */
+
 @media (max-width: 768px) {
   .tag-cloud {
     justify-content: center !important;
-    gap: 0.4rem !important;
+    gap: 0.35rem !important;
     padding: 0.5rem 0.5rem 1rem 0.5rem !important;
   }
 
   .tag-cloud-item {
-    font-size: clamp(0.75rem, 3vw, 1rem) !important; /* ✅ scales down naturally */
-    margin: 0.25rem !important;
+    margin: 0.2rem !important;
+    opacity: 0.9;
   }
 
+  /* slightly reduce the entire scale */
+  .tag-cloud-item[data-weight="1"]  { font-size: 0.7rem !important; }
+  .tag-cloud-item[data-weight="5"]  { font-size: 1.0rem !important; }
+  .tag-cloud-item[data-weight="10"] { font-size: 1.25rem !important; }
+
   html, body {
-    overflow-x: hidden !important; /* ✅ prevents zoomed layout overflow */
+    overflow-x: hidden !important;
   }
 }
 `
