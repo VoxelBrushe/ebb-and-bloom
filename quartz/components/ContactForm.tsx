@@ -1,50 +1,33 @@
-import { QuartzComponentConstructor, QuartzComponent } from "./types"
+import { QuartzComponent, QuartzComponentConstructor } from "./types"
 
-const ContactForm: QuartzComponentConstructor = () => {
-  const ContactFormComponent: QuartzComponent = () => {
-    return (
-      <div class="contact-form" lang="en">
-        <h3>get in touch</h3>
-        <div style={{ display: "flex", flexDirection: "column", gap: "1rem" }}>
-          <label style={{ display: "flex", flexDirection: "column", gap: "0.3rem" }}>
-            your email:
-            <input type="email" id="contact-email" placeholder="hello@example.com" required />
-          </label>
-          <label style={{ display: "flex", flexDirection: "column", gap: "0.3rem" }}>
-            your message:
-            <textarea id="contact-message" placeholder="what's on your mind?" required></textarea>
-          </label>
-          <button onclick="handleContactSubmit()" type="button">Send</button>
-        </div>
-        <script>
-          {`
-            window.handleContactSubmit = function() {
-              const email = document.getElementById('contact-email').value;
-              const message = document.getElementById('contact-message').value;
-              
-              if (!email || !message) {
-                alert('Please fill in all fields');
-                return;
-              }
-              
-              const formData = new FormData();
-              formData.append('email', email);
-              formData.append('message', message);
-              
-              fetch('https://contact-form.voxelbrushe.workers.dev', {
-                method: 'POST',
-                body: formData
-              })
-              .then(r => r.ok ? window.location.href = 'https://ebb-and-bloom.com/contact-success/' : alert('Error'))
-              .catch(e => alert('Error: ' + e));
-            }
-          `}
-        </script>
-      </div>
-    )
-  }
+export const ContactForm: QuartzComponent = () => {
+  return (
+    <div class="contact-form-container">
+      <h3 class="contact-form-title">Get in Touch</h3>
+      <form
+        action="https://formspree.io/f/mgooezed"
+        method="POST"
+        class="contact-form"
+      >
+        <label>
+          <span>Your name</span>
+          <input type="text" name="name" required />
+        </label>
 
-  return ContactFormComponent
+        <label>
+          <span>Your email</span>
+          <input type="email" name="email" required />
+        </label>
+
+        <label>
+          <span>Message</span>
+          <textarea name="message" rows="4" required></textarea>
+        </label>
+
+        <button type="submit">Send</button>
+      </form>
+    </div>
+  )
 }
 
-export default ContactForm
+export default (() => ContactForm) satisfies QuartzComponentConstructor
