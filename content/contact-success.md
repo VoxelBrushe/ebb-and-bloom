@@ -8,11 +8,11 @@ publish: true
 
 <br>
 
-pigeons are working hard to get your message to me.
+the currents will bring your message to me.
 
 <br>
 
-i will be sending my mountain goat shortly.
+soon, the tide will return with my reply.
 
 <br>
 

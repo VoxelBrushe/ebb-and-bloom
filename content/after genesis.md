@@ -29,7 +29,7 @@ And we all return to the Void.
 
 <br>
 
-## vines
+## roots
 
 - [[elemental synesthesia]]
 - [[rendezvous with death - gow2]]

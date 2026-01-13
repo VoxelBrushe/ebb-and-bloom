@@ -2,10 +2,29 @@ import { QuartzComponentConstructor, QuartzComponent } from "./types"
 
 const ContactForm: QuartzComponentConstructor = () => {
   const ContactFormComponent: QuartzComponent = () => {
+    const handleSubmit = (e: Event) => {
+      e.preventDefault()
+      
+      const form = e.target as HTMLFormElement
+      const formData = new FormData(form)
+      
+      fetch('https://contact-form.voxelbrushe.workers.dev', {
+        method: 'POST',
+        body: formData
+      })
+      .then(response => {
+        if (response.ok) {
+          // Show success and redirect
+          window.location.href = 'https://ebb-and-bloom.com/contact-success/'
+        }
+      })
+      .catch(error => console.error('Error:', error))
+    }
+
     return (
       <div class="contact-form" lang="en">
         <h3>get in touch</h3>
-        <form action="https://formspree.io/f/mgooezed" method="POST">
+        <form onSubmit={handleSubmit}>
           <label>
             your email:
             <input type="email" name="email" placeholder="hello@example.com" required />
@@ -14,7 +33,6 @@ const ContactForm: QuartzComponentConstructor = () => {
             your message:
             <textarea name="message" placeholder="what's on your mind?" required></textarea>
           </label>
-          <input type="hidden" name="_next" value="https://ebb-and-bloom.com/contact-success/" />
           <button type="submit">Send</button>
         </form>
       </div>

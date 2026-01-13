@@ -19,13 +19,29 @@ my ideas evolve in water:
 
 <br>
 
-#pond - whatever inspires me right now
+<p>
+  <span style="color:#D08770; font-weight:00;">#pond</span> - whatever inspires me right now
+</p>
 
-#puddle - prompts and thoughts that bubble to the surface
+<p>
+  <span style="color:#D08770; font-weight:00;">#puddle</span> - prompts and (randowm) thoughts
+</p>
 
-#lake - evolving ideas and story premises
+<p>
+  <span style="color:#D08770; font-weight:00;">#lake</span> - evolving ideas and story premises
+</p>
 
-#ocean - stories (un)published, mostly Dutch
+<p>
+  <span style="color:#D08770; font-weight:00;">#ocean</span> - stories (un)published, mostly Dutch
+</p>
+
+<br>
+
+an Idea may develop from a root, or may grow vines to form new ideas. 
+
+this is a continuing process, growing organically.
+
+it is a garden, after all.
 
 <br>
 
