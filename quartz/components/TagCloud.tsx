@@ -98,10 +98,20 @@ TagCloud.css = `
 /* Each tag */
 .tag-cloud-item {
   text-decoration: none !important;
-  color: #D08770 !important;
+  color: #D08770 !important; /* default: Nord orange */
   transition: transform 0.2s ease, color 0.2s ease, opacity 0.3s ease;
   display: inline-block;
   opacity: 0.9;
+}
+
+/* Light mode: black text for contrast */
+[saved-theme="light"] .tag-cloud-item {
+  color: #2E3440 !important; /* Nord black/graphite tone */
+}
+
+/* Dark mode: orange accent */
+[saved-theme="dark"] .tag-cloud-item {
+  color: #D08770 !important;
 }
 
 .tag-cloud-item:hover {
@@ -111,7 +121,7 @@ TagCloud.css = `
 
 /* Hover colors (theme aware) */
 [saved-theme="light"] .tag-cloud-item:hover {
-  color: #5E81AC !important;
+  color: #D08770 !important;
 }
 
 [saved-theme="dark"] .tag-cloud-item:hover {
