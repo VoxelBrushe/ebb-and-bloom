@@ -10,7 +10,6 @@ tags:
   - pond
   - AI
   - enlightenment
-  - criticalthinking
   - philosophy
 ---
 

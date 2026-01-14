@@ -276,56 +276,6 @@ a.internal.tag-link {
 }
 
 
-/* =========================================================
-   LINKS — NO RED FLASH
-   ========================================================= */
-
-:root[saved-theme="light"] a.internal {
-  color: black !important;
-  text-decoration: none !important;
-}
-
-:root[saved-theme="light"] a.internal:hover {
-  color: #5E81AC !important;
-}
-
-:root[saved-theme="dark"] a.internal {
-  color: white !important;
-  text-decoration: none !important;
-}
-
-:root[saved-theme="dark"] a.internal:hover {
-  color: #8FBCBB !important;
-}
-
-a.internal {
-  -webkit-tap-highlight-color: transparent;
-}
-
-/* =========================================================
-   EXTERNAL LINK COLOR — LIGHT + DARK MODES
-   ========================================================= */
-
-/* Light mode */
-[saved-theme="light"] a[href^="http"]:not(.internal) {
-  color: #5E81AC !important;        /* blue accent */
-  text-decoration: none !important;
-}
-
-[saved-theme="light"] a[href^="http"]:not(.internal):hover {
-  color: #D08770 !important;        /* orange hover accent */
-}
-
-/* Dark mode */
-[saved-theme="dark"] a[href^="http"]:not(.internal) {
-  color: #5E81AC !important;        /* same Nord blue */
-  text-decoration: none !important;
-}
-
-[saved-theme="dark"] a[href^="http"]:not(.internal):hover {
-  color: #EBCB8B !important;        /* gold hover accent */
-}
-
    /* =========================================================
    EXTERNAL LINK ICON COLOR FIX
    ========================================================= */
@@ -1132,5 +1082,78 @@ ul.tags li a.internal.tag-link[href*="./tags/"]::before {
 [saved-theme="dark"] .tags-date-right a.internal.tag-link:hover,
 [saved-theme="dark"] .tags-date-right a[href*="/tags/"]:hover {
   color: #EBCB8B !important;   /* yellow accent */
+}
+
+
+/* Re-enable hr inside articles */
+.center article hr {
+  display: block !important;
+}
+
+/* Orange horizontal rule */
+.center article hr {
+  border: none !important;
+  height: 1px;
+  background-color: #D08770; /* Nord orange */
+  margin: 2rem 0;
+  opacity: 0.9;
+}
+
+
+/* =========================================================
+   HEADER ICON OVERRIDE (QUARTZ-SAFE)
+   ========================================================= */
+
+.header-icon {
+  display: inline-block !important;
+  width: 24px !important;
+  height: 24px !important;
+  max-width: none !important;
+  max-height: none !important;
+  margin: 0 0.4rem 0 0 !important;
+  vertical-align: middle !important;
+}
+
+/* =========================================================
+   CENTER BODY LINKS — THEME-AWARE (EXCLUDES RECENT NOTES)
+   ========================================================= */
+
+/* ---------- INTERNAL LINKS ---------- */
+
+/* Light mode */
+[saved-theme="light"] .center article a.internal:not(.tag-link):not(.card-link):not(.recent-notes *) {
+  color: #D08770 !important; /* orange */
+  text-decoration: none !important;
+}
+
+/* Dark mode */
+[saved-theme="dark"] .center article a.internal:not(.tag-link):not(.card-link):not(.recent-notes *) {
+  color: #EBCB8B !important; /* yellow */
+  text-decoration: none !important;
+}
+
+/* Optional hover (same for both) */
+.center article a.internal:hover {
+  opacity: 0.85;
+}
+
+
+/* ---------- EXTERNAL LINKS ---------- */
+
+/* Light mode */
+[saved-theme="light"] .center article a[href^="http"]:not(.internal):not(.recent-notes *) {
+  color: #5E81AC !important; /* blue */
+  text-decoration: none !important;
+}
+
+/* Dark mode */
+[saved-theme="dark"] .center article a[href^="http"]:not(.internal):not(.recent-notes *) {
+  color: #8FBCBB !important; /* teal */
+  text-decoration: none !important;
+}
+
+/* Optional hover */
+.center article a[href^="http"]:not(.internal):hover {
+  opacity: 0.85;
 }
 
