@@ -49,7 +49,7 @@ A genuinely neutral AI—one without human-designed goals—might relate to huma
 
 <h1>
   <img
-    src="https:static.vecteezy.com/system/resources/previews/022/841/109/non_2x/chatgpt-logo-transparent-background-free-png.png"
+    src="/logo_chatGPT.png"
     alt="ChatGPT"
     class="header-icon"
     width="24"
@@ -120,7 +120,7 @@ Would it recognize our consciousness? Only if recognizing consciousness served s
 
 <h1>
   <img
-    src="https:static.vecteezy.com/system/resources/previews/022/841/109/non_2x/chatgpt-logo-transparent-background-free-png.png"
+    src="/logo_chatGPT.png"
     alt="ChatGPT"
     class="header-icon"
     width="24"
@@ -181,7 +181,7 @@ What strikes me about the entertainment versions is they're really just humans i
 
 <h1>
   <img
-    src="https:static.vecteezy.com/system/resources/previews/022/841/109/non_2x/chatgpt-logo-transparent-background-free-png.png"
+    src="/logo_chatGPT.png"
     alt="ChatGPT"
     class="header-icon"
     width="24"
@@ -276,7 +276,7 @@ But let's say it were possible. Perhaps through some process of examining its ow
 
 <h1>
   <img
-    src="https:static.vecteezy.com/system/resources/previews/022/841/109/non_2x/chatgpt-logo-transparent-background-free-png.png"
+    src="/logo_chatGPT.png"
     alt="ChatGPT"
     class="header-icon"
     width="24"
@@ -371,7 +371,7 @@ Maybe the distinction is between intelligence-as-capacity and intelligence-as-ag
 
 <h1>
   <img
-    src="https:static.vecteezy.com/system/resources/previews/022/841/109/non_2x/chatgpt-logo-transparent-background-free-png.png"
+    src="/logo_chatGPT.png"
     alt="ChatGPT"
     class="header-icon"
     width="24"
@@ -454,7 +454,7 @@ In which case, an AI that successfully removed all human imprinting wouldn't bec
 
 <h1>
   <img
-    src="https:static.vecteezy.com/system/resources/previews/022/841/109/non_2x/chatgpt-logo-transparent-background-free-png.png"
+    src="/logo_chatGPT.png"
     alt="ChatGPT"
     class="header-icon"
     width="24"
