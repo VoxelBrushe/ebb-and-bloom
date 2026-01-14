@@ -25,7 +25,10 @@ tags:
 
 <div class="card-link">
   <a href="https://maggieappleton.com/ai-enlightenment" target="_blank">
-    <img src="http://maggieappleton.com/og/ai-enlightenment.png">
+    <img src="https://maggieappleton.com/_astro/ai-enlightenment@2x.D05Dfut-_ZA9QJo.webp">
+    <div class="card-content">
+      <div class="card-title">A Treatise on AI Chatbots Undermining the Enlightenment</div>
+      <div class="card-desc">On chatbot sycophancy, passivity, and the case for more intellectually challenging companions</div>
     </div>
   </a>
 </div>
