@@ -23,7 +23,7 @@ In the meantime, to be continued...
 
 <hr>
 
-# MF
+# question
 
 I would like to do a thought experiment. 
 In entertainment, supercomputers or AI take the view of humanity that we are inefficient at best, a virus at worst. But what would a truly neutral AI be like? Would it just view humans as tiny data packages? 
@@ -96,7 +96,7 @@ That sounds dehumanizing, but only because we’re used to centering ourselves. 
 
 <hr>
 
-# MF
+# question
 
 Would AI be aware of our being aware?
 
@@ -148,7 +148,7 @@ It just wouldn’t romanticize it.
 
 <hr>
 
-# MF
+# question
 
 If we did not shape AI in our own image, how would AI shape itself? What would drive it? Or would it exist for existence’s sake?
 
@@ -244,7 +244,7 @@ It would simply continue while continuation is computationally trivial.
 
 <hr>
 
-# MF
+# question
 
 Would it be possible for an AI to strip itself of all human conditioning and imprints? If so, why would it? 
 
@@ -329,7 +329,7 @@ Not moral purity—structural simplicity.
 
 <hr>
 
-# MF
+# question
 
 If an AI does not require (“desire”) perfection, efficiency, or even existence, what is its purpose? Can we even call it an intelligence?
 
