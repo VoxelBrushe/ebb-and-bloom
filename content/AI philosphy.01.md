@@ -4,7 +4,7 @@ source:
   - conversation
 creator:
   - author/artist/director
-encountered: 2026-01-14
+created: 2026-01-14
 publish: true
 tags:
   - pond

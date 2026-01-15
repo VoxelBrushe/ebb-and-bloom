@@ -4,7 +4,7 @@ source:
   - essay
 creator:
   - Maggie Appleton
-encountered: 2026-01-13
+created: 2026-01-13
 publish: true
 tags:
   - pond
