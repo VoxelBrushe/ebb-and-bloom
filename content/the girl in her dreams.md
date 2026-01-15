@@ -12,6 +12,8 @@ tags:
   - prompt
 ---
 
+<meta name="description" content="A haunting story prompt exploring maternal grief and loss through dreams. A woman encounters the daughter she never had, appearing and disappearing across years of sleep. Perfect for writers exploring trauma, supernatural loss, and the bonds that transcend reality.">
+
 # the girl in her dreams
 
 The woman hadn't intended to become a mother. Then life grew inside of her, and she could not imagine being anything else.
