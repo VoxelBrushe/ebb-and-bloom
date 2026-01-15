@@ -1122,13 +1122,13 @@ ul.tags li a.internal.tag-link[href*="./tags/"]::before {
 
 /* Light mode */
 [saved-theme="light"] .center article a.internal:not(.tag-link):not(.card-link):not(.recent-notes *) {
-  color: #E4B860 !important; /* orange */
+  color: #B48EAD !important; /* purple */
   text-decoration: none !important;
 }
 
 /* Dark mode */
 [saved-theme="dark"] .center article a.internal:not(.tag-link):not(.card-link):not(.recent-notes *) {
-  color: #EBCB8B !important; /* yellow */
+  color: #B48EAD !important; /* purple */
   text-decoration: none !important;
 }
 
