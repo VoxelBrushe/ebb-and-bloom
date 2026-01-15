@@ -1162,17 +1162,24 @@ ul.tags li a.internal.tag-link[href*="./tags/"]::before {
    TAG PAGES — TITLE CASE + MOBILE SPACING (FINAL)
    ========================================================= */
 
-/* Force lowercase tag title */
-.page[data-slug^="tags/"] .page-title,
-.page[data-path^="tags/"] .page-title {
+body[data-slug^="tags/"] article.custom-tag-content > h1 {
   text-transform: lowercase !important;
 }
 
-/* Mobile spacing */
+
+/* =========================================================
+   GLOBAL MOBILE TOP SPACING (ALL PAGES)
+   ========================================================= */
+
 @media (max-width: 768px) {
-  .page[data-slug^="tags/"] .page-header,
-  .page[data-path^="tags/"] .page-header {
+  .center .page-header {
     padding-top: 1.5rem !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .center .page-header {
+    padding-top: 1.2rem !important;
   }
 }
 
