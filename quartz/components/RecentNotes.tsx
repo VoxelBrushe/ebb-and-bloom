@@ -37,13 +37,16 @@ export default ((userOpts?: Partial<Options>) => {
         return true
       })
       .sort((a, b) => {
-        // Sort by creation date, newest first
-        const dateA = a.dates?.created ?? a.frontmatter?.date ?? new Date(0)
-        const dateB = b.dates?.created ?? b.frontmatter?.date ?? new Date(0)
+        // Try multiple possible date sources
+        const dateA = a.dates?.created || a.frontmatter?.created || a.dates?.modified || new Date(0)
+        const dateB = b.dates?.created || b.frontmatter?.created || b.dates?.modified || new Date(0)
         
         // Ensure we're working with Date objects
         const timeA = dateA instanceof Date ? dateA.getTime() : new Date(dateA).getTime()
         const timeB = dateB instanceof Date ? dateB.getTime() : new Date(dateB).getTime()
+        
+        // Debug: log the dates (remove this after testing)
+        console.log(`Comparing: ${a.slug} (${new Date(timeA).toISOString()}) vs ${b.slug} (${new Date(timeB).toISOString()})`)
         
         return timeB - timeA  // Newest first
       })
