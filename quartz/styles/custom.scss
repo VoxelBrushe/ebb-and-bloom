@@ -1159,25 +1159,12 @@ ul.tags li a.internal.tag-link[href*="./tags/"]::before {
 }
 
 /* =========================================================
-   TAG PAGES — TITLE CASE + MOBILE SPACING (FINAL)
+   TAG PAGES — TITLE LOWERCASE
    ========================================================= */
 
 body[data-slug^="tags/"] article.custom-tag-content > h1 {
   text-transform: lowercase !important;
 }
-
-
-/* =========================================================
-   MOBILE NOTE CONTENT TOP SPACING (INSIDE ARTICLE)
-   ========================================================= */
-
-@media (max-width: 768px) {
-  .center article > h1:first-child,
-  .center article > h2:first-child {
-    margin-top: 1.25rem !important;
-  }
-}
-
 
 
 /* =========================================================
@@ -1199,4 +1186,13 @@ body[data-slug^="tags/"] article.custom-tag-content > h1 {
 [saved-theme="light"] .center article a.internal.tag-link,
 [saved-theme="dark"] .center article a.internal.tag-link {
   color: #B48EAD !important;
+}
+
+
+/* =========================================================
+   REMOVE VISUAL GAP BETWEEN HEADER AND ARTICLE
+   ========================================================= */
+
+.center article {
+  display: flow-root !important;
 }
