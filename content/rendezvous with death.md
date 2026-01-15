@@ -40,7 +40,6 @@ tags:
 by <a href="https://www.poetryfoundation.org/poets/alan-seeger" target="_blank" rel="noopener noreferrer">Alan Seeger</a>
 
 <br>
-
 I have a rendezvous with Death  
 
 At some disputed barricade,  
@@ -52,9 +51,7 @@ And apple-blossoms fill the air—
 I have a rendezvous with Death  
 
 When Spring brings back blue days and fair.  
-
 <br>  
-
 It may be he shall take my hand  
 
 And lead me into his dark land  
@@ -70,9 +67,7 @@ On some scarred slope of battered hill,
 When Spring comes round again this year  
 
 And the first meadow-flowers appear.  
-
 <br>  
-
 God knows 'twere better to be deep  
 
 Pillowed in silk and scented down,  
