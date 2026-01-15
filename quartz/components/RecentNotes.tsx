@@ -38,9 +38,14 @@ export default ((userOpts?: Partial<Options>) => {
       })
       .sort((a, b) => {
         // Sort by creation date, newest first
-        const dateA = a.dates?.created ?? new Date(0)
-        const dateB = b.dates?.created ?? new Date(0)
-        return dateB.getTime() - dateA.getTime()
+        const dateA = a.dates?.created ?? a.frontmatter?.date ?? new Date(0)
+        const dateB = b.dates?.created ?? b.frontmatter?.date ?? new Date(0)
+        
+        // Ensure we're working with Date objects
+        const timeA = dateA instanceof Date ? dateA.getTime() : new Date(dateA).getTime()
+        const timeB = dateB instanceof Date ? dateB.getTime() : new Date(dateB).getTime()
+        
+        return timeB - timeA  // Newest first
       })
       .slice(0, opts.limit)
 
@@ -78,7 +83,6 @@ export default ((userOpts?: Partial<Options>) => {
     )
   }
 
-  // ✅ Required: define component CSS *inside* before returning it
   RecentNotes.css = `
 .recent-notes {
   margin: 0 !important;
@@ -113,6 +117,5 @@ export default ((userOpts?: Partial<Options>) => {
 }
 `
 
-  // ✅ Return the actual component constructor
   return RecentNotes
 }) satisfies QuartzComponentConstructor
