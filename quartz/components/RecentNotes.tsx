@@ -37,9 +37,9 @@ export default ((userOpts?: Partial<Options>) => {
         return true
       })
       .sort((a, b) => {
-        // Try multiple possible date sources
-        const dateA = a.dates?.created || a.frontmatter?.created || a.dates?.modified || new Date(0)
-        const dateB = b.dates?.created || b.frontmatter?.created || b.dates?.modified || new Date(0)
+        // Try to get creation date from frontmatter first, then fall back to dates object
+        const dateA = a.frontmatter?.created || a.dates?.created || new Date(0)
+        const dateB = b.frontmatter?.created || b.dates?.created || new Date(0)
         
         // Ensure we're working with Date objects
         const timeA = dateA instanceof Date ? dateA.getTime() : new Date(dateA).getTime()
