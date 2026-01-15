@@ -1159,23 +1159,23 @@ ul.tags li a.internal.tag-link[href*="./tags/"]::before {
 }
 
 /* =========================================================
-   TAG PAGE TITLE — FORCE LOWERCASE
+   TAG PAGES — TITLE CASE + MOBILE SPACING (FINAL)
    ========================================================= */
 
-.page.tags .page-title {
+/* Force lowercase tag title */
+.page[data-slug^="tags/"] .page-title,
+.page[data-path^="tags/"] .page-title {
   text-transform: lowercase !important;
 }
 
-
-/* =========================================================
-   TAG PAGE TITLE — MOBILE SPACING
-   ========================================================= */
-
+/* Mobile spacing */
 @media (max-width: 768px) {
-  .page.tags .page-title {
-    padding-top: 1.25rem !important; /* adjust to taste */
+  .page[data-slug^="tags/"] .page-header,
+  .page[data-path^="tags/"] .page-header {
+    padding-top: 1.5rem !important;
   }
 }
+
 
 /* =========================================================
    INLINE TAGS IN NOTES — RESTORE HASH + COLOR
