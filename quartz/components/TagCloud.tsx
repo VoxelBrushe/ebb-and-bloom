@@ -98,7 +98,7 @@ TagCloud.css = `
 /* Each tag */
 .tag-cloud-item {
   text-decoration: none !important;
-  color: #D08770 !important; /* default: Nord orange */
+  color: #D8DEE9 !important; /* default: Nord orange */
   transition: transform 0.2s ease, color 0.2s ease, opacity 0.3s ease;
   display: inline-block;
   opacity: 0.9;
@@ -111,7 +111,7 @@ TagCloud.css = `
 
 /* Dark mode: orange accent */
 [saved-theme="dark"] .tag-cloud-item {
-  color: #D08770 !important;
+  color: #D8DEE9 !important;
 }
 
 .tag-cloud-item:hover {

@@ -276,6 +276,7 @@ a.internal.tag-link {
 }
 
 
+
    /* =========================================================
    EXTERNAL LINK ICON COLOR FIX
    ========================================================= */
@@ -1157,3 +1158,42 @@ ul.tags li a.internal.tag-link[href*="./tags/"]::before {
   opacity: 0.85;
 }
 
+/* =========================================================
+   TAG PAGE TITLE — FORCE LOWERCASE
+   ========================================================= */
+
+.page.tags .page-title {
+  text-transform: lowercase !important;
+}
+
+
+/* =========================================================
+   TAG PAGE TITLE — MOBILE SPACING
+   ========================================================= */
+
+@media (max-width: 768px) {
+  .page.tags .page-title {
+    padding-top: 1.25rem !important; /* adjust to taste */
+  }
+}
+
+/* =========================================================
+   INLINE TAGS IN NOTES — RESTORE HASH + COLOR
+   ========================================================= */
+
+/* Step 1: unlock color (stop forcing white) */
+.center article a.internal.tag-link {
+  color: inherit !important;
+}
+
+/* Step 2: add the # back */
+.center article a.internal.tag-link::before {
+  content: "#" !important;
+  margin-right: 0.15em;
+}
+
+/* Step 3: apply your purple link color */
+[saved-theme="light"] .center article a.internal.tag-link,
+[saved-theme="dark"] .center article a.internal.tag-link {
+  color: #B48EAD !important;
+}
