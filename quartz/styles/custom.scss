@@ -218,7 +218,7 @@ a.internal[href^="#"] {
   article h2 { color: #EBCB8B !important; }
   article h3 { color: #D08770 !important; }
   article h4 { color: #A3BE8C !important; }
-  article h5 { color: #EBCB8B !important; }
+  article h5 { color: #B48EAD !important; }
 }
 
 
@@ -397,11 +397,11 @@ a[href^="https"]::after {
 
 /* Theme colors */
 [saved-theme="light"] .note-tags {
-  color: #5E81AC;
+  color: #B48EAD;
 }
 
 [saved-theme="dark"] .note-tags {
-  color: #8FBCBB;
+  color: #B48EAD;
 }
 
 /* Optional hover effect */
@@ -559,7 +559,7 @@ section.backlinks {
 }
 
 [saved-theme="light"] .recent-notes ul.recent-notes-list li a.internal:hover {
-  color: #E4B860 !important;         /* accent color for hover */
+  color: #B48EAD !important;         /* accent color for hover */
 }
 
 /* Dark theme */
@@ -572,7 +572,7 @@ section.backlinks {
 }
 
 [saved-theme="dark"] .recent-notes ul.recent-notes-list li a.internal:hover {
-  color: #EBCB8B !important;         /* accent color for hover */
+  color: #B48EAD !important;         /* accent color for hover */
 }
 
 
@@ -999,7 +999,7 @@ ul.tags li a.internal.tag-link[href*="./tags/"]::before {
 .tags-date-left {
   text-align: left !important;
   font-style: italic !important;
-  opacity: 0.8 !important;
+  opacity: 0.9 !important;
   line-height: 1.3 !important;
 }
 
@@ -1075,13 +1075,13 @@ ul.tags li a.internal.tag-link[href*="./tags/"]::before {
 [saved-theme="light"] .tags-date-right a.tag-link:hover,
 [saved-theme="light"] .tags-date-right a.internal.tag-link:hover,
 [saved-theme="light"] .tags-date-right a[href*="/tags/"]:hover {
-  color: #EBCB8B !important;   /* yellow accent */
+  color: #B48EAD !important;   /* yellow accent */
 }
 
 [saved-theme="dark"] .tags-date-right a.tag-link:hover,
 [saved-theme="dark"] .tags-date-right a.internal.tag-link:hover,
 [saved-theme="dark"] .tags-date-right a[href*="/tags/"]:hover {
-  color: #EBCB8B !important;   /* yellow accent */
+  color: #B48EAD !important;   /* yellow accent */
 }
 
 

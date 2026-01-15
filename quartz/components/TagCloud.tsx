@@ -121,11 +121,11 @@ TagCloud.css = `
 
 /* Hover colors (theme aware) */
 [saved-theme="light"] .tag-cloud-item:hover {
-  color: #D08770 !important;
+  color: #B48EAD !important;
 }
 
 [saved-theme="dark"] .tag-cloud-item:hover {
-  color: #8FBCBB !important;
+  color: #B48EAD !important;
 }
 
 /* =========================================================

@@ -19,21 +19,13 @@ my ideas evolve in water:
 
 <br>
 
-<p>
-  <span style="color:#D08770; font-weight:00;">#pond</span> - whatever inspires me right now
-</p>
+#pond - whatever inspires me right now
 
-<p>
-  <span style="color:#D08770; font-weight:00;">#puddle</span> - prompts and (random) thoughts
-</p>
+#puddle - prompts and (random) thoughts
 
-<p>
-  <span style="color:#D08770; font-weight:00;">#lake</span> - evolving ideas and story premises
-</p>
+#lake - evolving ideas and story premises
 
-<p>
-  <span style="color:#D08770; font-weight:00;">#ocean</span> - stories, mostly Dutch
-</p>
+#ocean - stories, mostly Dutch
 
 <br>
 
