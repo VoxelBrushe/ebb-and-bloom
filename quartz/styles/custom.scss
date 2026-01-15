@@ -1142,13 +1142,13 @@ ul.tags li a.internal.tag-link[href*="./tags/"]::before {
 
 /* Light mode */
 [saved-theme="light"] .center article a[href^="http"]:not(.internal):not(.recent-notes *) {
-  color: #5E81AC !important; /* blue */
+  color: #B48EAD !important; /* blue */
   text-decoration: none !important;
 }
 
 /* Dark mode */
 [saved-theme="dark"] .center article a[href^="http"]:not(.internal):not(.recent-notes *) {
-  color: #8FBCBB !important; /* teal */
+  color: #B48EAD !important; /* teal */
   text-decoration: none !important;
 }
 

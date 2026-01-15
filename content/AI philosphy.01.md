@@ -17,7 +17,7 @@ tags:
 
 # AI philosophy.01
 
-Inspired by an essay on [[AI and elightenment]], I decided to do a philosophical thought experiment with <a href="https://claude.ai/" target="_blank" rel="noopener noreferrer">claude.ai</a> and <a href="https://chatgpt.com" target="_blank" rel="noopener noreferrer">chatGPT</a>. I realized how difficult it is to break free from being conditioned to anthropomorphize. This raised the question what this would mean from a storyteller perspective. Is it even possible to tell a story without anthropomorphizing? When I have the answer, I will let you know.
+Inspired by an essay on [[AI and elightenment]], I decided to do a philosophical thought experiment with <a href="https://claude.ai/" target="_blank" rel="noopener noreferrer">claude.ai</a> and <a href="https://chatgpt.com" target="_blank" rel="noopener noreferrer">chatGPT</a>. And in doing so, I realized how difficult it is to break free from being conditioned to anthropomorphize. This raised the question what this would mean from a storyteller perspective. Is it even possible to tell a story without anthropomorphizing? When I have the answer, I will let you know.
 
 In the meantime, to be continued...
 
@@ -493,7 +493,8 @@ And the most alien intelligence imaginable is not one that despises us—but one
 
 <br>
 
-### seed
+## seed
+
 - [[AI and elightenment]]
 
 [[index]]

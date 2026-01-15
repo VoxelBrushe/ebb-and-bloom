@@ -50,6 +50,7 @@ Or maybe we will have become so dependent on AI that a single power outage destr
 <br>
 
 ### more ponds
+
 - [[death and the toraja people]]
 - [[rendezvous with death - gow2]]
 
