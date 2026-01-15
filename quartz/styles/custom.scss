@@ -204,8 +204,8 @@ a.internal[href^="#"] {
    ========================================================= */
 [saved-theme="light"] {
   article h1 { color: #5E81AC !important; }
-  article h2 { color: #D08770 !important; }
-  article h3 { color: #A3BE8C !important; }
+  article h2 { color: #E4B860 !important; }
+  article h3 { color: #D08770 !important; }
   article h4 { color: #A3BE8C !important; }
   article h5 { color: #B48EAD !important; }
 }
@@ -559,7 +559,7 @@ section.backlinks {
 }
 
 [saved-theme="light"] .recent-notes ul.recent-notes-list li a.internal:hover {
-  color: #EBCB8B !important;         /* accent color for hover */
+  color: #E4B860 !important;         /* accent color for hover */
 }
 
 /* Dark theme */
@@ -1122,7 +1122,7 @@ ul.tags li a.internal.tag-link[href*="./tags/"]::before {
 
 /* Light mode */
 [saved-theme="light"] .center article a.internal:not(.tag-link):not(.card-link):not(.recent-notes *) {
-  color: #A3BE8C !important; /* orange */
+  color: #E4B860 !important; /* orange */
   text-decoration: none !important;
 }
 
