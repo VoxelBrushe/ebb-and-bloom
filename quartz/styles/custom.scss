@@ -1168,20 +1168,16 @@ body[data-slug^="tags/"] article.custom-tag-content > h1 {
 
 
 /* =========================================================
-   GLOBAL MOBILE TOP SPACING (ALL PAGES)
+   MOBILE NOTE CONTENT TOP SPACING (INSIDE ARTICLE)
    ========================================================= */
 
 @media (max-width: 768px) {
-  .center .page-header {
-    padding-top: 1.5rem !important;
+  .center article > h1:first-child,
+  .center article > h2:first-child {
+    margin-top: 1.25rem !important;
   }
 }
 
-@media (max-width: 480px) {
-  .center .page-header {
-    padding-top: 1.2rem !important;
-  }
-}
 
 
 /* =========================================================
