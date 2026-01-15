@@ -32,6 +32,6 @@ And we all return to the Void.
 ## roots
 
 - [[elemental synesthesia]]
-- [[rendezvous with death - gow2]]
+- [[rendezvous with death]]
 
 [[index]]

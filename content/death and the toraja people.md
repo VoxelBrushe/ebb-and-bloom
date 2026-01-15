@@ -53,8 +53,8 @@ Reading this article, I started wondering how I might have experienced the first
 
 ## more ponds
 
-- [[rendezvous with death - gow2]]
-- [[AI and elightenment]]
+- [[rendezvous with death]]
+- [[AI and enlightenment]]
 
 [[index]]
 
