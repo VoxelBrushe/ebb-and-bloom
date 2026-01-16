@@ -1203,7 +1203,7 @@ body[data-slug^="tags/"] article.custom-tag-content > h1 {
 
 @media (max-width: 480px) {
   .tags-date-line {
-    align-items: flex-start !important;
+    row-gap: 0.1rem !important;
   }
 }
 
