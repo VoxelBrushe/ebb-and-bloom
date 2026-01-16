@@ -1198,23 +1198,7 @@ body[data-slug^="tags/"] article.custom-tag-content > h1 {
 }
 
 /* =========================================================
-   TAGS + PLANTED DATE — MOBILE BASELINE FIX
-   ========================================================= */
-
-@media (max-width: 480px) {
-  .tags-date-line {
-    row-gap: 0.1rem !important;
-  }
-}
-
-@media (max-width: 480px) {
-  .tags-date-right {
-    margin-top: -0.15rem !important;
-  }
-}
-
-/* =========================================================
-   TAGS + PLANTED DATE — PHONE CENTERED
+   TAGS + PLANTED DATE — PHONE FIX (FINAL)
    ========================================================= */
 
 @media (max-width: 480px) {
@@ -1222,20 +1206,22 @@ body[data-slug^="tags/"] article.custom-tag-content > h1 {
     justify-content: center !important;
     align-items: center !important;
     text-align: center !important;
+    row-gap: 0.1rem !important;
   }
 
-  @media (max-width: 480px) {
-  .tags-date-left {
-    width: 100% !important;
-    display: block !important;
-    text-align: center !important;
-    align-self: center !important;
-  }
-}
-  
+  .tags-date-left,
   .tags-date-right {
     width: 100% !important;
     text-align: center !important;
+  }
+
+  .tags-date-left {
+    display: block !important;
+    align-self: center !important;
+  }
+
+  .tags-date-right {
+    margin-top: -0.15rem !important;
   }
 
   .tags-date-right ul.tags,
