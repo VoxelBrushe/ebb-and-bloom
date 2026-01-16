@@ -1198,7 +1198,7 @@ body[data-slug^="tags/"] article.custom-tag-content > h1 {
 }
 
 /* =========================================================
-   TAGS + PLANTED DATE — PHONE CENTER (ACTUAL FIX)
+   TAGS + PLANTED DATE — PHONE CENTER (FIXED)
    ========================================================= */
 
 @media (max-width: 480px) {
@@ -1213,12 +1213,23 @@ body[data-slug^="tags/"] article.custom-tag-content > h1 {
     width: 100% !important;
   }
 
-  /* THIS is the key line */
-  .tags-date-left .content-meta {
+  /* Target the content-meta more specifically */
+  .tags-date-left .content-meta,
+  .tags-date-left p.content-meta,
+  .center > .content-meta:last-child,
+  .center .content-meta:last-of-type {
     width: 100% !important;
     text-align: center !important;
-    margin: 0 !important;
+    margin: 0 auto !important;
     padding: 0 !important;
+    display: block !important;
+  }
+
+  /* Also center the time element inside */
+  .tags-date-left .content-meta time,
+  .tags-date-left p.content-meta time {
+    display: inline-block !important;
+    text-align: center !important;
   }
 
   .tags-date-right {
