@@ -4,8 +4,7 @@ export const ContactForm: QuartzComponent = () => {
   return (
     <div class="contact-form">
       <h3>message in a bottle</h3>
-      {/* 👇 Removed action/method to stop native redirect */}
-      <form id="contact-form">
+      <form id="contact-form" onsubmit="return false;">
         <label>
           <span>your name</span>
           <input type="text" name="name" required />
@@ -21,7 +20,7 @@ export const ContactForm: QuartzComponent = () => {
           <textarea name="message" rows={4} required></textarea>
         </label>
 
-        <button type="submit">release</button>
+        <button id="contact-submit" type="submit">release</button>
       </form>
 
       <p id="contact-status" class="contact-status" style="display:none"></p>
@@ -29,8 +28,10 @@ export const ContactForm: QuartzComponent = () => {
       <script is:inline>
         {String.raw`
           const form = document.getElementById('contact-form');
+          const button = document.getElementById('contact-submit');
           const status = document.getElementById('contact-status');
-          if (form && status) {
+
+          if (form && button && status) {
             form.noValidate = true;
 
             function setStatus(lines, cssClass) {
@@ -45,7 +46,7 @@ export const ContactForm: QuartzComponent = () => {
               });
             }
 
-            form.addEventListener('submit', async (e) => {
+            button.addEventListener('click', async (e) => {
               e.preventDefault();
               e.stopPropagation();
               e.stopImmediatePropagation();
@@ -55,13 +56,10 @@ export const ContactForm: QuartzComponent = () => {
               const data = new FormData(form);
 
               try {
-                // 👇 Explicitly send to Formspree
                 const response = await fetch("https://formspree.io/f/mgooezed", {
                   method: "POST",
                   body: data,
-                  headers: {
-                    Accept: "application/json"
-                  },
+                  headers: { Accept: "application/json" },
                 });
 
                 if (response.ok) {
@@ -73,7 +71,7 @@ export const ContactForm: QuartzComponent = () => {
                   setStatus(['💦 the bottle broke.', 'please send another.'], 'contact-error');
                 }
 
-                // Fade-out after 6s
+                // Fade-out after 6 s
                 setTimeout(() => {
                   status.classList.add('fade-out');
                   setTimeout(() => {
