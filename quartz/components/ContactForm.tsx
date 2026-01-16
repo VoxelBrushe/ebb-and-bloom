@@ -8,6 +8,7 @@ export const ContactForm: QuartzComponent = () => {
         id="contact-form"
         action="https://formspree.io/f/mgooezed"
         method="POST"
+        onsubmit="return false;"  // 👈 Prevent Formspree redirect
       >
         <label>
           <span>your name</span>
@@ -50,6 +51,9 @@ export const ContactForm: QuartzComponent = () => {
 
             form.addEventListener('submit', async (e) => {
               e.preventDefault();
+              e.stopPropagation();
+              e.stopImmediatePropagation();
+
               setStatus(['🍾 sending...'], 'contact-sending');
 
               const data = new FormData(form);
