@@ -897,7 +897,7 @@ ul.tags li a.internal.tag-link[href*="./tags/"]::before {
   height: 140px;
   object-fit: cover;
   flex-shrink: 0;
-  border-right: 1px solid #D8DEE9;
+  border-right: 0px solid #D8DEE9;
 }
 
 /* Card content container */
@@ -1195,4 +1195,14 @@ body[data-slug^="tags/"] article.custom-tag-content > h1 {
 
 .center article {
   display: flow-root !important;
+}
+
+/* =========================================================
+   TAGS + PLANTED DATE — TIGHTER ON MOBILE
+   ========================================================= */
+
+@media (max-width: 768px) {
+  .tags-date-line {
+    gap: 0.15rem !important; /* smaller vertical gap */
+  }
 }
