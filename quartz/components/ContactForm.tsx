@@ -4,11 +4,8 @@ export const ContactForm: QuartzComponent = () => {
   return (
     <div class="contact-form">
       <h3>message in a bottle</h3>
-      <form
-        id="contact-form"
-        action="https://formspree.io/f/mgooezed"
-        method="POST"
-      >
+      {/* 👇 Removed action/method to stop native redirect */}
+      <form id="contact-form">
         <label>
           <span>your name</span>
           <input type="text" name="name" required />
@@ -31,17 +28,15 @@ export const ContactForm: QuartzComponent = () => {
 
       <script is:inline>
         {String.raw`
-          document.addEventListener('DOMContentLoaded', () => {
-            const form = document.getElementById('contact-form');
-            const status = document.getElementById('contact-status');
-            if (!form) return;
-
-            form.noValidate = true; // ✅ Disable browser native validation popups
+          const form = document.getElementById('contact-form');
+          const status = document.getElementById('contact-status');
+          if (form && status) {
+            form.noValidate = true;
 
             function setStatus(lines, cssClass) {
               status.style.display = 'block';
               status.className = 'contact-status ' + cssClass;
-              status.innerHTML = ''; // Clear previous
+              status.innerHTML = '';
               lines.forEach((line, i) => {
                 const span = document.createElement('span');
                 span.textContent = line;
@@ -51,7 +46,7 @@ export const ContactForm: QuartzComponent = () => {
             }
 
             form.addEventListener('submit', async (e) => {
-              e.preventDefault();               // ✅ Stop browser submit
+              e.preventDefault();
               e.stopPropagation();
               e.stopImmediatePropagation();
 
@@ -60,10 +55,13 @@ export const ContactForm: QuartzComponent = () => {
               const data = new FormData(form);
 
               try {
-                const response = await fetch(form.action, {
-                  method: 'POST',
+                // 👇 Explicitly send to Formspree
+                const response = await fetch("https://formspree.io/f/mgooezed", {
+                  method: "POST",
                   body: data,
-                  headers: { Accept: 'application/json' },
+                  headers: {
+                    Accept: "application/json"
+                  },
                 });
 
                 if (response.ok) {
@@ -90,7 +88,7 @@ export const ContactForm: QuartzComponent = () => {
                 setStatus(['🛟 the tide turned.', 'please try again later.'], 'contact-error');
               }
             });
-          });
+          }
         `}
       </script>
     </div>
