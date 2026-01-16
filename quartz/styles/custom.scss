@@ -1198,11 +1198,40 @@ body[data-slug^="tags/"] article.custom-tag-content > h1 {
 }
 
 /* =========================================================
-   TAGS + PLANTED DATE — TIGHTER ON MOBILE
+   TAGS + PLANTED DATE — MOBILE BASELINE FIX
    ========================================================= */
 
-@media (max-width: 768px) {
+@media (max-width: 480px) {
   .tags-date-line {
-    gap: 0.15rem !important; /* smaller vertical gap */
+    align-items: flex-start !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .tags-date-right {
+    margin-top: -0.15rem !important;
+  }
+}
+
+/* =========================================================
+   TAGS + PLANTED DATE — PHONE CENTERED
+   ========================================================= */
+
+@media (max-width: 480px) {
+  .tags-date-line {
+    justify-content: center !important;
+    align-items: center !important;
+    text-align: center !important;
+  }
+
+  .tags-date-left,
+  .tags-date-right {
+    width: 100% !important;
+    text-align: center !important;
+  }
+
+  .tags-date-right ul.tags,
+  .tags-date-right div.tags {
+    justify-content: center !important;
   }
 }
