@@ -64,7 +64,7 @@ export const ContactForm: QuartzComponent = () => {
 
                 if (response.ok) {
                   form.reset();
-                  setStatus(['🍾thank you!', 'your message is in the currents.'], 'contact-success');
+                  setStatus(['thank you!', 'your message is in the currents.'], 'contact-success');
                 } else {
                   const err = await response.json().catch(() => ({}));
                   console.error('Formspree error:', err);
