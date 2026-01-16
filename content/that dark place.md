@@ -38,7 +38,8 @@ But how can he be certain?
 ## more puddles
 
 - [[stranger still]]
-- [[after genesis]]
+- [[never find a home]]
+- [[the girl in her dreams]]
 
 
 [[index]]

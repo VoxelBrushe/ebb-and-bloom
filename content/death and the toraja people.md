@@ -19,7 +19,7 @@ tags:
 # death and the toraja people
 
 - **Type**: Article
-- **Creator**: Caitlin Moore / mooremisadventures.com
+- **Creator**: Caitlin Moore
 - **Year**: 2020
 <br>
 
@@ -54,7 +54,7 @@ Reading this article, I started wondering how I might have experienced the first
 ## more ponds
 
 - [[rendezvous with death]]
-- [[AI and enlightenment]]
+- [[AI_philosophy.01]]
 
 [[index]]
 

@@ -7,8 +7,6 @@ publish: true
 
 <meta name="description" content="A digital garden where writing ideas take root. Discover story prompts, character inspiration, and creative thoughts. Perfect for writers seeking sparks of imagination.">
 
-<br>
-
 # welcome to my digital garden.
 
 here, I play with story seedlings to see if they take root.
