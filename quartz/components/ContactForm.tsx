@@ -4,104 +4,83 @@ export const ContactForm: QuartzComponent = () => {
   return (
     <div class="contact-form">
       <h3>message in a bottle</h3>
-
-      {/* ✅ Not a <form> anymore, just a container */}
-      <div id="contact-form">
+      <form
+        id="contact-form"
+        action="https://formspree.io/f/mgooezed"
+        method="POST"
+      >
         <label>
           <span>your name</span>
-          <input type="text" id="cf-name" name="name" required />
+          <input type="text" name="name" required />
         </label>
 
         <label>
           <span>your email</span>
-          <input type="email" id="cf-email" name="email" required />
+          <input type="email" name="email" required />
         </label>
 
         <label>
           <span>your message</span>
-          <textarea id="cf-message" name="message" rows={4} required></textarea>
+          <textarea name="message" rows={4} required></textarea>
         </label>
 
-        <button id="contact-submit">release</button>
-      </div>
+        <button type="submit">release</button>
+      </form>
 
       <p id="contact-status" class="contact-status" style="display:none"></p>
 
       <script is:inline>
         {String.raw`
-          const button = document.getElementById('contact-submit');
-          const status = document.getElementById('contact-status');
-          const nameField = document.getElementById('cf-name');
-          const emailField = document.getElementById('cf-email');
-          const messageField = document.getElementById('cf-message');
+          document.addEventListener('DOMContentLoaded', () => {
+            const form = document.getElementById('contact-form');
+            const status = document.getElementById('contact-status');
+            if (!form) return;
 
-          function setStatus(lines, cssClass) {
-            status.style.display = 'block';
-            status.className = 'contact-status ' + cssClass;
-            status.innerHTML = '';
-            lines.forEach((line, i) => {
-              const span = document.createElement('span');
-              span.textContent = line;
-              status.appendChild(span);
-              if (i < lines.length - 1) status.appendChild(document.createElement('br'));
-            });
-          }
+            form.addEventListener('submit', async (e) => {
+              e.preventDefault();
+              status.style.display = 'block';
+              status.textContent = '🌿 sending...';
+              status.className = 'contact-status contact-sending';
 
-          button.addEventListener('click', async (e) => {
-            e.preventDefault();
-            e.stopPropagation();
+              const data = new FormData(form);
+              try {
+                const response = await fetch(form.action, {
+                  method: 'POST',
+                  body: data,
+                  headers: { Accept: 'application/json' },
+                });
 
-            // ✅ Prevent any native form submission
-            if (!nameField.value || !emailField.value || !messageField.value) {
-              setStatus(['💭 please fill all fields.'], 'contact-error');
-              return;
-            }
+                if (response.ok) {
+                  form.reset();
+                  status.textContent = 'thank you!\nyour message in the currents.';
+                  status.className = 'contact-status contact-success';
+                } else {
+                  status.textContent = '⚠️ the bottle broke.\nplease send another.';
+                  status.className = 'contact-status contact-error';
+                }
 
-            setStatus(['🍾 sending...'], 'contact-sending');
-
-            const data = new FormData();
-            data.append('name', nameField.value);
-            data.append('email', emailField.value);
-            data.append('message', messageField.value);
-
-            try {
-              const response = await fetch("https://formspree.io/f/mgooezed", {
-                method: "POST",
-                body: data,
-                headers: { Accept: "application/json" },
-              });
-
-              if (response.ok) {
-                nameField.value = '';
-                emailField.value = '';
-                messageField.value = '';
-                setStatus(['🍾 thank you!', 'your message is in the currents.'], 'contact-success');
-              } else {
-                const err = await response.json().catch(() => ({}));
-                console.error('Formspree error:', err);
-                setStatus(['💦 the bottle broke.', 'please send another.'], 'contact-error');
-              }
-
-              // Fade-out after 6 s
-              setTimeout(() => {
-                status.classList.add('fade-out');
+                // Fade-out after 6s
                 setTimeout(() => {
-                  status.style.display = 'none';
-                  status.classList.remove('fade-out');
-                  status.innerHTML = '';
-                }, 1200);
-              }, 6000);
+                  status.classList.add('fade-out');
+                  setTimeout(() => {
+                    status.style.display = 'none';
+                    status.classList.remove('fade-out');
+                    status.textContent = '';
+                  }, 1200);
+                }, 6000);
 
-            } catch (error) {
-              console.error('Network error:', error);
-              setStatus(['🛟 the tide turned.', 'please try again later.'], 'contact-error');
-            }
+              } catch (error) {
+                status.textContent = '⚠️ the tide turned.\nplease try again later.';
+                status.className = 'contact-status contact-error';
+              }
+            });
           });
         `}
       </script>
     </div>
   )
 }
+
 
 ContactForm.css = `
 /* =========================================================
@@ -140,7 +119,7 @@ ContactForm.css = `
 }
 
 /* Form layout */
-#contact-form {
+.contact-form form {
   display: flex;
   flex-direction: column;
   gap: 1rem;
