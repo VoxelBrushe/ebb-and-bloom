@@ -8,7 +8,6 @@ export const ContactForm: QuartzComponent = () => {
         id="contact-form"
         action="https://formspree.io/f/mgooezed"
         method="POST"
-        onsubmit="return false;"  // 👈 Prevent Formspree redirect
       >
         <label>
           <span>your name</span>
@@ -37,6 +36,8 @@ export const ContactForm: QuartzComponent = () => {
             const status = document.getElementById('contact-status');
             if (!form) return;
 
+            form.noValidate = true; // ✅ Disable browser native validation popups
+
             function setStatus(lines, cssClass) {
               status.style.display = 'block';
               status.className = 'contact-status ' + cssClass;
@@ -50,13 +51,14 @@ export const ContactForm: QuartzComponent = () => {
             }
 
             form.addEventListener('submit', async (e) => {
-              e.preventDefault();
+              e.preventDefault();               // ✅ Stop browser submit
               e.stopPropagation();
               e.stopImmediatePropagation();
 
               setStatus(['🍾 sending...'], 'contact-sending');
 
               const data = new FormData(form);
+
               try {
                 const response = await fetch(form.action, {
                   method: 'POST',
@@ -68,6 +70,8 @@ export const ContactForm: QuartzComponent = () => {
                   form.reset();
                   setStatus(['🍾thank you!', 'your message is in the currents.'], 'contact-success');
                 } else {
+                  const err = await response.json().catch(() => ({}));
+                  console.error('Formspree error:', err);
                   setStatus(['💦 the bottle broke.', 'please send another.'], 'contact-error');
                 }
 
@@ -82,6 +86,7 @@ export const ContactForm: QuartzComponent = () => {
                 }, 6000);
 
               } catch (error) {
+                console.error('Network error:', error);
                 setStatus(['🛟 the tide turned.', 'please try again later.'], 'contact-error');
               }
             });
