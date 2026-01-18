@@ -93,6 +93,7 @@ I shall not fail that rendezvous.
 ## more ponds
 
 - [[death and the toraja people]]
+- [[jamais vu]]
 - [[AI_philosophy.01]]
 
 [[index]]

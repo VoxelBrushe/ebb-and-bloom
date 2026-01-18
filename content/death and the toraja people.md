@@ -20,6 +20,7 @@ tags:
 
 - **Type**: Article
 - **Creator**: Caitlin Moore
+- **Host**: https://mooremisadventures.com
 - **Year**: 2020
 <br>
 
@@ -55,6 +56,7 @@ Reading this article, I started wondering how I might have experienced the first
 
 - [[rendezvous with death]]
 - [[AI_philosophy.01]]
+- [[jamais vu]]
 
 [[index]]
 

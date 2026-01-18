@@ -497,4 +497,13 @@ And the most alien intelligence imaginable is not one that despises us—but one
 
 - [[AI and enlightenment]]
 
+<br>
+
+### more ponds
+
+- [[death and the toraja people]]
+- [[rendezvous with death]]
+- [[jamais vu]]
+
+
 [[index]]
