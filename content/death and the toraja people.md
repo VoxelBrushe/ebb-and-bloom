@@ -20,19 +20,9 @@ tags:
 
 - **Type**: Article
 - **Creator**: Caitlin Moore
-- **Host**: https://mooremisadventures.com
+- **Host**: <a href="https://mooremisadventures.com" target="_blank" rel="noopener noreferrer">Moore Misadventures</a>
 - **Year**: 2020
 <br>
-
-<div class="card-link">
-  <a href="https://www.mooremisadventures.com/blog/tana-toraja" target="_blank">
-    <img src="http://static1.squarespace.com/static/5d09463a7ff6500001c3c9ba/5d094e61c2341b0001fd3440/5dc83e85b4679c4cebf250ce/1604621876187/Sulawesi-11.jpg?format=1500w">
-    <div class="card-content">
-      <div class="card-title">The Living Dead: Understanding the Culture of Tana Toraja</div>
-      <div class="card-desc">Tana Toraja takes the cake as the most unique place I’ve ever visited. Then again, not many places let visitors meet mummified family members and invite them to the funeral of a stranger. Learn more about the land of the living dead.</div>
-    </div>
-  </a>
-</div>
 
 - a culture defined by death
 - death is cause for celebration
