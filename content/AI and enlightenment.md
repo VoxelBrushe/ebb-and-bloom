@@ -49,13 +49,13 @@ Or maybe we will have become so dependent on AI that a single power outage destr
 
 <br>
 
-### vines
+## vines
 
 - [[AI_philosophy.01]]
 
 <br>
 
-### more ponds
+## more ponds
 
 - [[death and the toraja people]]
 - [[rendezvous with death]]
