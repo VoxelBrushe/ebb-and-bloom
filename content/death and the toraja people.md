@@ -34,8 +34,6 @@ tags:
   </a>
 </div>
 
-<br>
-
 - a culture defined by death
 - death is cause for celebration
 - death and funeral are separate events, sometimes by years
