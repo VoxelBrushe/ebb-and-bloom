@@ -58,7 +58,7 @@ If déjà vu is familiarity without memory, jamais vu feels like memory without 
 
 - [[rendezvous with death]]
 - [[AI and enlightenment]]
-- [[AI_philosophy.01]]
+- [[01 Input/AI_philosophy.01]]
 
 [[index]]
 

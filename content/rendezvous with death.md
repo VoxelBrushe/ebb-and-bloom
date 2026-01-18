@@ -95,6 +95,6 @@ I shall not fail that rendezvous.
 
 - [[death and the toraja people]]
 - [[jamais vu]]
-- [[AI_philosophy.01]]
+- [[01 Input/AI_philosophy.01]]
 
 [[index]]

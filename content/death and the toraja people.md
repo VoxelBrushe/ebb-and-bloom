@@ -55,7 +55,7 @@ Reading this article, I started wondering how I might have experienced the first
 ## more ponds
 
 - [[rendezvous with death]]
-- [[AI_philosophy.01]]
+- [[01 Input/AI_philosophy.01]]
 - [[jamais vu]]
 
 [[index]]

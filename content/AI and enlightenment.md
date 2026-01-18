@@ -51,7 +51,7 @@ Or maybe we will have become so dependent on AI that a single power outage destr
 
 ### vines
 
-- [[AI_philosophy.01]]
+- [[01 Input/AI_philosophy.01]]
 
 <br>
 
