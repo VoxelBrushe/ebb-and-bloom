@@ -257,18 +257,17 @@ And by the time we realized it happened, there would be no one left to ask wheth
 
 <br>
 
-### roots
+## roots
 
 - [[AI_philosophy.01]]
 - [[AI and enlightenment]]
 
 <br>
 
-### more ponds
+## more ponds
 
 - [[death and the toraja people]]
-- [[rendezvous with death]]s
-- 
+- [[rendezvous with death]]
 - [[jamais vu]]
 
 [[index]]
