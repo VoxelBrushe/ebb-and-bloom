@@ -33,14 +33,13 @@ It must suffice. He must succeed.
 
 But how can he be certain?
 
-<br>
+<hr>
 
 ## more puddles
 
-- [[stranger still]]
 - [[never find a home]]
 - [[the girl in her dreams]]
-
+- [[stranger still]]
 
 [[index]]
 

@@ -26,7 +26,7 @@ They change her prescription, and the girl disappears.
 
 Dreamless years go by. And then one night, the girl reappears a young woman. She reaches out. And screams.
 
-<br>
+<hr>
 
 ## more puddles
 

@@ -27,7 +27,7 @@ Although we will not speak our truth, there is comfort in not believing. When we
 
 And we all return to the Void.
 
-<br>
+<hr>
 
 ## roots
 

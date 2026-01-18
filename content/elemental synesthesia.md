@@ -25,7 +25,7 @@ Elemental synesthesia. In space, fire spreads like liquid.
 
 There: I had my first thought. Genesis.
 
-<br>
+<hr>
 
 ## vines
 

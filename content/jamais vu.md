@@ -52,13 +52,13 @@ Some years ago, there was the case of a man who was in a  <a href="https://link
 
 If déjà vu is familiarity without memory, jamais vu feels like memory without familiarity. But what would it be like to have part of you constantly lagging behind or walking in front, but rarely truly be in sync? Is that even possible?
 
-<br>
+<hr>
 
 ## more ponds
 
 - [[rendezvous with death]]
 - [[AI and enlightenment]]
-- [[01 Input/AI_philosophy.01]]
+- [[AI_philosophy.01]]
 
 [[index]]
 

@@ -26,7 +26,7 @@ Stranger still is the paper your hand is resting on. An address is written down,
 
 And then there is the drawing…
 
-<br>
+<hr>
 
 ## more puddles
 

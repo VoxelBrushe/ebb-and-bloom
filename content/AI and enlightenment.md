@@ -47,13 +47,11 @@ To me, shamanism and nature have always been inextricably linked. But being an a
 
 Or maybe we will have become so dependent on AI that a single power outage destroyed our civilization.
 
-<br>
+<hr>
 
 ## vines
 
 - [[AI_philosophy.01]]
-
-<br>
 
 ## more ponds
 

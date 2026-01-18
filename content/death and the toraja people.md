@@ -50,12 +50,12 @@ It's a very human thing to grapple with the role death plays in life, the questi
 
 Reading this article, I started wondering how I might have experienced the first open casket funeral I ever attended, when I was about ten years old - or the funerals that followed - if death had been a natural part of life for me. And I wonder, am I shaped by the beliefs that are culturally ingrained in me, even though I no longer share them? Or am I shaped by my first encounter with death? Can you ever fully undo the way your early years have formed you?
 
-<br>
+<hr>
 
 ## more ponds
 
 - [[rendezvous with death]]
-- [[01 Input/AI_philosophy.01]]
+- [[AI_philosophy.01]]
 - [[jamais vu]]
 
 [[index]]

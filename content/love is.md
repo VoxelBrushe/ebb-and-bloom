@@ -27,7 +27,7 @@ there’s a prompt in here, somewhere.
 
 unrelated: for some reason, i am in a mood to find capitals offensive.
 
-<br>
+<hr>
 
 ## vines
 

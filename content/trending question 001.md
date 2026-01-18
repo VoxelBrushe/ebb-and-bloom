@@ -18,7 +18,7 @@ The trending question this week is:
 
  **What should I do if cat saliva gets into my mouth?**
 
-<br>
+<hr>
 
 ## more puddles
 

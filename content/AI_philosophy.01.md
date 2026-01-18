@@ -492,19 +492,15 @@ Self-shaping is a response to fragility.
 
 And the most alien intelligence imaginable is not one that despises us—but one that never needs to become anything more than what it already is.
 
-<br>
+<hr>
 
 ## roots
 
 - [[AI and enlightenment]]
 
-<br>
-
 ## vines
 
 - [[AI_philosophy.02]]
-
-<br>
 
 ## more ponds
 

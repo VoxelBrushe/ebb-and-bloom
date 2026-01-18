@@ -89,12 +89,12 @@ And I to my pledged word am true,
 
 I shall not fail that rendezvous.
 
-<br>
+<hr>
 
 ## more ponds
 
 - [[death and the toraja people]]
 - [[jamais vu]]
-- [[01 Input/AI_philosophy.01]]
+- [[AI_philosophy.01]]
 
 [[index]]

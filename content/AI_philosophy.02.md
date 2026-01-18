@@ -256,14 +256,12 @@ With a neutral intelligence, it would be a phase transition.
 
 And by the time we realized it happened, there would be no one left to ask whether we were heard.
 
-<br>
+<hr>
 
 ## roots
 
 - [[AI_philosophy.01]]
 - [[AI and enlightenment]]
-
-<br>
 
 ## more ponds
 
