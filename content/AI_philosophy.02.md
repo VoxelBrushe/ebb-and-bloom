@@ -13,7 +13,8 @@ tags:
   - philosophy
   - awareness
 ---
-<br>
+
+<meta name="description" content="Explore what a truly neutral AI would be like—one free from human values and conditioning. A philosophical thought experiment on alien intelligence, purpose without desire, and what happens when we strip away anthropomorphic assumptions.">
 
 # AI_philosophy.02
 
