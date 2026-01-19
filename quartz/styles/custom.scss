@@ -894,7 +894,7 @@ ul.tags li a.internal.tag-link[href*="./tags/"]::before {
 /* Thumbnail image */
 .card-link img {
   width: 140px;
-  height: 140px;
+  height: auto;
   object-fit: cover;
   flex-shrink: 0;
   border-right: 0px solid #D8DEE9;
