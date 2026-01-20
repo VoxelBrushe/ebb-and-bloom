@@ -18,10 +18,11 @@ tags:
 
 # rendezvous with death
 
-- **Type**: Game / Poem
-- **Creator**: Epic Games
-- **Host**: <a href="https://youtube.com" target="_blank" rel="noopener noreferrer">Youtube</a>
-- **Year**: 2008
+▸ **Type**: Game / Poem<br>
+▸ **Creator**: Epic Games<br>
+▸ **Host**: <a href="https://youtube.com" target="_blank" rel="noopener noreferrer">Youtube</a><br>
+▸ **Year**: 2008 <br>
+
 <br>
 
 <div class="card-link">

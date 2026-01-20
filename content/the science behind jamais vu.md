@@ -18,10 +18,11 @@ tags:
 
 # the science behind jamais vu
 
-- **Type**: Article
-- **Creator**: <a href="https://theconversation.com/profiles/akira-oconnor-315945" target="_blank" rel="noopener noreferrer">Akira O'Connor</a>, <a href="https://theconversation.com/profiles/christopher-moulin-1471135" target="_blank" rel="noopener noreferrer">Christopher Moulin</a> 
-- **Host**: <a href="https://theconversation.com" target="_blank" rel="noopener noreferrer">The Conversation</a>
-- **Year**: 2023
+▸ **Type**: Article<br>
+▸ **Creator**: <a href="https://theconversation.com/profiles/akira-oconnor-315945" target="_blank" rel="noopener noreferrer">Akira O'Connor</a>, <a href="https://theconversation.com/profiles/christopher-moulin-1471135" target="_blank" rel="noopener noreferrer">Christopher Moulin</a> <br>
+▸ **Host**: <a href="https://theconversation.com" target="_blank" rel="noopener noreferrer">The Conversation</a><br>
+▸ **Year**: 2023<br>
+
 <br>
 
 <div class="card-link">
@@ -34,11 +35,13 @@ tags:
   </a>
 </div>
 
-▸ jamais vu makes the familiar feel strange or unreal<br>
-▸ jamais vu serves a functional purpose<br>
-▸ jamais vu can be reliably induced<br>
-▸ research links jamais vu to OCD<br>
-▸ the cognitive system becomes oversaturated by repeated exposure<br>
+<br>
+
+- jamais vu makes the familiar feel strange or unreal<br>
+- jamais vu serves a functional purpose<br>
+- jamais vu can be reliably induced<br>
+- research links jamais vu to OCD<br>
+- the cognitive system becomes oversaturated by repeated exposure<br>
 
 <br>
 
