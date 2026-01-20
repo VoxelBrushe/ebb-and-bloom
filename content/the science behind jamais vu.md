@@ -34,11 +34,11 @@ tags:
   </a>
 </div>
 
-▸ jamais vu makes the familiar feel strange or unreal
-▸ jamais vu serves a functional purpose
-▸ jamais vu can be reliably induced
-▸ research links jamais vu to OCD
-▸ the cognitive system becomes oversaturated by repeated exposure
+▸ jamais vu makes the familiar feel strange or unreal<br>
+▸ jamais vu serves a functional purpose<br>
+▸ jamais vu can be reliably induced<br>
+▸ research links jamais vu to OCD<br>
+▸ the cognitive system becomes oversaturated by repeated exposure<br>
 
 <br>
 
