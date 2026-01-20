@@ -20,7 +20,7 @@ tags:
 
 - **Type**: Article
 - **Creator**: Caitlin Moore
-- **Host**: <a <a href="href="https://mooremisadventures.com" target="_blank" rel="noopener noreferrer">Moore Misadventures</a>" target="_blank" rel="noopener noreferrer">Moore Misadventures</a>
+- **Host**: <a href="https://mooremisadventures.com" target="_blank" rel="noopener noreferrer">Moore Misadventures</a>
 - **Year**: 2020
 <br>
 
