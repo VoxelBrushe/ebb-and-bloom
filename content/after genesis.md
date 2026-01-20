@@ -33,4 +33,10 @@ And we all return to the Void.
 
 - [[elemental synesthesia]]
 
+## more puddles
+
+- [[never find a home]]
+- [[stranger still]]
+- [[the girl in her dreams]]
+
 [[index]]

@@ -30,8 +30,8 @@ Dreamless years go by. And then one night, the girl reappears a young woman. She
 
 ## more puddles
 
-- [[never find a home]]
+- [[love is]]
+- [[out of mind]]
 - [[that dark place]]
-- [[after genesis]]
 
 [[index]]

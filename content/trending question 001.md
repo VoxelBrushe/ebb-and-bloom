@@ -3,7 +3,7 @@ type: puddle
 sparked-by:
   - - Source Note
 created: 2026-01-07
-publish: true
+publish: false
 tags:
   - puddle
   - question

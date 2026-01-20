@@ -30,8 +30,8 @@ And then there is the drawing…
 
 ## more puddles
 
-- [[that dark place]]
 - [[after genesis]]
-- [[the girl in her dreams]]
+- [[love is]]
+- [[out of mind]]
 
 [[index]]

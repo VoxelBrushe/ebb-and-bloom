@@ -37,8 +37,8 @@ But how can he be certain?
 
 ## more puddles
 
+- [[elemental synesthesia]]
 - [[never find a home]]
-- [[the girl in her dreams]]
 - [[stranger still]]
 
 [[index]]

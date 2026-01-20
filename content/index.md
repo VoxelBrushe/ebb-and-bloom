@@ -1,6 +1,6 @@
 ---
-title: ebb and bloom
-created: 2025-12-31
+title: ebb and bloom - a digital garden
+description: a digital garden where writing ideas take root. Discover story prompts, character inspiration, and creative thoughts.
 pageLayout: home
 publish: true
 ---
