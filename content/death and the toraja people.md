@@ -18,10 +18,11 @@ tags:
 
 # death and the toraja people
 
-- **Type**: Article
-- **Creator**: Caitlin Moore
-- **Host**: <a href="https://mooremisadventures.com" target="_blank" rel="noopener noreferrer">Moore Misadventures</a>
-- **Year**: 2020
+▸ **Type**: Article<br>
+▸ **Creator**: Caitlin Moore<br>
+▸ **Host**: <a href="https://mooremisadventures.com" target="_blank" rel="noopener noreferrer">Moore Misadventures</a><br>
+▸ **Year**: 2020<br>
+
 <br>
 
 <div class="card-link">
