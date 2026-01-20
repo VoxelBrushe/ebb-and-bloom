@@ -23,8 +23,6 @@ tags:
 ▸ **Host**: <a href="https://theconversation.com" target="_blank" rel="noopener noreferrer">The Conversation</a><br>
 ▸ **Year**: 2023<br>
 
-<br>
-
 <div class="card-link">
   <a href="https://theconversation.com/jamais-vu-the-science-behind-eerie-opposite-of-deja-vu-213596" target="_blank">
     <img src="https://images.theconversation.com/files/548389/original/file-20230914-9125-llzb2a.jpg?ixlib=rb-4.1.0&q=30&auto=format&w=600&h=600&fit=crop&dpr=2">
@@ -34,8 +32,6 @@ tags:
     </div>
   </a>
 </div>
-
-<br>
 
 - jamais vu makes the familiar feel strange or unreal<br>
 - jamais vu serves a functional purpose<br>

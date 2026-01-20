@@ -23,8 +23,6 @@ tags:
 ▸ **Host**: <a href="https://youtube.com" target="_blank" rel="noopener noreferrer">Youtube</a><br>
 ▸ **Year**: 2008 <br>
 
-<br>
-
 <div class="card-link">
   <a href="https://youtu.be/rXIjDzlGc5I?si=G2DoNAH3i7Hw6tD6" target="_blank">
     <img src="https://i.ytimg.com/vi/rXIjDzlGc5I/maxresdefault.jpg" alt="Gears of War 2 Trailer">

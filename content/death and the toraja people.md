@@ -23,8 +23,6 @@ tags:
 ▸ **Host**: <a href="https://mooremisadventures.com" target="_blank" rel="noopener noreferrer">Moore Misadventures</a><br>
 ▸ **Year**: 2020<br>
 
-<br>
-
 <div class="card-link">
   <a href="https://www.mooremisadventures.com/blog/tana-toraja" target="_blank">
     <img src="https://static1.squarespace.com/static/5d09463a7ff6500001c3c9ba/5d094e61c2341b0001fd3440/5dc83e85b4679c4cebf250ce/1604621876187/Sulawesi-11.jpg?format=1500w">
