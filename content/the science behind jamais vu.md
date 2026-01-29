@@ -55,8 +55,7 @@ If déjà vu is familiarity without memory, jamais vu feels like memory without 
 
 ## more ponds
 
-- [[rendezvous with death]]
+- [[Intuiti]]
 - [[death and the toraja people]]
 
 [[index]]
-

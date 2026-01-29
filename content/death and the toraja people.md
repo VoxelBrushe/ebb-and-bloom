@@ -55,7 +55,6 @@ Reading this article, I started wondering how I might have experienced the first
 
 - [[rendezvous with death]]
 - [[the science behind jamais vu]]
-- [[the girl in her dreams]]
 
 [[index]]
 
