@@ -12,17 +12,15 @@ tags:
   - prompts
   - cards
 ---
-<br>
+
+<meta name="description" content="Discover how the Intùiti creative cards deck sparks inspiration through archetypal imagery and thinking models—a mindful alternative to traditional brainstorming techniques.">
 
 # Intuiti
 
-<br>
-
-## soil
-- **Type**: Deck of Cards<br>
-- **Creator**: Sefirot<br>
-- **Host**: <a href="https://sefirot.it" target="_blank" rel="noopener noreferrer">Sefirot</a><br>
-- **Year**: N/A<br>
+▸ **Type**: Deck of Cards<br>
+▸**Creator**: Sefirot<br>
+▸ **Host**: <a href="https://sefirot.it" target="_blank" rel="noopener noreferrer">Sefirot</a><br>
+▸ **Year**: N/A<br>
 
 <div class="card-link">
   <a href="https://sefirot.it/intuiti-creative-cards" target="_blank">
