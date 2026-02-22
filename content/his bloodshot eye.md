@@ -46,11 +46,7 @@ He's back.
 
 As he walks by, he looks in my direction. I swear he sees me. 
 
-<br>
-
 He comes up to my door. His bloodshot eye fills the hole. 
-
-<br>
 
 If I move, he will see the light shift. If I breathe, he'll hear. 
 
@@ -59,8 +55,6 @@ If I move, he will see the light shift. If I breathe, he'll hear.
 Can I run?
 
 Do I scream?
-
-<br>
 
 Will he break down my door if I do?
 
