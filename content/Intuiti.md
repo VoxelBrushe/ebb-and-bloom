@@ -18,7 +18,7 @@ tags:
 # Intuiti
 
 ▸ **Type**: Deck of Cards<br>
-▸**Creator**: Sefirot<br>
+▸ **Creator**: Sefirot<br>
 ▸ **Host**: <a href="https://sefirot.it" target="_blank" rel="noopener noreferrer">Sefirot</a><br>
 ▸ **Year**: N/A<br>
 

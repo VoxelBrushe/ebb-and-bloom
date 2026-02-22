@@ -47,7 +47,7 @@ And I remember my grandmother, the way her world slipped away, and I think that 
 ## more puddles
 
 - [[the girl in her dreams]]
-- [[elemental synesthesia]]
-- [[never find a home]]
+- [[his bloodshot eye]]
+- [[love is]]
 
 [[index]]

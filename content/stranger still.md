@@ -11,7 +11,6 @@ tags:
   - blackout
   - prompt
 ---
-
 <meta name="description" content="A haunting mystery writing prompt blending dream logic and dark secrets. Perfect for writers developing psychological thrillers, unreliable narrators, and stories with supernatural undertones.">
 
 # stranger still
