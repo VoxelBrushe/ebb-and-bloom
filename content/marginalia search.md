@@ -43,8 +43,8 @@ tags:
 
 ## just some thoughts
 
-This site shows you a random selection of sites that big tech would not show you. Some of those sites look like they originate from either the heyday of the internet or a part of the dark web - proudly ignoring UX conventions or any type of mobile experience. I love it. I actually prefer the old style search engine to the new because it feels even more bare bones.
-Pictures say more than words, so let me overload your visual cortex with with a site I StumbledUpon:
+This site shows you a random selection of sites that you would otherwise never find. Some of those sites look like they originate from either the heyday of the internet or a part of the dark web - proudly ignoring UX conventions or any type of mobile experience. I love it. I actually prefer the old style search engine to the new because it feels even more bare bones.
+Pictures say more than words, so let me overload your visual cortex with a site I StumbledUpon:
 
 <br>
 
