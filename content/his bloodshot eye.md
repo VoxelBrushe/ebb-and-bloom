@@ -14,9 +14,7 @@ tags:
 
 # his bloodshot eye
 
-Quarter past six in the evening: my neighbour passes by the spyhole in my front door.
-
-Two minutes later: shouting, screaming, thumping, door slamming, crying. 
+Quarter past six in the evening: my neighbour passes by the spyhole in my front door. Two minutes later: shouting, screaming, thumping, door slamming, crying. 
 
 It happens every night, for weeks on end. Until five days ago. 
 
@@ -26,25 +24,15 @@ That first night, I think I heard scratching.
 
 I may have imagined it. It's been quiet ever since.
 
-But the smell.
+But the smell. It's faint, but it is there.
 
-It's faint, but it is there.
-
-Five nights now, and I keep looking through that spyhole.
-
-My heart leaps up into my throat. I can hardly breathe.
+Five nights now, and I keep looking through that spyhole. My heart leaps up into my throat. I can hardly breathe.
 
 He's back.
 
-As he walks by, he looks in my direction. I swear he sees me. 
+As he walks by, he looks in my direction. I swear he sees me. He comes up to my door. His bloodshot eye fills the hole. If I move, he will see the light shift. If I breathe, he'll hear. 
 
-He comes up to my door. His bloodshot eye fills the hole. 
-
-If I move, he will see the light shift. If I breathe, he'll hear. 
-
-Can I run?
-
-Do I scream?
+Can I run? Do I scream?
 
 Will he break down my door if I do?
 
