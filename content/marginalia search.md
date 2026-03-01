@@ -21,6 +21,24 @@ tags:
 ▸**Year**: N/A
 <br>
 
+<div class="card-link">
+  <a href="old-search.marginalia.nu/search?query=browse:random" target="_blank">
+    <div class="card-content">
+      <div class="card-title">Marginalia Search - browse:random - old</div>
+      <div class="card-desc">My name is Viktor. I’m a Swedish software engineer and hypertext enjoyer. Marginalia is a website I’ve built.</div>
+    </div>
+  </a>
+</div>
+
+<div class="card-link">
+  <a href="https://marginalia-search.com/explore" target="_blank">
+    <div class="card-content">
+      <div class="card-title">Explore - Marginalia Search - new</div>
+      <div class="card-desc">It’s really almost a bunch of websites on a common theme. If you find yourself clicking a link and ending up on a page that looks completely different, that’s just how things are.</div>
+    </div>
+  </a>
+</div>
+
 ```cardlink
 url: https://old-search.marginalia.nu/search?query=browse:random
 title: "Marginalia Search - browse:random"
