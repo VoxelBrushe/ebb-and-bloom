@@ -39,18 +39,6 @@ tags:
   </a>
 </div>
 
-```cardlink
-url: https://old-search.marginalia.nu/search?query=browse:random
-title: "Marginalia Search - browse:random"
-host: old-search.marginalia.nu
-```
-
-```cardlink
-url: https://marginalia-search.com/explore
-title: "Explore - Marginalia Search"
-host: marginalia-search.com
-```
-
 <br>
 
 ## just some thoughts
