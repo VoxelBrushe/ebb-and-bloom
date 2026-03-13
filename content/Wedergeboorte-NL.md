@@ -24,7 +24,7 @@ publish: true
 
 ## gewoon wat gedachten
 
-Soms is het fijn om een ander perspectief te kiezen. Ik denk dat ik onbewust ben geïnspireerd door het boek <a href="https://[Fetching Data#eztq](www.vanoorschot.nl/oorshop/het-licht-aan-het-einde-van-de-loop/)" target="_blank" rel="noopener noreferrer">Het licht aan het einde van de loop</a> van Martin Michael Driessen.
+Soms is het fijn om een ander perspectief te kiezen. Ik denk dat ik onbewust ben geïnspireerd door het boek <a href="https://www.vanoorschot.nl/oorshop/het-licht-aan-het-einde-van-de-loop/" target="_blank" rel="noopener noreferrer">Het licht aan het einde van de loop</a> van Martin Michael Driessen.
 
 <hr>
 
