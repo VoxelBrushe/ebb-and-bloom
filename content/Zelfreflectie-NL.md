@@ -30,7 +30,7 @@ Magisch realisme sluipt in veel van mijn verhalen. Ik hou van het idee dat magie
 
 ## more oceans
 
-[[Overhoop-NL]]
-[[Wedergeboorte-NL]]
+- [[Overhoop-NL]]
+- [[Wedergeboorte-NL]]
 
 [[index]]

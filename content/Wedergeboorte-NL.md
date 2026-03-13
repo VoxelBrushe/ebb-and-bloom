@@ -30,7 +30,7 @@ Soms is het fijn om een ander perspectief te kiezen. Ik denk dat ik onbewust ben
 
 ## more oceans
 
-[[Overhoop-NL]]
-[[Zelfreflectie-NL]]
+- [[Overhoop-NL]]
+- [[Zelfreflectie-NL]]
 
 [[index]]

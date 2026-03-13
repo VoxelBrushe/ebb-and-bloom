@@ -30,7 +30,7 @@ Het allereerste ultrakorte verhaal dat ik ooit schreef. Met heel veel schaven en
 
 ## more oceans
 
-[[Zelfreflectie-NL]]
-[[Wedergeboorte-NL]]
+- [[Zelfreflectie-NL]]
+- [[Wedergeboorte-NL]]
 
 [[index]]
